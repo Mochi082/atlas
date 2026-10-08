@@ -6,6 +6,7 @@ from extensions import db, login_manager
 from models import User
 from routes import register_routes
 from datetime import timedelta
+from werkzeug.security import generate_password_hash
 
 load_dotenv()
 
@@ -37,6 +38,14 @@ def create_app():
 
     # ルーティングの登録
     register_routes(app)
+
+    # テーブルがなければ作成し、管理者ユーザー（id=1）がいなければ ADMIN_PASSWORD から作成する
+    with app.app_context():
+        db.create_all()
+        admin_password = os.getenv('ADMIN_PASSWORD')
+        if admin_password and db.session.get(User, 1) is None:
+            db.session.add(User(id=1, pw_hash=generate_password_hash(admin_password)))
+            db.session.commit()
 
     return app
 
