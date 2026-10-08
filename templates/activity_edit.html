@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>活動記事編集</title>
+	<link rel="stylesheet" href="/static/css/management.css">
+</head>
+<body>
+	<main>
+{% include "management-messages.html" %}
+		<h1>活動記事編集</h1>
+		<form method="post" action="{{ url_for('activity_edit') }}" enctype="multipart/form-data">
+			<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+			{% for activity in activities %}
+				<fieldset>
+					<legend>投稿 #{{ activity.id }}（{{ activity.date.strftime('%Y.%m.%d') }}）</legend>
+					<input type="hidden" name="activity_id" value="{{ activity.id }}">
+				<p>
+					<label for="title_{{ activity.id }}">タイトル（必須）</label>
+					<input id="title_{{ activity.id }}" name="title_{{ activity.id }}" type="text" value="{{ activity.title }}">
+				</p>
+				{% for number in range(1, 5) %}
+					{% set text = activity['text' ~ number] %}
+					{% set image_path = activity['image_path_' ~ number] %}
+					<fieldset data-section{% if number > 1 and not text and not image_path %} hidden{% endif %}>
+						<legend>セクション {{ number }}</legend>
+						{% if image_path %}
+							<p>現在の画像:</p>
+							<img src="{{ url_for('static', filename=image_path) }}" alt="現在の画像{{ number }}">
+							<p>
+								<label>
+									<input type="checkbox" name="delete_image_{{ number }}_{{ activity.id }}" value="1">
+									この画像を削除する
+								</label>
+							</p>
+						{% else %}
+							<p>現在の画像: なし</p>
+						{% endif %}
+						<p>
+							<label for="image_{{ number }}_{{ activity.id }}">新しい画像をアップロード（省略可）</label>
+							<input id="image_{{ number }}_{{ activity.id }}" name="image_{{ number }}_{{ activity.id }}" type="file" accept=".jpg,.jpeg,.png,.gif,.webp">
+						</p>
+						<p>
+							<label for="text{{ number }}_{{ activity.id }}">本文{{ number }}{% if number == 1 %}（必須）{% endif %}</label>
+							<textarea id="text{{ number }}_{{ activity.id }}" name="text{{ number }}_{{ activity.id }}" rows="5">{{ text or '' }}</textarea>
+						</p>
+					</fieldset>
+				{% endfor %}
+					<button type="button" data-add-section>＋ セクションを追加（最大4つ）</button>
+				<p>
+					<label>
+						<input type="checkbox" name="published_{{ activity.id }}" value="1" {% if activity.published %}checked{% endif %}>
+						公開する
+					</label>
+				</p>
+				<p>
+					<input type="submit" value="削除" formaction="{{ url_for('delete_activity', activity_id=activity.id) }}" formenctype="application/x-www-form-urlencoded" onclick="return confirm('本当に削除しますか？');">
+				</p>
+				</fieldset>
+			{% else %}
+				<p>活動記事がありません。</p>
+			{% endfor %}
+			{% if activities %}
+				<button type="submit">すべて保存</button>
+			{% endif %}
+		</form>
+		<p><a href="{{ url_for('management') }}">管理画面に戻る</a></p>
+	</main>
+
+	<script>
+		// 隠れているセクションを1つずつ表示する。4つすべて表示したら＋ボタンを隠す
+		document.querySelectorAll('[data-add-section]').forEach((button) => {
+			const container = button.parentElement;
+			const update = () => {
+				button.hidden = !container.querySelector(':scope > [data-section][hidden]');
+			};
+			button.addEventListener('click', () => {
+				const next = container.querySelector(':scope > [data-section][hidden]');
+				if (next) {
+					next.hidden = false;
+					next.querySelector('input[type="file"], textarea').focus();
+				}
+				update();
+			});
+			update();
+		});
+	</script>
+</body>
+</html>

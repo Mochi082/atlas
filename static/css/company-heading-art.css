@@ -1,0 +1,5 @@
+/* Decorative illustrations only on the company landing headings. */
+#main-content[data-content-page="company"] .company-heading-art{display:inline-block;position:relative;width:56px;height:56px;overflow:hidden;vertical-align:middle;margin-left:18px}
+#main-content[data-content-page="company"] .company-heading-art img{position:absolute;display:block;max-width:none;height:auto;width:var(--art-width);left:var(--art-left);top:var(--art-top)}
+@media(max-width:600px){#main-content[data-content-page="company"] .company-heading-art{width:34px;height:34px;margin-left:10px}}
+.company-heading-art img[src*="/socost/earth-hands.png"]{--art-width:176.4706%;--art-left:-38.2353%;--art-top:-38.2353%;}

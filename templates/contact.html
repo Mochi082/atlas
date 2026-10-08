@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" sizes="any">
+<script src="{{ url_for('static', filename='js/homepage-scroll.js') }}"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+  <title>お問い合わせ | ATLAS COMPUTER</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site-base.css') }}?v=20261006-font1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}?v=20261008-contact2">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/subpage-theme.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site-footer.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site-navigation.css') }}?v=20261007-review3">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/typography-review.css') }}?v=20261008-unify1">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/prose-flow.css') }}?v=20261008-flow2">
+</head>
+<body data-contact-confirm-url="{{ url_for('contact_confirm') }}" data-contact-url="{{ url_for('contact') }}" data-contact-complete-url="{{ url_for('contact_complete') }}" class="owned-subpage contact-page">
+<a class="skip-link" href="#main-content">本文へ移動</a>
+<!-- SITE-HEADER:START -->
+<header class="site-header" id="top">
+
+  <a class="brand" href="{{ url_for('index') }}" aria-label="アトラスコンピュータ トップページへ"><img src="{{ url_for('static', filename='images/atlas_logo.jpg') }}" alt="株式会社アトラスコンピュータ" width="196" height="40" decoding="async"></a>
+  <nav class="desktop-nav" aria-label="グローバルナビゲーション">
+    <a href="{{ url_for('company') }}">会社案内</a>
+    <a href="{{ url_for('business') }}">事業内容</a>
+    <a href="{{ url_for('smes') }}">中小企業向けITコンサルティング</a>
+    <a href="{{ url_for('partner') }}">ビジネスパートナー</a>
+    <a href="{{ url_for('recruit') }}">採用について</a>
+    <a href="{{ url_for('contact') }}">お問い合わせ</a>
+  </nav>
+  <div class="header-actions">
+  <a class="header-contact" href="{{ url_for('contact') }}" aria-label="お問い合わせ"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg></a>
+  <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <button class="drawer-close" type="button" aria-label="メニューを閉じる">×</button>
+  <div class="drawer-inner">
+    <p class="drawer-kicker">ATLAS COMPUTER</p>
+    <nav class="drawer-nav" aria-label="メニュー">
+      <a href="{{ url_for('company') }}"><span>会社案内<small>COMPANY</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('business') }}"><span>事業内容<small>BUSINESS</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('smes') }}"><span>中小企業向けITコンサルティング<small>IT CONSULTING</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('partner') }}"><span>ビジネスパートナー<small>BUSINESS PARTNER</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('recruit') }}"><span>採用について<small>RECRUIT</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('contact') }}"><span>お問い合わせ<small>CONTACT</small></span><i aria-hidden="true">→</i></a>
+    </nav>
+  </div>
+</aside>
+<div class="drawer-backdrop"></div>
+<!-- SITE-HEADER:END -->
+
+<main tabindex="-1" id="main-content" data-content-page="contact">
+<section class="contact-page-title"><div><p class="eyebrow">CONTACT</p><h1>お問い合わせ</h1><p>ご相談・ご質問はこちらからお問い合わせください。</p></div></section>
+<section class="form-section">
+  <div class="form-steps"><b>01 入力</b><span>02 確認</span><span>03 完了</span></div>
+{% if config.get('FRONTEND_PREVIEW') %}
+<nav aria-label="デバッグ用画面移動" style="margin:0 0 20px;font-size:14px">
+<a href="{{ url_for('contact_confirm') }}">デバッグ：次へ →</a>
+</nav>
+{% endif %}
+
+  <p class="form-guide"><em>「必須」</em>の項目は入力が必要です。</p>
+  <form action="contact-confirm.html" method="get" id="contact-form" novalidate>
+    <label><span class="form-label-text">お問い合わせの種類 <em>必須</em></span>
+      <select name="type" required>
+        <option value="">選択してください</option>
+        <option value="product-partner">協業・業務提携</option>
+        <option value="onsite-corporate">オンサイトアウトソーシング（法人の方）</option>
+        <option value="onsite-freelance">オンサイトアウトソーシング（個人事業主様）</option>
+        <option value="sme-sales">売り上げを上げたい（ITコンサル）</option>
+        <option value="sme-cost">経費を削減したい（ITコンサル）</option>
+        <option value="sme-productivity">生産性を向上したい（ITコンサル）</option>
+        <option value="sme-security">セキュリティ対策をしたい（ITコンサル）</option>
+        <option value="services">弊社のサービスについて</option>
+        <option value="recruit">採用について</option>
+        <option value="other">その他</option>
+      </select>
+    </label>
+    <label><span class="form-label-text">お名前 <em>必須</em></span>
+      <input name="name" required minlength="2" maxlength="50" autocomplete="name" placeholder="例：山田 太郎">
+    </label>
+    <label><span class="form-label-text">フリガナ <em>必須</em></span>
+      <input name="kana" required minlength="2" maxlength="50" autocomplete="off" data-filter="kana" placeholder="例：ヤマダ タロウ">
+    </label>
+    <label id="company-field"><span class="form-label-text">会社名 <em class="company-required" hidden>必須</em></span>
+      <input name="company" maxlength="100" autocomplete="organization" placeholder="例：株式会社アトラスコンピュータ">
+    </label>
+    <label id="department-field"><span class="form-label-text">部署名 <em class="department-required" hidden>必須</em></span>
+      <input name="department" maxlength="100" placeholder="例：システム開発部">
+    </label>
+    <label><span class="form-label-text">メールアドレス <em>必須</em></span>
+      <input type="email" name="email" required minlength="6" maxlength="254" autocomplete="email" placeholder="例：info@example.com">
+    </label>
+    <label><span class="form-label-text">電話番号 <em>必須</em></span>
+      <input type="tel" name="tel" required autocomplete="tel" inputmode="numeric" data-filter="tel" placeholder="例：0312345678">
+    </label>
+    <label><span class="form-label-text">お問い合わせ内容 <em>必須</em></span>
+      <textarea name="message" required minlength="10" maxlength="3000" placeholder="お問い合わせ内容をご入力ください。"></textarea>
+      <small class="char-count">0 / 3000</small>
+    </label>
+    <div class="consent-box">
+      <h2 class="consent-title" id="privacy-notice-title"><span class="heading-unit">個人情報の</span><span class="heading-unit">取り扱いについて</span></h2>
+      <details class="privacy-details">
+        <summary>個人情報の取り扱いについて全文を読む</summary>
+      <div class="privacy-scroll" role="region" aria-labelledby="privacy-notice-title">
+        <p>この入力フォームで取得する個人情報の取り扱いは下記2項の利用目的のためであり、この目的の範囲を超えて利用することはございません。</p>
+
+        <h3><span class="heading-unit">1．組織の名称、</span><span class="heading-unit">個人情報に関する</span><span class="heading-unit">管理者の氏名、</span><span class="heading-unit">所属及び連絡先</span></h3>
+        <p>組織の名称：株式会社アトラスコンピュータ<br>
+        管理者名：個人情報保護管理者　堀江　貴幸<br>
+        所属部署：システム開発部<br>
+        連絡先：電話03-5816-5770</p>
+
+        <h3><span class="heading-unit">2．個人情報の</span><span class="heading-unit">利用目的</span></h3>
+        <p>当社へのお問い合わせにお答えするため</p>
+
+        <h3><span class="heading-unit">3．個人情報の</span><span class="heading-unit">第三者提供</span></h3>
+        <p>当社は、ご提供いただいた個人情報を次の場合を除き第三者に開示・提供いたしません。</p>
+        <ul>
+          <li>ご本人の同意がある場合</li>
+          <li>法令に基づく場合</li>
+          <li>人の生命、身体又は財産の保護のために必要がある場合であって、人の同意を得ることが困難であるとき</li>
+          <li>公衆衛生の向上又は児童の健全な育成の推進のために特に必要がある場合であって、本人の同意を得ることが困難であるとき</li>
+          <li>国の機関若しくは地方公共団体又はその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、本人の同意を得ることによって当該事務の遂行に支障を及ぼすおそれがあるとき</li>
+        </ul>
+
+        <h3><span class="heading-unit">4．個人情報取扱いの</span><span class="heading-unit">委託</span></h3>
+        <p>当社は、事業運営上、お客様により良いサービスを提供するために業務の一部を外部に委託しています。業務委託先に対しては、個人情報を預けることがあります。</p>
+        <p>この場合、個人情報を適切に取り扱っていると認められる委託先を選定し、契約等において個人情報の適正管理・機密保持などによりお客様の個人情報の漏洩防止に必要な事項を取決め、適切な管理を実施させます。</p>
+
+        <h3><span class="heading-unit">5．個人情報の</span><span class="heading-unit">開示等の請求</span></h3>
+        <p>お客様が当社に対してご自身の個人情報の開示等（利用目的の通知、開示、内容の訂正・追加・削除、利用の停止または消去、第三者への提供の停止、第三者提供記録の開示）に関して、当社「個人情報に関するお問合わせ窓口」に申し出ることができます。その際、当社はご本人を確認させていただいたうえで、合理的な期間内に対応いたします。</p>
+        <p>開示等の申し出の詳細につきましては、下記の「個人情報に関するお問い合わせ窓口」までお問い合わせください。</p>
+        <p>〒110-0016 東京都台東区台東2-5-1 NOEビル5F<br>
+        株式会社アトラスコンピュータ　個人情報問合せ係<br>
+        TEL：03-5816-5770 （受付時間　9:00～18:00）</p>
+
+        <h3><span class="heading-unit">6．個人情報を</span><span class="heading-unit">提供されることの</span><span class="heading-unit">任意性について</span></h3>
+        <p>当社に個人情報を提供されるかどうかは、任意によるものです。ただし、必要な項目をいただけない場合、お問い合わせに適切な回答ができない場合があります。</p>
+
+        <h3><span class="heading-unit">7．本Webサイトへ</span><span class="heading-unit">アクセスしたことを</span><span class="heading-unit">契機として機械的に</span><span class="heading-unit">取得される情報</span></h3>
+        <p>当社は、閲覧されたWebサイトのセキュリティ確保・ユーザーサービス向上のため、Cookieにより閲覧された方の情報を取得することがあります。</p>
+      </div>
+      </details>
+      <label class="consent"><input type="checkbox" name="consent" required> 個人情報の取り扱いについて同意する</label>
+    </div>
+    <p class="form-error" id="form-error" role="alert"></p>
+    <button class="form-submit" type="submit" disabled>入力内容を確認する <span>→</span></button>
+    <noscript><p>入力内容の確認にはJavaScriptが必要です。ブラウザーの設定で有効にしてください。</p></noscript>
+  </form>
+</section>
+</main>
+<footer class="site-footer">
+    <nav class="footer-policy" aria-label="サイトポリシー">
+      <a href="{{ url_for('policy_terms') }}">サイト利用規定</a>
+      <a href="{{ url_for('policy_privacy') }}">個人情報取扱について</a>
+      <a href="{{ url_for('policy_protection') }}">個人情報保護方針</a>
+      <a href="{{ url_for('policy_security') }}">セキュリティポリシー</a>
+      <a href="{{ url_for('policy_disclaimer') }}">免責事項</a>
+      <a href="{{ url_for('policy_harassment') }}">採用活動におけるハラスメント防止方針</a>
+
+    </nav>
+    <div class="footer-main">
+      <div class="footer-identity">
+        <span class="footer-wordmark">株式会社アトラスコンピュータ</span>
+        <div class="footer-certifications" role="group" aria-label="認証マーク">
+        <img src="{{ url_for('static', filename='images/p_JP.png') }}" alt="Privacy Mark 10824656" width="216" height="216" loading="lazy" decoding="async">
+        <img src="{{ url_for('static', filename='images/icd.png') }}" alt="i Competency Dictionary 2023 Silver Plus 01-03102(05)" width="613" height="613" loading="lazy" decoding="async">
+      </div>
+      </div>
+      <small>© 2026 ATLAS COMPUTER CO.,LTD.</small>
+    </div>
+  </footer>
+<script src="{{ url_for('static', filename='js/script.js') }}?v=20261007-review3"></script>
+<script src="{{ url_for('static', filename='js/contact.js') }}?v=20261008-contact2"></script>
+</body></html>

@@ -1,0 +1,947 @@
+/* ============================================
+   管理画面 全画面ダッシュボード CSS
+   ============================================ */
+
+/* === リセット === */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100%;
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  background-color: #1a1f2e;
+  color: #e0e4ef;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+ul { list-style: none; }
+a  { text-decoration: none; }
+
+/* ============================================================
+   ダッシュボードレイアウト（main > div がある画面専用）
+   management.html のみ対象。form ページには影響しない。
+   ============================================================ */
+main:has(> div) {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  /* トップバーは中身の高さだけにし、余った高さはサイドバー・コンテンツの行に回す */
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
+
+/* トップバー */
+main:has(> div) > h1 {
+  grid-column: 1 / -1;
+  background: linear-gradient(90deg, #1e2a45, #243154);
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 18px 28px;
+  border-bottom: 2px solid #3b82f6;
+  letter-spacing: 0.05em;
+}
+
+/* サイドバー */
+main:has(> div) > div:first-of-type {
+  grid-column: 1;
+  background-color: #1e2a45;
+  border-right: 1px solid #2e3d5f;
+}
+
+/* コンテンツエリア */
+main:has(> div) > div:last-of-type {
+  grid-column: 2;
+  padding: 24px 28px;
+}
+
+/* ============================================
+   サイドバー ナビゲーション
+   ============================================ */
+main:has(> div) > div:first-of-type > ul {
+  padding: 16px 0;
+}
+
+main:has(> div) > div:first-of-type ul li a,
+main:has(> div) > div:first-of-type ul li button {
+  display: block;
+  padding: 13px 24px;
+  color: #a8b8d8;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-left: 3px solid transparent;
+  transition: background-color 0.15s, color 0.15s, border-left-color 0.15s;
+}
+
+main:has(> div) > div:first-of-type ul li a:hover,
+main:has(> div) > div:first-of-type ul li button:hover {
+  background-color: rgba(59, 130, 246, 0.12);
+  color: #fff;
+  border-left-color: #3b82f6;
+}
+
+/* ログアウトボタン（POST のため form + button）をリンクと同じ見た目にする */
+main:has(> div) > div:first-of-type ul li button {
+  width: 100%;
+  background: none;
+  border: none;
+  border-left: 3px solid transparent;
+  text-align: left;
+  font-family: inherit;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+main:has(> div) > div:first-of-type ul li:last-child {
+  margin-top: 16px;
+  border-top: 1px solid #2e3d5f;
+}
+
+main:has(> div) > div:first-of-type ul li:last-child a,
+main:has(> div) > div:first-of-type ul li:last-child button {
+  color: #f87171;
+}
+
+main:has(> div) > div:first-of-type ul li:last-child a:hover,
+main:has(> div) > div:first-of-type ul li:last-child button:hover {
+  background-color: rgba(239, 68, 68, 0.12);
+  color: #fca5a5;
+  border-left-color: #ef4444;
+}
+
+/* ============================================
+   コンテンツ：カード共通
+   ============================================ */
+main:has(> div) > div:last-of-type > ul {
+  background-color: #1f2b3e;
+  border: 1px solid #2e3d5f;
+  border-radius: 10px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+/* セクションヘッダー */
+main:has(> div) > div:last-of-type > ul:first-of-type::before {
+  content: "お知らせ一覧";
+  grid-column: 1 / -1;
+  display: block;
+  padding: 12px 20px;
+  background-color: #192235;
+  color: #7da4e0;
+  font-size: 0.83rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #2e3d5f;
+}
+
+main:has(> div) > div:last-of-type > ul:last-of-type::before {
+  content: "活動報告一覧";
+  display: block;
+  grid-column: 1 / -1;
+  padding: 12px 20px;
+  background-color: #192235;
+  color: #7da4e0;
+  font-size: 0.83rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #2e3d5f;
+}
+
+/* ============================================
+   お知らせ一覧
+   li:nth-child(odd)  → タイトル+本文（col 1）
+   li:nth-child(even) → バッジ（col 2）
+   ============================================ */
+main:has(> div) > div:last-of-type > ul:first-of-type {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+main:has(> div) > div:last-of-type > ul:first-of-type > li:nth-child(odd) {
+  grid-column: 1;
+  padding: 12px 20px;
+  border-bottom: 1px solid #243044;
+  align-self: center;
+}
+
+main:has(> div) > div:last-of-type > ul:first-of-type > li:nth-child(odd) > p:first-child {
+  font-weight: 600;
+  color: #dde6f8;
+  font-size: 0.93rem;
+}
+
+main:has(> div) > div:last-of-type > ul:first-of-type > li:nth-child(odd) > p:last-child {
+  color: #a0aec0;
+  font-size: 0.88rem;
+  margin-top: 2px;
+}
+
+main:has(> div) > div:last-of-type > ul:first-of-type > li:nth-child(even) {
+  grid-column: 2;
+  padding: 12px 20px;
+  border-bottom: 1px solid #243044;
+  align-self: center;
+}
+
+main:has(> div) > div:last-of-type > ul:first-of-type > li:nth-child(even) > p {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+  background-color: #2e4068;
+  color: #a8c0e8;
+}
+
+main:has(> div) > div:last-of-type > ul:first-of-type > li:only-child {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #4a5a7a;
+  font-style: italic;
+  padding: 28px;
+  border-bottom: none;
+}
+
+/* ============================================
+   活動報告一覧（1投稿 = li × 7）
+   ============================================ */
+main:has(> div) > div:last-of-type > ul:last-of-type {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+main:has(> div) > div:last-of-type > ul:last-of-type > li {
+  grid-column: 1 / -1;
+  padding: 10px 20px;
+  color: #c8d4ec;
+  font-size: 0.93rem;
+}
+
+/* 1投稿 = li × 11（日付・タイトル・公開バッジ ＋ 本文と画像 × 4セクション）*/
+
+/* 日付（投稿区切り）*/
+main:has(> div) > div:last-of-type > ul:last-of-type > li:nth-child(11n+1) {
+  background-color: #192235;
+  color: #3b82f6;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 12px 20px 8px;
+  border-top: 2px solid #3b82f6;
+  letter-spacing: 0.03em;
+}
+
+main:has(> div) > div:last-of-type > ul:last-of-type > li:first-child {
+  border-top: none;
+}
+
+/* タイトル */
+main:has(> div) > div:last-of-type > ul:last-of-type > li:nth-child(11n+2) {
+  grid-column: 1;
+  background-color: #1d2a3f;
+  font-weight: 600;
+  color: #dde6f8;
+  align-self: center;
+}
+
+/* 公開バッジ */
+main:has(> div) > div:last-of-type > ul:last-of-type > li:nth-child(11n+3) {
+  grid-column: 2;
+  background-color: #1d2a3f;
+  padding: 10px 20px;
+  align-self: center;
+  border-bottom: 1px solid #243044;
+}
+
+main:has(> div) > div:last-of-type > ul:last-of-type > li:nth-child(11n+3) > p {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+  background-color: #2e4068;
+  color: #a8c0e8;
+}
+
+/* 画像 li（セクション1〜4）*/
+main:has(> div) > div:last-of-type > ul:last-of-type > li:nth-child(11n+5),
+main:has(> div) > div:last-of-type > ul:last-of-type > li:nth-child(11n+7),
+main:has(> div) > div:last-of-type > ul:last-of-type > li:nth-child(11n+9),
+main:has(> div) > div:last-of-type > ul:last-of-type > li:nth-child(11n+11) {
+  background-color: #192235;
+  padding: 8px 20px;
+}
+
+/* 投稿の最後の li */
+main:has(> div) > div:last-of-type > ul:last-of-type > li:nth-child(11n+11) {
+  border-bottom: 2px solid #2e3d5f;
+}
+
+/* 本文・画像がない li を非表示 */
+main:has(> div) > div:last-of-type > ul:last-of-type > li:empty {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  border: none;
+}
+
+/* 画像 */
+main:has(> div) ul li img {
+  display: block;
+  width: 180px;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #3b4d6e;
+  object-fit: cover;
+  margin: 4px 0;
+}
+
+/* 投稿なし（活動報告）*/
+main:has(> div) > div:last-of-type > ul:last-of-type > li:only-child {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #4a5a7a;
+  font-style: italic;
+  padding: 28px;
+  border-top: none !important;
+  background-color: transparent !important;
+  font-weight: normal;
+}
+
+/* ============================================================
+   フォームページ（main > form がある画面専用）
+   新規お知らせ・新規活動報告・編集画面 等
+   ============================================================ */
+main:has(> form) {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 48px 24px;
+  min-height: 100vh;
+}
+
+main > form {
+  width: 100%;
+  max-width: 640px;
+  background-color: #1f2b3e;
+  border: 1px solid #2e3d5f;
+  border-radius: 12px;
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+main > form label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #7da4e0;
+  margin-bottom: 6px;
+  letter-spacing: 0.04em;
+}
+
+main > form input[type="text"],
+main > form input[type="number"] {
+  width: 100%;
+  padding: 10px 14px;
+  background-color: #151e2e;
+  border: 1px solid #2e3d5f;
+  border-radius: 7px;
+  color: #e0e4ef;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+main > form input[type="text"]:focus,
+main > form input[type="number"]:focus {
+  border-color: #3b82f6;
+}
+
+main > form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  background-color: #151e2e;
+  border: 1px solid #2e3d5f;
+  border-radius: 7px;
+  color: #e0e4ef;
+  font-size: 0.95rem;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.15s;
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+main > form textarea:focus {
+  border-color: #3b82f6;
+}
+
+main > form button[type="submit"] {
+  align-self: flex-end;
+  padding: 10px 28px;
+  background-color: #3b82f6;
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  letter-spacing: 0.03em;
+}
+
+main > form button[type="submit"]:hover {
+  background-color: #2563eb;
+}
+
+/* ============================================
+   公開/非公開バッジ色分け
+   <p class="published"> / <p class="unpublished">
+   ============================================ */
+.published {
+  background-color: rgba(34, 197, 94, 0.2) !important;
+  color: #4ade80 !important;
+  border: 1px solid rgba(34, 197, 94, 0.35) !important;
+}
+
+.unpublished {
+  background-color: rgba(239, 68, 68, 0.2) !important;
+  color: #f87171 !important;
+  border: 1px solid rgba(239, 68, 68, 0.35) !important;
+}
+
+/* ============================================
+   スクロールバー
+   ============================================ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #1a1f2e; }
+::-webkit-scrollbar-thumb { background: #3b4d6e; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+
+
+/* ============================================================
+   以下を management.css の末尾に追記してください
+   対象：お知らせ編集・活動報告編集など fieldset を含む編集画面
+   既存スタイル（newinfo等）への影響なし
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   main を縦積みに
+   → h1・form・戻るリンクを上から順に並べる
+   :has(> form > fieldset) で fieldset がある画面のみ対象
+   ---------------------------------------------------------- */
+main:has(> form > fieldset) {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* ----------------------------------------------------------
+   ページタイトル h1
+   ---------------------------------------------------------- */
+main:has(> form > fieldset) > h1 {
+  width: 100%;
+  max-width: 800px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #3b82f6;
+  letter-spacing: 0.05em;
+}
+
+/* ----------------------------------------------------------
+   フォーム本体を少し広めに（既存の max-width: 640px を上書き）
+   ---------------------------------------------------------- */
+main:has(> form > fieldset) > form {
+  max-width: 800px;
+}
+
+/* ----------------------------------------------------------
+   管理画面へ戻る リンク
+   ---------------------------------------------------------- */
+main:has(> form > fieldset) ~ p,
+main:has(> form > fieldset) > p {
+  width: 100%;
+  max-width: 800px;
+}
+
+main:has(> form > fieldset) > p > a {
+  color: #7da4e0;
+  font-size: 0.88rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+main:has(> form > fieldset) > p > a:hover {
+  color: #3b82f6;
+}
+
+/* ----------------------------------------------------------
+   fieldset：1投稿分のカード
+   ---------------------------------------------------------- */
+main > form > fieldset {
+  border: 1px solid #2e3d5f;
+  border-radius: 10px;
+  padding: 24px 28px;
+  background-color: #192235;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* legend（投稿 #id） */
+main > form > fieldset > legend {
+  color: #7da4e0;
+  font-size: 0.83rem;
+  font-weight: 700;
+  padding: 0 8px;
+  letter-spacing: 0.05em;
+}
+
+/* fieldset 内の p を縦積みに */
+main > form > fieldset > p {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ----------------------------------------------------------
+   チェックボックス行（公開する）
+   ---------------------------------------------------------- */
+main > form > fieldset > p:has(> label > input[type="checkbox"]) {
+  flex-direction: row;
+  align-items: center;
+}
+
+main > form > fieldset > p:has(> label > input[type="checkbox"]) > label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #c8d4ec;
+  font-size: 0.93rem;
+  font-weight: normal;
+  margin-bottom: 0;
+  letter-spacing: normal;
+  cursor: pointer;
+}
+
+main > form input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #3b82f6;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ----------------------------------------------------------
+   削除ボタン（input[type="submit"]）
+   ※ 保存ボタン（button[type="submit"]）とは別タグなので競合しない
+   ---------------------------------------------------------- */
+main > form input[type="submit"] {
+  align-self: flex-start;
+  padding: 7px 20px;
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 7px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+  font-family: inherit;
+}
+
+main > form input[type="submit"]:hover {
+  background-color: rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+}
+
+/* ----------------------------------------------------------
+   「投稿はありません」（form 直下の p、リンクなし）
+   ---------------------------------------------------------- */
+main > form > p:not(:has(a)) {
+  color: #4a5a7a;
+  font-style: italic;
+  text-align: center;
+  padding: 28px 0;
+}
+
+
+/* ============================================================
+   活動記事の作成画面（new_activity.html）
+   セクションを fieldset で囲んでいるため、レイアウト・h1・戻るリンクは
+   fieldset 編集画面（info_edit / activity_edit）と共通のスタイルを使用
+   ここでは form 直下のタイトル入力行のみ調整
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   タイトル入力行（form 直下の p）
+   既存の「投稿はありません」用スタイル（p:not(:has(a))）を打ち消す
+   ---------------------------------------------------------- */
+main > form > p:has(> input[type="text"]) {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: inherit;
+  font-style: normal;
+  text-align: left;
+  padding: 0;
+}
+
+main > form > p:has(> input[type="text"]) > label {
+  margin-bottom: 0;
+}
+
+/* ----------------------------------------------------------
+   画像選択（input[type="file"]）
+   ---------------------------------------------------------- */
+main > form input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  background-color: #151e2e;
+  border: 1px dashed #2e3d5f;
+  border-radius: 7px;
+  color: #a0aec0;
+  font-size: 0.88rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+main > form input[type="file"]:hover,
+main > form input[type="file"]:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+main > form input[type="file"]::file-selector-button {
+  margin-right: 12px;
+  padding: 6px 16px;
+  background-color: #2e4068;
+  color: #a8c0e8;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+main > form input[type="file"]::file-selector-button:hover {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+/* ----------------------------------------------------------
+   セクション追加ボタン（＋）
+   new_activity：form 直下 / activity_edit：投稿の fieldset 直下
+   ---------------------------------------------------------- */
+main > form button[type="button"] {
+  align-self: stretch;
+  padding: 12px;
+  background-color: transparent;
+  color: #7da4e0;
+  border: 1px dashed #3b4d6e;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: inherit;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+main > form button[type="button"]:hover {
+  background-color: rgba(59, 130, 246, 0.12);
+  border-color: #3b82f6;
+  color: #fff;
+}
+
+/* ----------------------------------------------------------
+   hidden のセクション・ボタンを非表示にする
+   （fieldset に display: flex を指定しているため hidden 属性だけでは消えない）
+   ---------------------------------------------------------- */
+main > form fieldset[hidden],
+main > form button[hidden] {
+  display: none;
+}
+
+
+/* ============================================================
+   活動記事の編集画面（activity_edit.html）
+   基本は fieldset 編集画面（info_edit と共通）のスタイルを使用
+   ここでは画像用の入れ子 fieldset（fieldset > fieldset）のみ追加
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   画像1・画像2 の枠
+   ---------------------------------------------------------- */
+main > form > fieldset > fieldset {
+  border: 1px solid #2e3d5f;
+  border-radius: 8px;
+  padding: 16px 20px 20px;
+  background-color: #1f2b3e;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+main > form > fieldset > fieldset > legend {
+  color: #a8b8d8;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0 6px;
+  letter-spacing: 0.05em;
+}
+
+main > form > fieldset > fieldset > p {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* 「現在の画像:」「現在の画像: なし」 */
+main > form > fieldset > fieldset > p:not(:has(*)) {
+  color: #a0aec0;
+  font-size: 0.85rem;
+}
+
+/* 現在の画像 */
+main > form > fieldset > fieldset > img {
+  display: block;
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #3b4d6e;
+  object-fit: cover;
+}
+
+/* ----------------------------------------------------------
+   チェックボックス行（この画像を削除する）
+   ---------------------------------------------------------- */
+main > form > fieldset > fieldset > p:has(> label > input[type="checkbox"]) {
+  flex-direction: row;
+  align-items: center;
+}
+
+main > form > fieldset > fieldset > p:has(> label > input[type="checkbox"]) > label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #f87171;
+  font-size: 0.88rem;
+  font-weight: normal;
+  margin-bottom: 0;
+  letter-spacing: normal;
+  cursor: pointer;
+}
+
+main > form > fieldset > fieldset input[type="checkbox"] {
+  accent-color: #ef4444;
+}
+
+
+/* ============================================================
+   新規お知らせ画面（newinfo.html）
+   :has(> form > textarea) で form 直下に入力欄が並ぶ画面のみ対象
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   main を縦積みに（h1・form）
+   ---------------------------------------------------------- */
+main:has(> form > textarea) {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+/* ----------------------------------------------------------
+   ページタイトル h1
+   ---------------------------------------------------------- */
+main:has(> form > textarea) > h1 {
+  width: 100%;
+  max-width: 640px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #3b82f6;
+  letter-spacing: 0.05em;
+}
+
+/* ----------------------------------------------------------
+   管理画面へ戻る リンク
+   ---------------------------------------------------------- */
+main:has(> form > textarea) > p {
+  width: 100%;
+  max-width: 640px;
+}
+
+main:has(> form > textarea) > p > a {
+  color: #7da4e0;
+  font-size: 0.88rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+main:has(> form > textarea) > p > a:hover {
+  color: #3b82f6;
+}
+
+
+/* ============================================================
+   送信エラー画面（csrf_error.html）
+   main > section の画面のみ対象
+   ============================================================ */
+main:has(> section) {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 48px 24px;
+  min-height: 100vh;
+}
+
+main > section {
+  width: 100%;
+  max-width: 640px;
+  background-color: #1f2b3e;
+  border: 1px solid #2e3d5f;
+  border-top: 3px solid #f87171;
+  border-radius: 12px;
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+main > section > h1 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fca5a5;
+  letter-spacing: 0.05em;
+}
+
+main > section > p {
+  color: #c8d4ec;
+  font-size: 0.93rem;
+}
+
+main > section > p:has(> a) {
+  margin-top: 8px;
+}
+
+main > section > p > a {
+  display: inline-block;
+  padding: 10px 28px;
+  background-color: #3b82f6;
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 700;
+  border-radius: 7px;
+  letter-spacing: 0.03em;
+  transition: background-color 0.15s;
+}
+
+main > section > p > a:hover {
+  background-color: #2563eb;
+}
+
+
+/* ============================================================
+   社員コメント一覧（management.html）
+   活動報告の ul:last-of-type に影響しないよう ol + クラスで指定
+   ============================================================ */
+main:has(> div) .comment-list {
+  list-style: none;
+  background-color: #1f2b3e;
+  border: 1px solid #2e3d5f;
+  border-radius: 10px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+main:has(> div) .comment-list::before {
+  content: "社員の声一覧";
+  display: block;
+  padding: 12px 20px;
+  background-color: #192235;
+  color: #7da4e0;
+  font-size: 0.83rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #2e3d5f;
+}
+
+main:has(> div) .comment-list > li {
+  padding: 14px 20px;
+  border-bottom: 1px solid #243044;
+}
+
+main:has(> div) .comment-list > li:last-child {
+  border-bottom: none;
+}
+
+.comment-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  color: #dde6f8;
+  font-weight: 600;
+}
+
+.comment-age {
+  display: inline-flex;
+  padding: 2px 10px;
+  border-radius: 20px;
+  background-color: #2e4068;
+  color: #a8c0e8;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.comment-text {
+  color: #c8d4ec;
+  font-size: 0.93rem;
+  white-space: pre-wrap;
+}
+
+main:has(> div) .comment-list > li.comment-empty {
+  text-align: center;
+  color: #4a5a7a;
+  font-style: italic;
+  padding: 28px;
+}
+
+/* ============================================================
+   社員の声（VOiCE 埋め込み）
+   ============================================================ */
+main:has(> div) .comment-text a,
+main > form > fieldset > p > a {
+  color: #7da4e0;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+main > form > fieldset > .voice-embed {
+  display: block;
+  width: 100%;
+  max-width: 620px;
+  height: 400px;
+  border: none;
+  border-radius: 8px;
+  background-color: #fff;
+}

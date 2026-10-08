@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" sizes="any">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover" />
+  <title>ATLAS COMPUTER | アトラスコンピュータ</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site-base.css') }}?v=20261006-font1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}?v=20261007-review3" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site-footer.css') }}" />
+  <script src="{{ url_for('static', filename='js/homepage-scroll.js') }}"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site-navigation.css') }}?v=20261007-review3">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/typography-review.css') }}?v=20261008-unify1">
+</head>
+<body class="home-page">
+<a class="skip-link" href="#main-content">本文へ移動</a>
+  <canvas id="atlas-particles" class="atlas-particles" aria-hidden="true"></canvas>
+  <!-- SITE-HEADER:START -->
+<header class="site-header" id="top">
+  <a class="brand" href="{{ url_for('index') }}" aria-label="アトラスコンピュータ トップページへ"><img src="{{ url_for('static', filename='images/atlas_logo.jpg') }}" alt="株式会社アトラスコンピュータ" width="196" height="40" decoding="async"></a>
+  <nav class="desktop-nav" aria-label="グローバルナビゲーション">
+    <a href="{{ url_for('company') }}">会社案内</a>
+    <a href="{{ url_for('business') }}">事業内容</a>
+    <a href="{{ url_for('smes') }}">中小企業向けITコンサルティング</a>
+    <a href="{{ url_for('partner') }}">ビジネスパートナー</a>
+    <a href="{{ url_for('recruit') }}">採用について</a>
+    <a href="{{ url_for('contact') }}">お問い合わせ</a>
+  </nav>
+  <div class="header-actions">
+  <a class="header-contact" href="{{ url_for('contact') }}" aria-label="お問い合わせ"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg></a>
+  <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <button class="drawer-close" type="button" aria-label="メニューを閉じる">×</button>
+  <div class="drawer-inner">
+    <p class="drawer-kicker">ATLAS COMPUTER</p>
+    <nav class="drawer-nav" aria-label="メニュー">
+      <a href="{{ url_for('company') }}"><span>会社案内<small>COMPANY</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('business') }}"><span>事業内容<small>BUSINESS</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('smes') }}"><span>中小企業向けITコンサルティング<small>IT CONSULTING</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('partner') }}"><span>ビジネスパートナー<small>BUSINESS PARTNER</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('recruit') }}"><span>採用について<small>RECRUIT</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('contact') }}"><span>お問い合わせ<small>CONTACT</small></span><i aria-hidden="true">→</i></a>
+    </nav>
+  </div>
+</aside>
+<div class="drawer-backdrop"></div>
+<!-- SITE-HEADER:END -->
+
+  <main tabindex="-1" id="main-content" data-content-page="index">
+    <section class="hero hero--type hero--editorial" aria-labelledby="hero-title">
+      <div class="hero-content reveal">
+        <div class="hero-message">
+          <p class="eyebrow">ATLAS COMPUTER <span>／</span> TRUST &amp; TECHNOLOGY</p>
+          <h1 id="hero-title"><span class="hero-title-line">技術と情熱で、</span><span class="hero-title-line hero-title-accent">ビジネスに革新を。</span></h1>
+        </div>
+        <div class="hero-detail">
+          <p class="hero-copy"><span class="hero-copy-line">中小企業様の課題をITの力で解決し、</span><span class="hero-copy-line">持続的な成長と競争力の向上を実現します。</span></p>
+          <p class="hero-extra">新たな時代に向けたイノベーションのお手伝いを</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section home-business" id="business" aria-labelledby="home-business-title" data-content-section="business">
+      <div class="overview-intro reveal"><span class="overview-kicker">OUR BUSINESS</span><h2 id="home-business-title">技術をつなぎ、<br>ビジネスを支える。</h2><p>開発からDX化、ITサポートまで。<br class="overview-mobile-break">4つの事業をご紹介します。</p></div>
+      <div class="home-business-list">
+        <article class="home-business-row" data-service-key="software" aria-labelledby="home-software-title">
+          <figure class="home-business-visual home-business-visual--software" aria-hidden="true" data-content-role="media"><img src="{{ url_for('static', filename='images/Designer.png') }}" alt="" width="1600" height="1067" loading="lazy" decoding="async"></figure>
+          <div class="home-business-copy reveal"><p class="business-eyebrow">SYSTEM DEVELOPMENT</p><h3 id="home-software-title">システム開発</h3><p>お客様の開発体制や業務課題に合わせ、常駐・受託開発から業務自動化まで対応します。</p><a class="home-business-link" href="{{ url_for('business') }}#software">システム開発について <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="home-business-row" data-service-key="fa" aria-labelledby="home-fa-title">
+          <figure class="home-business-visual home-business-visual--fa" aria-hidden="true" data-content-role="media"><img src="{{ url_for('static', filename='images/Designer_FA.png') }}" alt="" width="1600" height="1067" loading="lazy" decoding="async"></figure>
+          <div class="home-business-copy reveal"><p class="business-eyebrow">FA SYSTEMS</p><h3 id="home-fa-title"><span class="heading-unit">FA系</span><span class="heading-unit">システム開発</span></h3><p>FA分野のシステム開発に関するご相談を承ります。詳しい事業内容は今後ご案内します。</p><a class="home-business-link" href="{{ url_for('business') }}#fa">FA系システム開発について <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="home-business-row" data-service-key="dx" aria-labelledby="home-dx-title">
+          <figure class="home-business-visual home-business-visual--dx" aria-hidden="true" data-content-role="media"><img src="{{ url_for('static', filename='images/home-dx.jpg') }}" alt="" width="1600" height="1067" loading="lazy" decoding="async"></figure>
+          <div class="home-business-copy reveal"><p class="business-eyebrow">DX SUPPORT</p><h3 id="home-dx-title">DX化支援</h3><p>kintoneなどを活用し、中小企業の業務課題に合わせたDX化を支援します。</p><a class="home-business-link" href="{{ url_for('business') }}#dx">DX化支援について <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="home-business-row" data-service-key="support" aria-labelledby="home-support-title">
+          <figure class="home-business-visual home-business-visual--support" aria-hidden="true" data-content-role="media"><img src="{{ url_for('static', filename='images/home-support.jpg') }}" alt="" width="1600" height="1067" loading="lazy" decoding="async"></figure>
+          <div class="home-business-copy reveal"><p class="business-eyebrow">IT SUPPORT</p><h3 id="home-support-title">ITサポート</h3><p>ヘルプデスクやテクニカルサポートなど、お客様のIT環境に関するサポート業務を支援します。</p><a class="home-business-link" href="{{ url_for('business') }}#support">ITサポートについて <span aria-hidden="true">→</span></a></div>
+        </article>
+      </div>
+    </section>
+    <section class="section news" id="news" data-content-section="news">
+      <div class="news-panel">
+      <div class="section-heading reveal">
+
+        <div><p class="section-en">NEWS</p><h2>お知らせ</h2><img class="news-president" src="{{ url_for('static', filename='images/image.png') }}" alt="" width="164" height="365" loading="lazy" decoding="async"></div>
+      </div>
+      <div class="news-content"><ul class="news-list reveal" aria-label="最新のお知らせ">
+        <!-- NEWS:START -->
+        {% for information in informations %}
+        <li class="news-item" data-news-id="{{ information.id }}"><a href="{{ url_for('news_contents', information_id=information.id) }}"><time datetime="{{ information.date.strftime('%Y-%m-%d') }}">{{ information.date.strftime('%Y.%m.%d') }}</time><span>{{ information.title }}</span><b aria-hidden="true">→</b></a></li>
+        {% else %}
+        <li class="news-item news-empty">現在お知らせはありません。</li>
+        {% endfor %}
+        <!-- NEWS:END -->
+      </ul>
+      <a class="news-all-link" href="{{ url_for('news') }}">すべてのお知らせ <span aria-hidden="true">→</span></a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-policy" aria-label="サイトポリシー">
+      <a href="{{ url_for('policy_terms') }}">サイト利用規定</a>
+      <a href="{{ url_for('policy_privacy') }}">個人情報取扱について</a>
+      <a href="{{ url_for('policy_protection') }}">個人情報保護方針</a>
+      <a href="{{ url_for('policy_security') }}">セキュリティポリシー</a>
+      <a href="{{ url_for('policy_disclaimer') }}">免責事項</a>
+      <a href="{{ url_for('policy_harassment') }}">採用活動におけるハラスメント防止方針</a>
+
+    </nav>
+    <div class="footer-main">
+      <div class="footer-identity">
+        <span class="footer-wordmark">株式会社アトラスコンピュータ</span>
+        <div class="footer-certifications" role="group" aria-label="認証マーク">
+        <img src="{{ url_for('static', filename='images/p_JP.png') }}" alt="Privacy Mark 10824656" width="216" height="216" loading="lazy" decoding="async">
+        <img src="{{ url_for('static', filename='images/icd.png') }}" alt="i Competency Dictionary 2023 Silver Plus 01-03102(05)" width="613" height="613" loading="lazy" decoding="async">
+      </div>
+      </div>
+      <small>© 2026 ATLAS COMPUTER CO.,LTD.</small>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}?v=20261007-review3"></script>
+  <script src="{{ url_for('static', filename='js/atlas-particles.js') }}" defer></script>
+
+</body>
+</html>

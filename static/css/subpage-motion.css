@@ -1,0 +1,11 @@
+/* Only JS-observed content is hidden; pages remain readable without JS. */
+.subpage-motion-pending{opacity:0;transform:translateY(8px);transition:opacity .35s ease,transform .35s ease}
+.subpage-motion-pending.subpage-motion-visible{opacity:1;transform:none}
+/* Preserve the hero background; animate only its content. */
+.page-hero.subpage-motion{opacity:1;transform:none;transition:none}
+@media(max-width:600px){
+  .subpage-motion-pending{transform:none;transition:opacity .18s ease}
+}
+@media(prefers-reduced-motion:reduce){
+  .subpage-motion-pending{opacity:1;transform:none;transition:none}
+}

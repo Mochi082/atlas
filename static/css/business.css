@@ -1,0 +1,219 @@
+/* BUSINESS: content layouts only. Typography tokens, jump UI and motion are shared. */
+.business-detail-page{padding-top:76px;color:var(--ink,#0d1825);background:#fff}
+.business-detail-page .bd-wrap{width:min(1120px,calc(100% - 80px));margin-inline:auto}
+.business-detail-page .bd-intro{padding-block:60px 72px}
+.business-detail-page .bd-section{padding:48px 0 52px;scroll-margin-top:76px}
+.business-detail-page .bd-section-head{padding-top:0}
+.business-detail-page .bd-section-head small,.business-detail-page .bd-skills-heading small,.business-detail-page .bd-contact small{font-size:12px;letter-spacing:.14em;font-weight:700;color:#245d8e}
+.business-detail-page .bd-section-head h2{font-size:clamp(26px,3vw,38px);line-height:1.45;text-wrap:balance;line-break:strict;margin:12px 0 20px}
+.business-detail-page :is(.bd-lead,.bd-services p,.service-concerns){color:var(--reading-body-color);font-weight:var(--reading-body-weight);font-size:var(--reading-body-size);line-height:var(--reading-body-leading)}
+.business-detail-page .bd-lead{margin:0 0 32px}
+.business-detail-page .bd-services{display:grid;grid-template-columns:minmax(0,1fr);gap:32px;max-width:52em}
+.business-detail-page .bd-services article{padding:0}
+.business-detail-page .bd-services h3{margin:0 0 12px;text-wrap:wrap;line-break:strict;font-size:22px;font-weight:600;line-height:1.5}
+.business-detail-page .bd-services p{margin:0}
+.business-detail-page .bd-skills{margin-top:30px;padding:22px 28px 16px;background:#fff;border-top:2px solid #193c58;scroll-margin-top:90px}
+.business-detail-page .bd-skills-heading{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:16px}
+.business-detail-page .bd-skills-heading h3{margin:8px 0 0;font-size:22px;line-height:1.5}
+.business-detail-page .bd-skills-heading p{max-width:340px;margin:0;color:var(--reading-body-color);font-weight:var(--reading-body-weight);font-size:14px;line-height:1.8}
+.business-detail-page .bd-skill-list{margin:0}
+.business-detail-page .bd-skill-list>div{display:grid;grid-template-columns:205px minmax(0,1fr);gap:22px;padding:12px 0;border-top:1px solid #d5e0e8}
+.business-detail-page .bd-skill-list dt{font-size:15px;font-weight:700;color:#193c58}
+.business-detail-page .bd-skill-list dd{margin:0;font-size:15px;line-height:1.65;color:var(--reading-body-color);font-weight:var(--reading-body-weight)}
+.bd-skills summary{min-height:44px;padding:10px 0;color:#245d8e;font-weight:600;cursor:pointer}
+.bd-skills details[open] .disclosure-open,.bd-skills details:not([open]) .disclosure-close{display:none}
+.business-detail-page .bd-contact{background:#112a40;color:#fff;padding:56px 0}
+.business-detail-page .bd-contact .bd-wrap{display:flex;justify-content:space-between;align-items:center;gap:36px}
+.business-detail-page .bd-contact small{color:#94c4e3}
+.business-detail-page .bd-contact h2{font-size:clamp(24px,2.7vw,32px);margin:9px 0}
+.business-detail-page .bd-contact p{margin:12px 0 0;color:#d5e0e8;font-size:16px;line-height:1.85}
+.business-detail-page .bd-contact a{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-shrink:0;padding:18px 24px;border:1px solid #8ca3b5;font-weight:700;transition:background .25s ease}
+.business-detail-page .bd-contact a:hover{background:#204765}
+
+@media(max-width:800px){
+ .business-detail-page{padding-top:64px}
+ .business-detail-page .bd-wrap{width:calc(100% - 44px)}
+ .business-detail-page .bd-intro{padding-block:46px 55px}
+ .business-detail-page .bd-section{padding:36px 0 40px}
+ .business-detail-page .bd-services{grid-template-columns:1fr;gap:26px}
+ .business-detail-page .bd-services h3{font-size:20px}
+ .business-detail-page .bd-skills{padding:18px 16px 12px}
+ .business-detail-page .bd-skill-list>div{grid-template-columns:1fr;gap:7px}
+ .business-detail-page .bd-contact .bd-wrap{display:block}
+ .business-detail-page .bd-contact a{margin-top:26px}
+}
+
+/* Shared list presentation for service pages with consultation examples. */
+.service-concerns{margin:12px 0 0;padding-left:1.4em}
+.service-concerns li{padding-left:6px}
+.service-concerns li+li{margin-top:6px}
+.service-concerns li::marker{color:#245d8e}
+
+/* Consultation themes separate the offer from concrete concerns. */
+.consultation-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);grid-template-areas:"overview concerns" "action concerns";grid-template-rows:min-content 1fr;gap:18px clamp(24px,3vw,40px);align-items:start}
+/* Themes share a reading order while retaining different concern surfaces. */
+.consultation-layout-linear,.consultation-layout-stacked{grid-template-columns:1fr;grid-template-areas:"overview" "concerns" "action";grid-template-rows:auto;gap:22px}
+.consultation-layout-linear .consultation-concerns{padding:20px 24px;border-left:0;background:#f4f8fb}
+/* Center theme introductions and actions; keep concern copy left aligned. */
+.consultation-layout-centered .consultation-overview,.consultation-layout-centered .service-contact{text-align:center}
+.consultation-layout-centered .consultation-concerns{width:100%;max-width:48em;justify-self:center;box-sizing:border-box;text-align:left}
+.consultation-layout-centered .consultation-checklist{max-width:none}
+.consultation-layout-centered .service-contact{justify-self:center}
+.consultation-checklist{display:grid;grid-template-columns:minmax(0,1fr);max-width:44em;gap:12px;list-style:none;margin:14px 0 0;padding:0}
+.consultation-checklist li{display:grid;grid-template-columns:1em minmax(0,1fr);gap:10px;font-size:var(--reading-body-size);line-height:var(--reading-body-leading);color:var(--reading-body-color);font-weight:var(--reading-body-weight)}
+.concern-check{display:block;width:1em;height:1em;margin-top:.375em;color:#245d8e;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.consultation-layout-stacked .consultation-concerns{padding:8px 0 8px 20px}
+.consultation-overview{grid-area:overview}
+.consultation-overview .bd-lead{margin-bottom:0;text-wrap:pretty}
+/* Proposal concepts from the existing copy; not contractual stages or promises. */
+.consultation-explainer{margin:18px 0 0;color:var(--reading-body-color);font-size:var(--reading-body-size);line-height:1.5}
+.consultation-explainer figcaption{margin-bottom:12px}
+.consultation-explainer ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;list-style:none;margin:0;padding:0}
+.consultation-explainer li{position:relative;padding:8px 0;border-bottom:2px solid #c5dce9;text-align:center;font-weight:600;color:#193c58;align-content:center}
+.consultation-explainer .explainer-arrow{position:absolute;right:-16px;top:50%;width:16px;transform:translateY(-50%);font-weight:500;color:#245d8e}
+.consultation-concerns{grid-area:concerns;padding:8px 0 8px 24px;border-left:2px solid #c5dce9}
+.consultation-concerns h3{margin:0;font-size:20px;color:#193c58}
+[data-content-page="smes"] .bd-section{padding-block:30px 22px;background:var(--consultation-background,#f7fbfe)}
+.consultation-layout .service-contact{grid-area:action;margin-top:0}
+.bd-skill-names{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px 20px;margin:0;padding:0;list-style:none}
+.bd-skill-names li{min-width:0}
+@media(min-width:701px) and (max-width:900px){
+ .consultation-layout:not(.consultation-layout-linear):not(.consultation-layout-stacked){grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+}
+@media(max-width:700px){
+ .consultation-layout{grid-template-columns:1fr;grid-template-areas:"overview" "concerns" "action";grid-template-rows:auto;gap:16px}
+ .consultation-concerns{padding:0;border-left:0}
+ .consultation-concerns h3{font-size:18px}
+ .consultation-layout-linear .consultation-concerns{padding:14px}
+ .consultation-layout-stacked .consultation-concerns{padding:0}
+.consultation-checklist{gap:8px}
+}
+@media(max-width:900px){
+ .business-detail-page .bd-skills-heading{flex-direction:column;align-items:flex-start;gap:12px}
+ .bd-skill-names{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .consultation-explainer ul{grid-template-columns:1fr;gap:16px}
+ .consultation-explainer li{padding:0 20px;border-bottom:0;text-align:center}
+ .consultation-explainer .explainer-arrow{right:calc(50% - 8px);top:auto;bottom:-16px;width:16px;line-height:16px;transform:rotate(90deg)}
+}
+@media(max-width:600px){
+ [data-content-page="smes"] .bd-intro{padding-block:24px 20px}
+ [data-content-page="smes"] .bd-section{padding-block:20px 24px}
+ .bd-skill-names{gap:3px 14px}
+ .business-detail-page .bd-section{padding-block:28px 30px}
+ .business-detail-page .bd-section-head h2{font-size:24px;margin:10px 0 16px}
+ .business-detail-page .bd-lead{margin-bottom:24px}
+ .consultation-overview .bd-lead{margin-bottom:0}
+ .business-detail-page .bd-services{gap:22px}
+ .business-detail-page .bd-services h3{font-size:19px;margin-bottom:10px}
+ .business-detail-page .bd-skills-heading h3{font-size:19px}
+}
+
+/* Consulting themes differ only in their full-section background color. */
+[data-content-page="smes"] .consultation-concerns{padding:20px 24px;border-left:0;background:var(--consultation-background,#f7fbfe)}
+[data-content-page="smes"] #sales{--consultation-background:#fff}
+[data-content-page="smes"] #cost{--consultation-background:#eaf5fb}
+[data-content-page="smes"] #productivity{--consultation-background:#fff}
+[data-content-page="smes"] #security{--consultation-background:#eaf5fb}
+@media(max-width:700px){
+ [data-content-page="smes"] .consultation-concerns{padding:14px}
+}
+/* Give each numbered business its own visible section boundary. */
+[data-content-page=business].business-detail-page :is(#software,#dx){background:#fff}
+[data-content-page=business].business-detail-page :is(#fa,#support){background:#fff}
+[data-content-page=business].business-detail-page .bd-section+.bd-section{border-top:0}
+
+/* Full-width bands group each business heading and introduction. */
+.business-detail-page[data-content-page="business"] .bd-section{padding-top:0}
+[data-content-page="business"] .bd-section-band{background:transparent;padding:32px 0}
+[data-content-page="business"] .bd-section-body{margin-top:32px}
+[data-content-page="business"] .bd-section-band .bd-section-head{padding:0;margin:0;background:transparent}
+[data-content-page="business"] .bd-section-band .bd-section-head :is(small,h2){color:#fff}
+[data-content-page="business"] .bd-section-band .bd-section-head h2{margin:12px 0 16px}
+[data-content-page="business"] .bd-section-band .bd-section-head>small{border-left-color:#b8ddf4}
+.business-detail-page[data-content-page="business"] .bd-section-band .bd-lead{color:#edf5fc;background:transparent;border:0;padding:0;margin:0}
+@media(max-width:800px){
+ [data-content-page="business"] .bd-section-band{padding:26px 0}
+ [data-content-page="business"] .bd-section-body{margin-top:24px}
+}
+
+/* A quiet accent connects each white body to its heading band. */
+[data-content-page="business"] .bd-section-body{border-left:2px solid #111;padding-left:32px}
+[data-content-page="business"] #business-contact{scroll-margin-top:90px}
+@media(max-width:600px){[data-content-page="business"] .bd-section-body{padding-left:22px}}
+
+[data-content-page="business"] .bd-fa-placeholder{min-height:200px}
+@media(max-width:600px){[data-content-page="business"] .bd-fa-placeholder{min-height:160px}}
+
+/* Keep desktop title bands within the body width; mobile remains full width. */
+@media(min-width:801px){
+ [data-content-page="business"] .bd-section-band{width:min(1120px,calc(100% - 80px));margin-inline:auto;padding-inline:64px}
+ [data-content-page="business"] .bd-section-band>.bd-wrap{width:100%}
+}
+
+@media(min-width:801px){[data-content-page="business"] .bd-section-body{padding-left:62px}}
+
+[data-content-page="business"] .bd-skills-heading{flex-direction:column;align-items:flex-start;gap:12px}
+[data-content-page="business"] .bd-skills-heading p{max-width:none}
+
+/* Balance the body inset and keep its rule close to the text. */
+[data-content-page="business"] .bd-section-body{position:relative;border-left:0}
+[data-content-page="business"] .bd-section-body::before{content:"";position:absolute;left:0;top:0;bottom:0;width:1px;background:#111}
+[data-content-page="business"] .bd-section-body.bd-fa-placeholder::before{display:none}
+[data-content-page="business"] .bd-skills{padding-inline:0}
+@media(min-width:801px){
+ [data-content-page="business"] .bd-section-body{padding-inline:64px}
+ [data-content-page="business"] .bd-section-body::before{left:40px}
+}
+
+.business-detail-page[data-content-page="business"] .bd-services{max-width:none;width:100%}
+
+/* Each business reads as one square-edged framed section. */
+[data-content-page="business"] .bd-section-body{margin-top:0;border:1px solid #cbdbe6;border-top:0;padding-top:36px;padding-bottom:36px}
+[data-content-page="business"] .bd-section-body::before{display:none}
+[data-content-page="business"] .bd-fa-placeholder{min-height:240px}
+@media(max-width:800px){
+ [data-content-page="business"] .bd-section-body{width:100%;padding:28px 22px}
+ [data-content-page="business"] .bd-fa-placeholder{min-height:190px}
+}
+
+/* Join consecutive business sections without an outside gap. */
+.business-detail-page[data-content-page="business"] .bd-section{padding-bottom:0}
+
+/* Compact desktop bands while retaining the mobile proportions. */
+@media(min-width:801px){
+ [data-content-page="business"] .bd-section-band{padding-block:24px}
+ [data-content-page="business"] .bd-section-band .bd-section-head h2{font-size:32px;margin:10px 0 12px}
+}
+
+@media(max-width:800px){
+ [data-content-page="business"] .bd-section-band{padding-block:20px}
+ [data-content-page="business"] .bd-section-band .bd-section-head h2{font-size:22px;margin:8px 0 10px}
+}
+
+@media(max-width:800px){
+ [data-content-page="business"] .bd-section-band{padding-block:14px}
+ [data-content-page="business"] .bd-section-band .bd-section-head h2{font-size:19px;margin:6px 0 8px}
+}
+
+[data-content-page="business"] :is(.technical-close,.bd-site-link){display:inline-flex;align-items:center;justify-content:space-between;gap:20px;min-height:44px;padding:12px 18px;border:1px solid #245d8e;background:#fff;color:#245d8e;font:inherit;font-weight:700;line-height:1.6;text-decoration:none;border-radius:0}
+[data-content-page="business"] :is(.technical-close,.bd-site-link):hover{background:#edf5fc}
+[data-content-page="business"] :is(.technical-close,.bd-site-link):focus-visible{outline:2px solid #245d8e;outline-offset:3px}
+[data-content-page="business"] .technical-close{margin-top:20px}
+[data-content-page="business"] .bd-site-link{margin-top:16px}
+
+[data-content-page="business"] .bd-section-band .bd-section-head :is(small,h2){color:#123b58}
+[data-content-page="business"] .bd-section-band .bd-section-head>small{border-left-color:#3983ac}
+.business-detail-page[data-content-page="business"] .bd-section-band .bd-lead{color:#244a63}
+
+[data-content-page="business"] .bd-section-body{border:0}
+
+@media(min-width:801px){
+ [data-content-page="business"] .bd-section-band,
+ .business-detail-page[data-content-page="business"] .bd-section-body{width:min(1120px,calc(100% - 80px))}
+}
+
+/* Leave more breathing room before the next business heading. */
+[data-content-page="business"] .bd-section-body{padding-bottom:64px}
+@media(max-width:800px){[data-content-page="business"] .bd-section-body{padding-bottom:44px}}
+
+[data-content-page="business"] .bd-skills-heading p{font-weight:600}

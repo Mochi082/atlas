@@ -1,0 +1,31 @@
+<header class="site-header" id="top">
+
+  <a class="brand" href="{{ url_for('index') }}" aria-label="アトラスコンピュータ トップページへ"><img src="{{ url_for('static', filename='images/atlas_logo.jpg') }}" alt="株式会社アトラスコンピュータ" width="196" height="40" decoding="async"></a>
+  <nav class="desktop-nav" aria-label="グローバルナビゲーション">
+    <a href="{{ url_for('company') }}">会社案内</a>
+    <a href="{{ url_for('business') }}">事業内容</a>
+    <a href="{{ url_for('smes') }}">中小企業向けITコンサルティング</a>
+    <a href="{{ url_for('partner') }}">ビジネスパートナー</a>
+    <a href="{{ url_for('recruit') }}">採用について</a>
+    <a href="{{ url_for('contact') }}">お問い合わせ</a>
+  </nav>
+  <div class="header-actions">
+  <a class="header-contact" href="{{ url_for('contact') }}" aria-label="お問い合わせ"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg></a>
+  <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <button class="drawer-close" type="button" aria-label="メニューを閉じる">×</button>
+  <div class="drawer-inner">
+    <p class="drawer-kicker">ATLAS COMPUTER</p>
+    <nav class="drawer-nav" aria-label="メニュー">
+      <a href="{{ url_for('company') }}"><span>会社案内<small>COMPANY</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('business') }}"><span>事業内容<small>BUSINESS</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('smes') }}"><span>中小企業向けITコンサルティング<small>IT CONSULTING</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('partner') }}"><span>ビジネスパートナー<small>BUSINESS PARTNER</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('recruit') }}"><span>採用について<small>RECRUIT</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('contact') }}"><span>お問い合わせ<small>CONTACT</small></span><i aria-hidden="true">→</i></a>
+    </nav>
+  </div>
+</aside>
+<div class="drawer-backdrop"></div>

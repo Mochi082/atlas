@@ -1,0 +1,86 @@
+/* Socost: one unique illustration per placement, with consistent frames and optically balanced visible sizes.
+   Original files stay unchanged; positioning excludes transparent outer margins. */
+#main-content .socost-art{position:relative;width:240px;height:240px;padding:0;border:0;background:none;box-shadow:none;overflow:hidden;flex:none}
+#main-content .socost-art img{position:absolute;display:block;max-width:none;width:var(--art-width,100%);height:auto;left:var(--art-left,0);top:var(--art-top,0)}
+#main-content .consultation-art{margin:24px auto 0}
+#main-content .illustrated-intro{position:relative;padding-right:304px;min-height:240px;box-sizing:border-box}
+#main-content .intro-art{position:absolute;right:0;top:50%;transform:translateY(-50%);margin:0}
+@media(max-width:1000px){
+ #main-content .consultation-overview{display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:16px 28px;align-items:center}
+ #main-content .consultation-overview>.bd-lead,#main-content .consultation-overview>.consultation-explainer{grid-column:1}
+ #main-content .consultation-art{grid-column:2;grid-row:1 / span 2;width:190px;height:190px;margin:0}
+ #main-content .illustrated-intro{padding-right:238px;min-height:190px}
+ #main-content .intro-art{width:190px;height:190px}
+}
+@media(max-width:600px){
+ #main-content .illustrated-intro{padding-right:0;min-height:0}
+ #main-content .intro-art{position:relative;top:auto;right:auto;transform:none;width:150px;height:150px;margin:24px auto 0}
+ #main-content .consultation-overview{display:block}
+ #main-content .consultation-art{width:150px;height:150px;margin:24px auto 0}
+}
+#main-content .socost-art img[src*="/socost/business.png"]{--art-width:95.9707%;--art-left:2.0147%;--art-top:0.0000%;}
+#main-content .socost-art img[src*="/socost/sales.png"]{--art-width:100.0000%;--art-left:0.0000%;--art-top:1.1696%;}
+#main-content .socost-art img[src*="/socost/cost.png"]{--art-width:135.8710%;--art-left:-17.8097%;--art-top:-17.9355%;}
+#main-content .socost-art img[src*="/socost/work.png"]{--art-width:206.3415%;--art-left:-53.1707%;--art-top:-53.1707%;}
+#main-content .socost-art img[src*="/socost/security.png"]{--art-width:166.4587%;--art-left:-33.1523%;--art-top:-25.9083%;}
+#main-content .socost-art img[src*="/socost/meeting.png"]{--art-width:100.0000%;--art-left:0.0000%;--art-top:2.7009%;}
+
+#main-content .socost-art img[src*="/socost/consulting.png"]{--art-width:100.0000%;--art-left:0.0000%;--art-top:9.6433%;}
+
+/* Consulting: full-width introduction, then illustration beside examples. */
+#main-content[data-content-page="smes"] .consultation-layout{display:grid;grid-template-columns:300px minmax(0,1fr);grid-template-areas:"heading heading" "lead lead" "diagram diagram" "art concerns";gap:24px 48px;align-items:center}
+#main-content[data-content-page="smes"] .bd-section-head{grid-area:heading;margin-left:0}
+#main-content[data-content-page="smes"] .consultation-layout>.bd-lead{grid-area:lead;margin:0;max-width:none}
+#main-content[data-content-page="smes"] .consultation-explainer{grid-area:diagram;margin:0}
+#main-content[data-content-page="smes"] .consultation-art{grid-area:art;margin:0 auto}
+#main-content[data-content-page="smes"] .consultation-concerns{grid-area:concerns;margin:0;align-self:center}
+@media(max-width:1000px){
+ #main-content[data-content-page="smes"] .consultation-layout{grid-template-columns:210px minmax(0,1fr);gap:24px 28px}
+}
+@media(max-width:600px){
+ #main-content[data-content-page="smes"] .consultation-layout{grid-template-columns:minmax(0,1fr);grid-template-areas:"heading" "lead" "diagram" "art" "concerns";gap:24px}
+}
+
+/* Optional body illustrations sit beside a complete text group, never between paragraphs. */
+#main-content .illustrated-body{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:48px;align-items:center}
+#main-content .illustrated-body>.socost-art{margin:0 auto}
+#main-content .illustrated-body>.partner-prose{margin:0}
+@media(max-width:1000px){
+ #main-content .illustrated-body{grid-template-columns:minmax(0,1fr) 190px;gap:28px}
+ #main-content .body-art{width:190px;height:190px}
+}
+@media(max-width:600px){
+ #main-content .illustrated-body{grid-template-columns:minmax(0,1fr);gap:24px}
+ #main-content .body-art{width:150px;height:150px}
+}
+#main-content .socost-art img[src*="/socost/development.png"]{--art-width:121.3483%;--art-left:-10.6742%;--art-top:-10.6742%;}
+#main-content .socost-art img[src*="/socost/support.png"]{--art-width:150.6122%;--art-left:-25.3061%;--art-top:-24.8878%;}
+#main-content .socost-art img[src*="/socost/alliance.png"]{--art-width:140.5479%;--art-left:-20.2740%;--art-top:-20.2740%;}
+#main-content #product .partner-reading-content{display:block}
+#main-content #product .partner-diagram{margin-top:32px}
+
+#main-content .socost-art img[src*="/socost/company-discover.png"]{--art-width:152.7454%;--art-left:-26.3727%;--art-top:-26.1606%;}
+
+#main-content .socost-art img[src*="/socost/recruit.png"]{--art-width:149.5114%;--art-left:-24.7557%;--art-top:-24.7557%;}
+
+/* Recruitment gets a roomier opening while retaining the shared hero style. */
+#main-content[data-content-page="recruit"] .illustrated-intro{min-height:340px;display:flex;flex-direction:column;justify-content:center;padding-top:48px;padding-bottom:48px}
+@media(max-width:1000px){#main-content[data-content-page="recruit"] .illustrated-intro{min-height:280px;padding-top:36px;padding-bottom:36px}}
+@media(max-width:600px){#main-content[data-content-page="recruit"] .illustrated-intro{min-height:0;display:block;padding-top:28px;padding-bottom:32px}}
+
+#main-content .socost-art img[src*="/socost/construction.png"]{--art-width:125.5814%;--art-left:-12.7907%;--art-top:-12.7907%;}
+
+/* Hero artwork is reserved for desktop; body artwork remains responsive. */
+@media(max-width:1000px){
+ #main-content .intro-art{display:none}
+ #main-content .illustrated-intro{padding-right:0;min-height:0}
+ #main-content[data-content-page="recruit"] .illustrated-intro{min-height:0}
+}
+
+/* Keep the pending announcement and construction artwork together. */
+#main-content #fa .fa-overview{grid-template-columns:max-content 240px;gap:40px;justify-content:center}
+#main-content #fa .bd-pending-note{margin:0}
+@media(max-width:1000px){#main-content #fa .fa-overview{grid-template-columns:minmax(0,1fr) 190px;gap:24px;max-width:650px;margin-inline:auto}}
+@media(max-width:600px){#main-content #fa .fa-overview{grid-template-columns:minmax(0,1fr);gap:16px}}
+
+@media(min-width:1001px){#main-content #fa .fa-overview{padding-left:180px;box-sizing:border-box}}

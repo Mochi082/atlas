@@ -1,0 +1,222 @@
+
+/* Current lower-page colors and surfaces. Shared navigation/footer live separately. */
+body {
+
+  background:#fff
+}
+
+.company-page .company-title, .business-detail-page .company-title {
+
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  min-height:460px;
+  display:flex;
+  align-items:center;
+
+}
+
+.company-page .company-title::after, .business-detail-page .company-title::after {
+
+  content:"";
+  position:absolute;
+  inset:auto -15% -33% 38%;
+  height:55%;
+  border-radius:50%;
+  border-top:2px solid rgba(255,255,255,.68);
+  pointer-events:none;
+  z-index:-1;
+}
+
+.company-page .company-title-inner {
+
+  position:relative;
+  z-index:1
+}
+
+.company-page .company-title h1, .business-detail-page .company-title h1 {
+
+  color:#104674
+}
+
+.company-page .company-title .company-lead, .business-detail-page .company-title .company-lead {
+
+  color:#175d90
+}
+
+.company-page .company-philosophy {
+
+  background:#fff
+}
+
+.company-page .company-guide-thumb {
+
+  color:#fff;
+  text-shadow:0 2px 9px #134f7e;
+}
+
+.company-page .company-guide-list .activity-item {
+
+  border-color:#d8e9f2;
+  transition:transform .25s,box-shadow .25s
+}
+
+.company-page .company-guide-list .activity-item:hover {
+
+  transform:translateY(-3px);
+  box-shadow:0 15px 35px rgba(24,91,141,.1)
+}
+
+.company-page .company-more-group {
+
+  background:#f1faff
+}
+
+.business-detail-page .bd-intro {
+
+  background:#fff
+}
+
+.business-detail-page #software {
+
+  background:#f6fcff
+}
+
+.business-detail-page #support {
+
+  background:#e7f5fd
+}
+
+.business-detail-page .bd-index a {
+
+  transition:background .25s
+}
+
+.business-detail-page .bd-index a:hover {
+
+  background:#e7f5fd
+}
+
+.service-page .people-card {
+
+  box-shadow:0 16px 34px rgba(19,83,133,.12);
+}
+
+.contact-page .form-steps {
+
+  border-color:#b9dfee
+}
+
+.contact-page input:focus, .contact-page textarea:focus, .contact-page select:focus {
+
+  outline-color:#158dcc
+}
+
+@media(max-width:800px) {
+.company-page .company-title, .business-detail-page .company-title {
+
+    min-height:370px;
+    background-position:center,55% center
+  }
+
+}
+@media(prefers-reduced-motion:reduce) {
+.company-page .company-guide-list .activity-item {
+
+    transition:none
+  }
+
+}
+body {
+
+  color:#213f57
+}
+
+.owned-subpage, .service-page {
+
+  background:#fff
+}
+
+.company-page .company-title, .business-detail-page .company-title, .partner-page .partner-hero, .contact-page .contact-page-title {
+
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:radial-gradient(ellipse 37% 95% at 100% 8%,rgba(163,222,197,.45),transparent 83%),linear-gradient(115deg,#f8fcff 0%,#e6f4fc 50%,#98cce8 100%)!important;
+  color:#164f7d;
+}
+
+.company-page .company-title::before, .business-detail-page .company-title::before, .contact-page .contact-page-title::before {
+
+  content:"";
+  position:absolute;
+  pointer-events:none;
+  width:55%;
+  height:160%;
+  right:-18%;
+  top:-50%;
+  border:1px solid rgba(255,255,255,.48);
+  border-radius:50%;
+  transform:rotate(-22deg);
+  z-index:-1;
+}
+
+.company-page .company-title, .business-detail-page .company-title {
+
+  min-height:340px
+}
+
+.company-page .company-title h1, .business-detail-page .company-title h1, .contact-page .contact-page-title h1 {
+
+  color:#124e80
+}
+
+.company-page .company-title .company-lead, .business-detail-page .company-title .company-lead {
+
+  color:#386d8e
+}
+
+.company-page .company-guide-thumb {
+
+  background:linear-gradient(135deg,#b7deef,#69aed6)!important;
+  text-shadow:none
+}
+
+.company-page .company-more-group, .business-detail-page #software {
+
+  background:#f7fbfe
+}
+
+.business-detail-page #support {
+
+  background:#eaf5fb
+}
+
+.company-page .company-guide-list .activity-item, .service-page .people-card {
+
+  box-shadow:0 12px 28px rgba(29,91,137,.1);
+  border-radius:14px
+}
+
+.service-page .people-card, .service-page .people-card:nth-child(2), .service-page .people-card:nth-child(3) {
+
+  background:linear-gradient(155deg,#2b84bc,#145b94 72%,#6dbcae)!important;
+}
+
+.contact-page .form-steps {
+
+  border-color:#c6e4e9
+}
+
+.contact-page input:focus, .contact-page textarea:focus, .contact-page select:focus {
+
+  outline-color:#247fc1
+}
+
+@media(max-width:650px) {
+.company-page .company-title, .business-detail-page .company-title {
+
+    min-height:285px
+  }
+
+}

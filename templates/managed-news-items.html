@@ -1,0 +1,3 @@
+{% for information in informations %}
+<li class="news-item" data-news-id="{{ information.id }}"><a href="{{ url_for('news_detail') }}?id={{ information.id }}"><time datetime="{{ information.date.strftime('%Y-%m-%d') }}">{{ information.date.strftime('%Y.%m.%d') }}</time><span>{{ information.title }}</span><b aria-hidden="true">→</b></a></li>
+{% else %}<li class="news-empty">現在、お知らせはありません。</li>{% endfor %}

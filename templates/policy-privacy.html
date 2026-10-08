@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="ja"><head>
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" sizes="any">
+<script src="{{ url_for('static', filename='js/homepage-scroll.js') }}"></script><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>個人情報の取扱いについて | ATLAS COMPUTER</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site-base.css') }}?v=20261006-font1"><link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='css/company-detail.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='css/policy.css') }}?v=20261008-policy1"><link rel="stylesheet" href="{{ url_for('static', filename='css/subpage-hero.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site-footer.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/subpage-motion.css') }}">
+  <script src="{{ url_for('static', filename='js/subpage-motion.js') }}" defer></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site-navigation.css') }}?v=20261007-review3">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/typography-review.css') }}?v=20261008-unify1">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/prose-flow.css') }}?v=20261008-flow2">
+</head><body class="owned-subpage">
+<a class="skip-link" href="#main-content">本文へ移動</a>
+<!-- SITE-HEADER:START -->
+<header class="site-header" id="top">
+
+  <a class="brand" href="{{ url_for('index') }}" aria-label="アトラスコンピュータ トップページへ"><img src="{{ url_for('static', filename='images/atlas_logo.jpg') }}" alt="株式会社アトラスコンピュータ" width="196" height="40" decoding="async"></a>
+  <nav class="desktop-nav" aria-label="グローバルナビゲーション">
+    <a href="{{ url_for('company') }}">会社案内</a>
+    <a href="{{ url_for('business') }}">事業内容</a>
+    <a href="{{ url_for('smes') }}">中小企業向けITコンサルティング</a>
+    <a href="{{ url_for('partner') }}">ビジネスパートナー</a>
+    <a href="{{ url_for('recruit') }}">採用について</a>
+    <a href="{{ url_for('contact') }}">お問い合わせ</a>
+  </nav>
+  <div class="header-actions">
+  <a class="header-contact" href="{{ url_for('contact') }}" aria-label="お問い合わせ"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg></a>
+  <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <button class="drawer-close" type="button" aria-label="メニューを閉じる">×</button>
+  <div class="drawer-inner">
+    <p class="drawer-kicker">ATLAS COMPUTER</p>
+    <nav class="drawer-nav" aria-label="メニュー">
+      <a href="{{ url_for('company') }}"><span>会社案内<small>COMPANY</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('business') }}"><span>事業内容<small>BUSINESS</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('smes') }}"><span>中小企業向けITコンサルティング<small>IT CONSULTING</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('partner') }}"><span>ビジネスパートナー<small>BUSINESS PARTNER</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('recruit') }}"><span>採用について<small>RECRUIT</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('contact') }}"><span>お問い合わせ<small>CONTACT</small></span><i aria-hidden="true">→</i></a>
+    </nav>
+  </div>
+</aside>
+<div class="drawer-backdrop"></div>
+<!-- SITE-HEADER:END -->
+
+<main tabindex="-1" id="main-content" class="company-detail-main" data-content-page="policy-privacy"><div class="company-detail-wrap">
+<nav class="company-detail-breadcrumb" aria-label="パンくずリスト"><a href="{{ url_for('index') }}">トップ</a><span aria-hidden="true">／</span><span aria-current="page">個人情報の取扱いについて</span></nav>
+<header class="company-detail-hero page-hero">
+<p class="section-no">POLICY</p><h1><span class="heading-unit">個人情報の</span><span class="heading-unit">取扱いについて</span></h1></header>
+<nav class="policy-toc" aria-label="このページの目次"><p class="policy-toc-title">このページの内容</p><div class="policy-toc-groups"><details class="policy-toc-group"><summary>Ⅰ. 個人情報の取扱いについて</summary><ul><li><a href="#policy-section-1">章の先頭へ</a></li><li><a href="#policy-section-2">1. 事業者の名称、住所、代表者名</a></li>
+<li><a href="#policy-section-3">2. 管理者（若しくはその代理人）の氏名又は職名、所属及び連絡先</a></li>
+<li><a href="#policy-section-4">3. 個人情報の利用目的</a></li>
+<li><a href="#policy-section-5">4. 個人情報の第三者提供</a></li>
+<li><a href="#policy-section-6">5. 個人情報取扱いの委託</a></li>
+<li><a href="#policy-section-7">6. 個人情報の開示等の請求</a></li>
+<li><a href="#policy-section-8">7. 個人情報を提供されることの任意性について</a></li>
+<li><a href="#policy-section-9">8. ご本人が容易に認識できない方法による取得する場合について</a></li>
+<li><a href="#policy-section-10">9. 認定個人情報保護団体について</a></li>
+<li><a href="#policy-section-11">【個人情報に関する苦情・相談窓口】</a></li></ul></details>
+<details class="policy-toc-group"><summary>Ⅱ. 保有個人データ及び第三者提供記録の請求手続きのご案内</summary><ul><li><a href="#policy-section-12">章の先頭へ</a></li><li><a href="#policy-section-13">1. 保有個人データの利用目的</a></li>
+<li><a href="#policy-section-14">2. 「開示等の請求」申出先</a></li>
+<li><a href="#policy-section-15">3. 「開示等の請求」に際してご提出いただく書類</a></li>
+<li><a href="#policy-section-16">4. 代理人様による「開示等の請求」の場合</a></li>
+<li><a href="#policy-section-17">5. 「開示等の請求」の手数料及びその徴収方法</a></li>
+<li><a href="#policy-section-18">6. 「開示等の請求」に対する回答方法</a></li>
+<li><a href="#policy-section-19">7. 保有個人データの安全管理のために講じた措置</a></li></ul></details></div></nav>
+<article class="company-detail-article policy-article">
+<!-- Official text checked 2026-10-06: https://atlas-co.co.jp/policy/privacy; wording unchanged. -->
+<h2 id="policy-section-1" tabindex="-1"><span class="heading-unit">Ⅰ. 個人情報の</span><span class="heading-unit">取扱いについて</span></h2>
+
+      <h3 id="policy-section-2" tabindex="-1"><span class="heading-unit">1. 事業者の名称、</span><span class="heading-unit">住所、代表者名</span></h3>
+      <p>
+        株式会社アトラスコンピュータ<br>
+        東京都台東区台東2-5-1 NOEビル5F<br>
+        代表取締役　小長谷　丈晴 
+      </p>
+
+      <h3 id="policy-section-3" tabindex="-1"><span class="heading-unit">2. 管理者</span><span class="heading-unit">（若しくはその代理人）の</span><span class="heading-unit">氏名又は職名、</span><span class="heading-unit">所属及び連絡先</span></h3>
+      <p>
+        管理者名：個人情報保護管理者　堀江　貴幸<br>
+        所属部署：株式会社アトラスコンピュータ　システム開発部<br>
+        連絡先　：電話 03-5816-5770
+      </p>
+
+      <h3 id="policy-section-4" tabindex="-1"><span class="heading-unit">3. 個人情報の</span><span class="heading-unit">利用目的</span></h3>
+      <p>
+        （１）ご本人より直接書面等（ホームページや電子メール等によるものを含む。
+        以下「書面」という）に記載された個人情報を取得する場合の利用目的。
+        及び開示対象個人情報の利用目的
+      </p>
+      <div class="policy-table" tabindex="0" role="region" aria-label="個人情報の取扱いに関する表"><table>
+        <tr>
+          <th scope="col">分類</th>
+          <th scope="col">利用目的</th>
+        </tr>
+        <tr>
+          <td>お客様情報</td>
+          <td>お見積りのご依頼、ご相談に対する回答。</td>
+        </tr>
+        <tr>
+          <td>取引先情報</td>
+          <td>商談及び業務上の諸連絡、受発注業務、請求支払業務のため</td>
+        </tr>
+        <tr>
+          <td>従業者情報</td>
+          <td>従業者の人事労務管理、業務管理、健康管理、セキュリティ管理のため</td>
+        </tr>
+        <tr>
+          <td>採用応募者情報</td>
+          <td>採用業務のため</td>
+        </tr>
+        <tr>
+          <td>お問合せ者情報</td>
+          <td>お問合せにお答えするため</td>
+        </tr>
+      </table></div>
+
+      <p>
+        （２）ご本人より直接書面以外の方法で個人情報を取得する際の利用目的
+      </p>
+      <div class="policy-table" tabindex="0" role="region" aria-label="個人情報の取扱いに関する表"><table>
+        <tr>
+          <th scope="col">分類</th>
+          <th scope="col">利用目的</th>
+        </tr>
+        <tr>
+          <td>お客様情報</td>
+          <td>受託業務のシステム開発業務のため</td>
+        </tr>
+        <tr>
+          <td>協力会社要員情報</td>
+          <td>委託先の協力会社要員情報を取得する場合</td>
+        </tr>
+        <tr>
+          <td>採用応募者情報</td>
+          <td>ハローワークやリクナビ・マイナビ等就職斡旋サイトや人材紹介会社からの採用応募者は採用業務のため</td>
+        </tr>
+      </table></div>
+
+      <h3 id="policy-section-5" tabindex="-1"><span class="heading-unit">4. 個人情報の</span><span class="heading-unit">第三者提供</span></h3>
+      <p>
+        当社では取得した個人情報を、業務目的の達成に必要な範囲において、
+        以下の要領で第三者に提供する場合がございます。
+      </p>
+      <div class="policy-table" tabindex="0" role="region" aria-label="個人情報の取扱いに関する表"><table>
+        <tr>
+          <th scope="row">（１）第三者に提供する目的</th>
+          <td>システム開発業務契約履行のため</td>
+        </tr>
+        <tr>
+          <th scope="row">（２）提供する個人情報の項目</th>
+          <td>氏名、スキル・資格情報等</td>
+        </tr>
+        <tr>
+          <th scope="row">（３）提供の手段又は方法</th>
+          <td>記憶媒体にパスワードをかけて保存した上で、メールにより送付または手渡しします。</td>
+        </tr>
+        <tr>
+          <th scope="row">（４）提供を受ける者の組織の種類、属性</th>
+          <td>契約請負元</td>
+        </tr>
+        <tr>
+          <th scope="row">（５）個人情報の取扱いに関する契約</th>
+          <td>機密保持契約によって提供先が適切に個人情報保護を行なうよう義務付けています。</td>
+        </tr>
+      </table></div>
+
+      <h3 id="policy-section-6" tabindex="-1"><span class="heading-unit">5. 個人情報取扱いの</span><span class="heading-unit">委託</span></h3>
+      <p>
+        当社は事業運営上、お客様により良いサービスを提供するために業務の一部を外部に委託しています。
+        業務委託先に対しては、個人情報を預けることがあります。この場合、
+        個人情報を適切に取り扱っていると認められる委託先を選定し、
+        契約等において個人情報の適正管理・機密保持などによりお客様の個人情報の漏洩防止に必要な事項を取決め、
+        適切な管理を実施させます。
+      </p>
+
+      <h3 id="policy-section-7" tabindex="-1"><span class="heading-unit">6. 個人情報の</span><span class="heading-unit">開示等の請求</span></h3>
+      <p>
+        お客様は、当社に対してご自身の個人情報の開示等（利用目的の通知、開示、内容の訂正・追加・削除、
+        利用の停止または消去、第三者への提供の停止、第三者提供記録の開示）に関して、
+        当社「個人情報に関するお問合わせ窓口」に申し出ることができます。その際、
+        当社はお客様ご本人を確認させていただいたうえで、合理的な期間内に対応いたします。
+        開示等の申し出の詳細につきましては、
+        下記の「個人情報に関する苦情・相談窓口」までお問い合わせください。
+      </p>
+
+      <h3 id="policy-section-8" tabindex="-1"><span class="heading-unit">7. 個人情報を</span><span class="heading-unit">提供されることの</span><span class="heading-unit">任意性について</span></h3>
+      <p>
+        お客様が当社に個人情報を提供されるかどうかは、お客様の任意によるものです。
+        ただし、必要項目をいただけない場合、各サービス等が適切な状態で提供できない場合があります。
+      </p>
+
+      <h3 id="policy-section-9" tabindex="-1"><span class="heading-unit">8. ご本人が容易に</span><span class="heading-unit">認識できない方法による</span><span class="heading-unit">取得する場合について</span></h3>
+      <p>クッキー（Cookies）は、お客さまが当社のサイトに再度訪問された際、
+        より便利に当サイトを閲覧していただくためのものであり、
+        お客さまのプライバシーを侵害するものではなく、
+        またお客さまのコンピューターへ悪影響を及ぼすことはありません。
+        また当社のサイトでは個人情報を入力していただく部分にはすべてSSL（Secure Sockets Layer）
+        のデータ暗号化システムを利用しております。</p>
+<p>さらに、サイト内における情報の保護にもファイアーウォールを設置するなどの方策を採っております。
+        ただし、インターネット通信の性格上、セキュリティを完全に保証するものではありません。
+        あらかじめご了承ください。</p>
+
+      <h3 id="policy-section-10" tabindex="-1"><span class="heading-unit">9. 認定個人情報</span><span class="heading-unit">保護団体について</span></h3>
+      <p>
+        認定個人情報保護団体の名称：一般財団法人日本情報経済社会推進協会<br>
+        苦情の解決の申出先：認定個人情報保護団体事務局<br>
+        住所：〒106-0032 東京都港区六本木一丁目9番9号 六本木ファーストビル内<br>
+        電話番号：03-5860-7565　／　0120-700-779<br>
+        ※当社の商品・サービスに関する問合せ先ではありません。
+      </p>
+
+      <div>
+        <h3 id="policy-section-11" tabindex="-1"><span class="heading-unit">【個人情報に関する</span><span class="heading-unit">苦情・相談窓口】</span></h3>
+        <p>
+          お客様の個人情報に関するお問合せにつきましては、下記窓口で受付けております。
+        </p>
+        <p>
+          〒 110-0016 東京都台東区台東 2-5-1 NOEビル 5F<br>
+          株式会社アトラスコンピュータ　個人情報問合せ係<br>
+          TEL：03-5818-5770（受付時間　9:00〜18:00）<br>
+          FAX：03-5818-8432
+        </p>
+      </div>
+
+    
+
+      <h2 id="policy-section-12" tabindex="-1"><span class="heading-unit">Ⅱ. 保有個人データ及び</span><span class="heading-unit">第三者提供記録の</span><span class="heading-unit">請求手続きのご案内</span></h2>
+      <p>
+        当社で保有している開示対象個人情報に関して、
+        ご本人様又はその代理人様からの利用目的の通知、開示、内容の訂正、追加又は削除、
+        利用の停止、消去及び第三者への提供の停止の請求及び第三者提供記録の開示（以下、「開示等の請求」といいます）
+        につきましては、当社所定の請求書により、以下の手続きにて対応させていただきます。
+      </p>
+
+      <h3 id="policy-section-13" tabindex="-1"><span class="heading-unit">1. 保有個人データの</span><span class="heading-unit">利用目的</span></h3>
+      <div class="policy-table" tabindex="0" role="region" aria-label="個人情報の取扱いに関する表"><table>
+        <tr>
+          <th scope="row">お客様情報</th>
+          <td>お見積りのご依頼、ご相談に対する回答。</td>
+        </tr>
+        <tr>
+          <th scope="row">取引先情報</th>
+          <td>商談及び業務上の諸連絡、受発注業務、請求支払業務のため</td>
+        </tr>
+        <tr>
+          <th scope="row">従業者情報</th>
+          <td>従業者の人事労務管理、業務管理、健康管理、セキュリティ管理のため</td>
+        </tr>
+        <tr>
+          <th scope="row">採用応募者情報</th>
+          <td>採用業務のため</td>
+        </tr>
+        <tr>
+          <th scope="row">お問合せ者情報</th>
+          <td>お問合せにお答えするため</td>
+        </tr>
+      </table></div>
+
+      <h3 id="policy-section-14" tabindex="-1"><span class="heading-unit">2. 「開示等の請求」</span><span class="heading-unit">申出先</span></h3>
+      <p>
+        「開示等の請求」は「個人情報に関する苦情・相談窓口」宛、当社所定の請求書に必要書類・
+        手数料を同封の上、郵送によりお願い申し上げます。
+      </p>
+
+      <h3 id="policy-section-15" tabindex="-1"><span class="heading-unit">3. 「開示等の請求」に</span><span class="heading-unit">際してご提出いただく</span><span class="heading-unit">書類</span></h3>
+      <p>
+        「開示等の請求」を行う場合は、(１)の請求書に所定の事項を全てご記入の上、
+        ご郵送下さい。請求書用紙につきましては下記の該当する用紙を郵便で送付いたします。
+        なお、ご本人確認のため、運転免許証、
+        パスポート等の本人確認書類の写しの同封が必要となります。
+      </p>
+      <h4><span class="heading-unit">(１)当社所定の</span><span class="heading-unit">請求書</span></h4>
+      <p>
+        ①&nbsp;利用目的の通知の場合<br>
+        「開示対象個人情報開示等請求書」
+      </p>
+      <p>
+        ②&nbsp;開示の場合<br>
+        「開示対象個人情報開示等請求書」
+      </p>
+      <p>
+        ③&nbsp;訂正、追加又は削除の場合、利用の停止、消去及び第三者への提供の停止の場合<br>
+        「開示対象個人情報開示等請求書」
+      </p>
+
+      <h3 id="policy-section-16" tabindex="-1"><span class="heading-unit">4. 代理人様による</span><span class="heading-unit">「開示等の請求」の場合</span></h3>
+      <p>
+        「開示等の請求」をする方が代理人様である場合は、
+        ２．（１）の書類に加えて、
+        下記３．（１）の代理人である事を証明する書類の写しのいずれか及び
+        ３．の（２）の代理人様ご自身を証明する書類の写しのいずれかを同封してください。
+      </p>
+      <h4><span class="heading-unit">(１)代理人である事を</span><span class="heading-unit">証明する書類</span></h4>
+      <p>
+        ＜開示等の求めをすることにつき本人が委任した代理人様の場合＞<br>
+        ①&nbsp;本人の委任状（原本）
+      </p>
+      <p>
+        ＜代理人様が未成年者の法定代理人の場合＞<br>
+        ①&nbsp;戸籍謄本<br>
+        ②&nbsp;住民票（続柄の記載されたもの）<br>
+        ③&nbsp;その他法定代理権の確認ができる公的書類
+      </p>
+      <p>
+        ＜代理人様が成年被後見人の法定代理人の場合＞<br>
+        ①&nbsp;見登記等に関する登記事項証明書<br>
+        ②&nbsp;その他法定代理権の確認ができる公的書類
+      </p>
+
+      <h4><span class="heading-unit">(２)代理人様ご自身を</span><span class="heading-unit">証明する書類の写し</span></h4>
+      <p>
+        ①&nbsp;本人の委任状（原本）<br>
+        ①&nbsp;運転免許証<br>
+        ②&nbsp;パスポート<br>
+        ③&nbsp;マイナンバーカード(表面)<br>
+        ④&nbsp;健康保険の被保険者証<br>
+        ⑤&nbsp;住民票<br>
+        ⑥&nbsp;住民基本台帳カード
+      </p>
+      <p>
+        ※尚、本籍地情報は都道府県までとし、
+        それ以降の情報は黒塗り等の処理をしてください。
+      </p>
+
+      <h3 id="policy-section-17" tabindex="-1"><span class="heading-unit">5. 「開示等の請求」の</span><span class="heading-unit">手数料及び</span><span class="heading-unit">その徴収方法</span></h3>
+      <p>
+        利用目的の通知又は開示の請求の場合にのみ、
+        １回の請求につき、上記の金額（当社からの返信費を含む）を申し受けます。
+        上記金額分の郵便定額小為替を請求書類の郵送時に同封してください。
+      </p>
+      <p>
+        手数料金額：500円
+      </p>
+
+      <h3 id="policy-section-18" tabindex="-1"><span class="heading-unit">6. 「開示等の請求」に</span><span class="heading-unit">対する回答方法</span></h3>
+      <p>
+        原則として、請求書記載のご本人様住所宛に書面（封書郵送）にてご回答申し上げます。
+      </p>
+      <p>
+        ◇「開示等の請求」にともない取得した個人情報は、
+        開示等の請求への対応に必要な範囲に限り取り扱います。<br>
+        ◇以下の場合には、「開示等の請求」にお応えできない場合があります。
+        その場合は、その旨と理由を御通知申し上げます。
+        また、不開示の場合についても手数料をいただきますのでご承知ください。
+      </p>
+      <p>
+        ①&nbsp;ご本人様又は代理人様の本人確認ができない場合<br>
+        ②&nbsp;所定の申請書類に不備があった場合<br>
+        ③&nbsp;開示等の請求の対象が「開示対象個人情報」(※)に該当しない場合<br>
+        ④&nbsp;利用目的を本人に通知し、又は公表することによって本人又は第三者の生命、
+        身体、財産その他の権利利益を害するおそれがある場合。<br>
+        ⑤&nbsp;利用目的を本人に通知し、
+        又は公表することによって当社の権利又は正当な利益を害するおそれがある場合。<br>
+        ⑥&nbsp;国の機関又は地方公共団体が法令の定める事務を遂行することに対して協力する必要がある場合であって、
+        利用目的を本人に通知し、
+        又は公表することによって当該事務の遂行に支障を及ぼすおそれがあるとき。
+      </p>
+      <p>
+        ※保有個人データとは、体系的に構成した情報の集合物を構成する個人情報であって、
+        当社が、ご本人から求められる開示、利用目的の通知、内容の訂正、追加又は削除、利用の停止、
+        消去及び第三者への提供の停止、第三者提供記録の開示の求めのすべてに応じることができる権限を有するものです。
+        ただし、以下a)～d)のいずれかに該当する場合は開示対象個人情報には該当しません。
+      </p>
+      <p>
+        a)&nbsp;当該個人データ又は当該第三者提供記録の存否が明らかになることによって、
+        本人又は第三者の生命、身体又は財産に危害が及ぶおそれのあるもの<br>
+        b)&nbsp;当該個人データ又は当該第三者提供記録の存否が明らかになることによって、
+        違法又は不当な行為を助長し、又は誘発するおそれのあるもの<br>
+        c)&nbsp;当該個人データ又は当該第三者提供記録の存否が明らかになることによって、
+        国の安全が害されるおそれ、他国若しくは国際機関との信頼関係が損なわれるおそれ又は他国若しくは国際機関との交渉上不利益を被るおそれのあるもの<br>
+        d)&nbsp;当該個人データ又は当該第三者提供記録の存否が明らかになることによって、
+        犯罪の予防、鎮圧又は捜査その他の公共の安全と秩序維持に支障が及ぶおそれのあるもの
+      </p>
+
+      <h3 id="policy-section-19" tabindex="-1"><span class="heading-unit">7. 保有個人データの</span><span class="heading-unit">安全管理のために</span><span class="heading-unit">講じた措置</span></h3>
+      <p>
+        当社では、個人情報、特定個人情報の取扱いに関する規程、及び安全対策に関する規程を定め以下の措置を講じております。
+      </p>
+      <div>
+        <h4>①&nbsp;組織的安全管理措置</h4>
+        <ul>
+          <li>個人情報の取扱いに関して方針を定め、個人情報保護方針として、社内に周知徹底するとともに、一般の方も入手できるようにホームページで公開しています。</li>
+          <li>取得、利用、保存、提供、削除・廃棄等の段階ごとに、取扱方法、責任者・担当者及びその任務等について個人情報の取扱い手順を定め、規程文書としてまとめ、社内に周知しております。</li>
+          <li>個人情報の取扱状況について、定期的に自己点検を実施するとともに、他部署や外部の者による公平な立場からの内部監査を定期的に実施しています。</li>
+        </ul>
+      </div>
+      <div>
+        <h4>②&nbsp;人的安全管理措置</h4>
+        <ul>
+          <li>個人情報の取扱いに関する留意事項について、従業者に定期的な研修を実施しております。</li>
+          <li>従業者から、秘密保持に関する誓約を取得しております。</li>
+        </ul>
+      </div>
+      <div>
+        <h4><span class="heading-unit">③&nbsp;物理的安全管理措置、</span><span class="heading-unit">技術的安全措置</span></h4>
+        <ul>
+          <li>取扱い担当者以外の従業者や他の権限を有しない者による個人情報の閲覧を防止するため、取り扱う区域を限定しております。</li>
+          <li>個人情報は、施錠キャビネットやアクセス制限を行っているサーバに保管しています。</li>
+          <li>コンピューターウイルスなどの不正ソフトウェアへの対策を行っています。</li>
+        </ul>
+      </div>
+
+      <p>
+        以上
+      </p>
+</article><a class="company-detail-back return-link" href="{{ url_for('index') }}">← トップページへ戻る</a></div></main>
+<footer class="site-footer">
+    <nav class="footer-policy" aria-label="サイトポリシー">
+      <a href="{{ url_for('policy_terms') }}">サイト利用規定</a>
+      <a href="{{ url_for('policy_privacy') }}">個人情報取扱について</a>
+      <a href="{{ url_for('policy_protection') }}">個人情報保護方針</a>
+      <a href="{{ url_for('policy_security') }}">セキュリティポリシー</a>
+      <a href="{{ url_for('policy_disclaimer') }}">免責事項</a>
+      <a href="{{ url_for('policy_harassment') }}">採用活動におけるハラスメント防止方針</a>
+
+    </nav>
+    <div class="footer-main">
+      <div class="footer-identity">
+        <span class="footer-wordmark">株式会社アトラスコンピュータ</span>
+        <div class="footer-certifications" role="group" aria-label="認証マーク">
+        <img src="{{ url_for('static', filename='images/p_JP.png') }}" alt="Privacy Mark 10824656" width="216" height="216" loading="lazy" decoding="async">
+        <img src="{{ url_for('static', filename='images/icd.png') }}" alt="i Competency Dictionary 2023 Silver Plus 01-03102(05)" width="613" height="613" loading="lazy" decoding="async">
+      </div>
+      </div>
+      <small>© 2026 ATLAS COMPUTER CO.,LTD.</small>
+    </div>
+  </footer>
+<script src="{{ url_for('static', filename='js/script.js') }}?v=20261007-review3"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+/* Shared footer: company and marks on the left, copyright on the right. */
+.site-footer .footer-policy{max-width:1240px;margin:0 auto 32px;padding:0;display:flex;flex-wrap:wrap;gap:12px 28px;font-size:13px;line-height:1.75}
+.site-footer .footer-policy a:hover{text-decoration:underline}
+.site-footer .footer-policy a:focus-visible{outline:3px solid #a9dcfa;outline-offset:5px}
+@media(max-width:600px){.site-footer .footer-policy{margin-bottom:24px;gap:6px 20px;font-size:12px}.site-footer .footer-policy a{display:inline-flex;align-items:center;min-height:44px}}
+.site-footer{position:relative;z-index:1;padding:32px clamp(22px,6vw,96px);background:linear-gradient(180deg,#125a94 0%,#104574 45%,#0e304b 100%);color:#e1eff8;font-size:14px;line-height:1.75}
+.site-footer .footer-main{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0;border:0}
+.site-footer .footer-identity{display:flex;align-items:center;gap:12px;min-width:0}
+.site-footer .footer-wordmark{display:block;color:#fff;font-size:14px;font-weight:400;letter-spacing:0;line-height:1.75}
+.site-footer .footer-certifications{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.site-footer .footer-certifications img{display:block;width:64px;height:auto;object-fit:contain}
+.site-footer .footer-main>small{font-size:12px;color:#e1eff8;line-height:1.75}
+@media(max-width:1000px){.site-footer .footer-main{flex-wrap:wrap;gap:24px}.site-footer .footer-main>small{margin-left:auto}}
+@media(max-width:600px){
+ .site-footer{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 8px;padding:24px 22px}
+ .site-footer .footer-policy{grid-column:1 / -1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;margin:0;gap:0 14px}
+ .site-footer .footer-main,.site-footer .footer-identity{display:contents}
+ .site-footer .footer-wordmark{grid-column:1 / -1;font-size:13px}
+ .site-footer .footer-certifications{grid-column:1;grid-row:3;gap:8px}
+ .site-footer .footer-certifications img{width:48px}
+ .site-footer .footer-main>small{grid-column:1 / -1;grid-row:4;margin:0;font-size:11px}
+}
+
+/* Mobile footer: a vertical policy list and a right-aligned identity block. */
+@media(max-width:600px){
+ .site-footer{display:grid;grid-template-columns:minmax(0,1fr);gap:0;padding:32px 26px 40px;}
+ .site-footer .footer-policy{grid-column:1;grid-row:1;display:flex;flex-direction:column;align-items:stretch;gap:6px;margin:0 0 28px;font-size:14px;}
+ .site-footer .footer-policy a{min-height:44px;padding:6px 0;}
+ .site-footer .footer-certifications{grid-column:1;grid-row:2;justify-self:end;gap:10px;margin:0 0 16px;}
+ .site-footer .footer-certifications img{width:58px;}
+ .site-footer .footer-wordmark{grid-column:1;grid-row:3;text-align:right;font-size:14px;margin:0 0 12px;}
+ .site-footer .footer-main>small{grid-column:1;grid-row:4;text-align:right;font-size:11px;margin:0;}
+}

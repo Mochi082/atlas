@@ -1,0 +1,209 @@
+/* Company detail pages: self-contained styling; shared navigation stays in styles.css. */
+.company-detail-main{background:#fff;min-height:70vh;padding:125px 40px 100px}
+.company-detail-wrap{max-width:980px;margin:0 auto}
+.company-detail-breadcrumb{display:flex;align-items:center;gap:12px;flex-wrap:wrap;color:#667786;font-size:13px}
+.company-detail-breadcrumb a{color:#245b88;text-decoration:none}
+.company-detail-hero{padding:60px 0 38px;border-bottom:1px solid #dce5eb}
+.company-detail-hero h1{font-size:clamp(34px,5vw,54px);line-height:1.35;margin:12px 0 0}
+.company-detail-article{max-width:var(--detail-content-width,790px);padding:45px 0 20px}
+.company-detail-article .detail-lead{font-size:clamp(23px,3vw,34px);font-weight:700;color:#15364d;line-height:1.6;margin:0 0 45px}
+.company-detail-article section{margin:0 0 52px}
+.company-detail-article h2{font-size:var(--detail-heading-size,clamp(21px,2.5vw,27px));line-height:var(--detail-heading-leading,1.5);margin:0 0 var(--detail-heading-gap,18px);color:#15364d;text-wrap:var(--detail-heading-wrap,wrap);line-break:strict}
+.company-detail-article p{line-height:2;letter-spacing:var(--detail-text-tracking,.025em);color:var(--reading-body-color);font-weight:var(--reading-body-weight);margin:0 0 var(--detail-paragraph-gap,18px)}
+.company-detail-article .detail-sign{text-align:right;margin-top:30px}
+/* Company narratives share a reading scale; policy/profile retain their own rules. */
+.company-editorial{font-size:var(--reading-body-size);--detail-content-width:100%;--detail-heading-size:clamp(22px,2.3vw,26px);--detail-heading-leading:1.55;--detail-heading-gap:20px;--detail-heading-wrap:balance;--detail-text-tracking:.01em;--detail-paragraph-gap:var(--reading-paragraph-gap);--detail-section-gap:28px;--detail-section-inset:16px}
+[data-content-page="company-message"] .company-editorial{--detail-heading-wrap:wrap}
+.company-editorial p{line-height:var(--reading-body-leading);text-wrap:pretty;line-break:strict}
+/* Logo explanations retain intentional topic breaks; narrative headings flow. */
+[data-content-page="company-logo"] .detail-heading-phrase{display:block}
+.company-editorial section{margin-bottom:var(--detail-section-gap)}
+.company-editorial section + section{padding-top:var(--detail-section-inset)}
+[data-content-page="company-principles"] .company-editorial section + section{border-top:1px solid #dce5eb}
+.company-editorial .detail-lead{font-size:22px;line-height:1.75;margin-bottom:24px;text-wrap:pretty}
+.company-editorial .company-logo-image{margin:20px 0 24px}
+.company-editorial .company-detail-photo{margin:0 0 28px}
+.company-detail-back{margin-top:15px}
+.detail-logo-placeholder{min-height:220px;display:grid;place-items:center;border:1px dashed #a7bac6;background:#f6f9fb;color:#788c99;font-size:13px;letter-spacing:.15em;margin-bottom:55px}
+.detail-logo-small{min-height:120px;max-width:340px;margin:0 0 20px}
+@media(max-width:800px){.company-detail-main{padding:96px 22px 65px}.company-detail-hero{padding:40px 0 25px}.company-detail-article{padding-top:32px}.company-detail-article section{margin-bottom:var(--detail-section-gap,38px)}}
+@media(min-width:601px) and (max-width:1100px){.company-detail-main{padding-inline:32px}.company-editorial{--detail-section-gap:24px;--detail-section-inset:14px}}
+@media(max-width:600px){
+ .company-editorial{--detail-heading-size:19px;--detail-heading-leading:1.5;--detail-heading-gap:14px;--detail-section-gap:18px;--detail-section-inset:10px}
+ .company-editorial .detail-lead{font-size:19px;margin-bottom:20px}
+ .company-detail-main{padding-bottom:48px}
+ .company-detail-article{padding-top:28px}
+ .company-detail-profile .profile-list>div{padding-block:16px}
+ .company-detail-profile p{line-height:1.8}
+}
+
+/* Clearly marked editorial image slots. Remove the labels when publishing. */
+.company-detail-article .detail-image-slot{margin:22px 0 48px;padding:18px;border:2px dashed #92aabb;background:#f4f8fb;text-align:center}
+.company-detail-article .detail-image-slot-label{font-weight:700;color:#245b88;font-size:14px;margin-bottom:14px}
+.company-detail-article .detail-image-slot img{display:block;width:auto;max-width:100%;max-height:300px;height:auto;object-fit:contain;margin:0 auto 14px}
+.company-detail-article .detail-image-slot figcaption{font-size:12px;color:#607789;line-height:1.6}
+.company-detail-article .detail-image-pending-box{min-height:150px;display:grid;place-items:center;padding:18px;border:1px solid #c7d8e3;background:#fff;color:#607789}
+
+/* Company profile and access live on the same detail page. */
+.company-detail-profile{max-width:100%}
+.company-detail-profile .profile-list{margin:0}
+.company-detail-profile .profile-list>div{display:grid;grid-template-columns:minmax(130px,27%) 1fr;gap:18px;padding:22px 0;border-bottom:1px solid #dce5eb}
+.company-detail-profile .profile-list dt{font-weight:700;color:#15364d}
+.company-detail-profile .profile-list dd{margin:0;line-height:1.8;color:var(--reading-body-color);font-weight:var(--reading-body-weight)}
+.company-profile-access{margin-top:85px;padding-top:55px;border-top:1px solid #dce5eb}
+.company-profile-access h2{font-size:clamp(27px,3vw,38px);margin:10px 0 28px}
+.company-profile-access .access-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.company-profile-access .access-grid h3{font-size:19px;margin:0 0 15px}
+.company-profile-access .access-lines p{margin:0 0 10px}
+
+@media(max-width:800px){.company-detail-profile .profile-list>div{grid-template-columns:1fr;gap:6px}.company-profile-access .access-grid{grid-template-columns:1fr}.company-profile-access{margin-top:55px}}
+
+.company-detail-photo{margin:0 0 40px}
+.company-detail-photo img{display:block;width:100%;max-width:760px;height:auto;margin-inline:auto}
+
+.company-logo-image{margin:24px 0 36px}
+.company-logo-image img{display:block;max-width:100%;height:auto}
+
+/* The supplied logo leads its letter/color explanations; the sphere detail
+   uses a native-size crop of that same image, without inventing artwork. */
+.logo-concept-layout{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:40px}
+.company-editorial .logo-concept-main{width:min(100%,550px);aspect-ratio:550 / 160;overflow:hidden;clip-path:inset(0 1px);margin:0 auto}
+.logo-concept-main img{width:100%;height:100%;object-fit:cover;object-position:center}
+.logo-spheres-view{width:100px;height:94px;overflow:hidden;margin:6px auto 0}
+.logo-spheres-view img{display:block;width:550px;max-width:none;height:300px;margin-left:-66px;margin-top:-103px}
+.logo-concept-spheres{grid-template-columns:120px minmax(0,1fr);gap:28px;align-items:start}
+.logo-concept-copy section:last-child{margin-bottom:0}
+@media(max-width:900px){
+ .logo-concept-layout{grid-template-columns:1fr;gap:24px;margin-bottom:32px}
+ .logo-spheres-view{margin:0 auto}
+}
+
+/* Uses the same location URL as the official corporate profile. */
+.access-map{margin-top:30px}
+.access-map iframe{display:block;width:100%;height:360px;border:1px solid #c8d9e5;background:#f4f8fb}
+.access-map a{display:inline-flex;align-items:center;min-height:44px;margin-top:10px;color:#245b88;text-decoration:underline}
+@media(max-width:600px){.access-map iframe{height:280px}}
+
+/* Keep logo explanations on one reading axis at every viewport width. */
+[data-content-page="company-logo"] .logo-concept-spheres{
+  grid-template-columns:minmax(0,1fr);
+  gap:24px;
+}
+[data-content-page="company-logo"] .logo-concept-copy{min-width:0;width:100%}
+
+/* Center the logo concept presentation. */
+[data-content-page="company-logo"] .company-detail-hero,
+[data-content-page="company-logo"] .company-detail-article{text-align:center}
+[data-content-page="company-logo"] .company-detail-article section,
+[data-content-page="company-logo"] .logo-concept-copy{margin-left:auto;margin-right:auto}
+[data-content-page="company-logo"] .logo-spheres-view{margin-left:auto;margin-right:auto}
+[data-content-page="company-logo"] .company-detail-back{display:table;margin-left:auto;margin-right:auto}
+
+[data-content-page="company-logo"] .company-editorial .logo-concept-main{clip-path:inset(0 3px)}
+
+[data-content-page="company-logo"] .company-detail-article h2{color:#086dbc}
+
+/* Give each logo explanation and paragraph more breathing room. */
+[data-content-page="company-logo"] .company-editorial{
+  --detail-paragraph-gap:28px;
+  --detail-section-gap:44px;
+  --detail-section-inset:20px;
+}
+@media(max-width:600px){
+  [data-content-page="company-logo"] .company-editorial{
+    --detail-paragraph-gap:22px;
+    --detail-section-gap:32px;
+    --detail-section-inset:14px;
+  }
+}
+
+/* Separate logo topics more clearly without changing paragraph spacing. */
+[data-content-page="company-logo"] .company-editorial{
+  --detail-section-gap:64px;
+  --detail-section-inset:28px;
+}
+[data-content-page="company-logo"] .logo-concept-layout{margin-bottom:64px}
+@media(max-width:600px){
+  [data-content-page="company-logo"] .company-editorial{
+    --detail-section-gap:46px;
+    --detail-section-inset:20px;
+  }
+  [data-content-page="company-logo"] .logo-concept-layout{margin-bottom:46px}
+}
+
+/* Center the representative message presentation. */
+[data-content-page="company-message"] .company-detail-hero,
+[data-content-page="company-message"] .company-detail-article{text-align:center}
+[data-content-page="company-message"] .company-detail-article .detail-sign{text-align:center}
+[data-content-page="company-message"] .company-detail-back{display:table;margin-left:auto;margin-right:auto}
+
+[data-content-page="company-message"] .company-detail-article{margin-left:auto;margin-right:auto}
+
+/* Representative message: clear topics and readable paragraphs. */
+[data-content-page="company-message"] .company-editorial{
+  --detail-section-gap:64px;
+  --detail-section-inset:24px;
+  --detail-paragraph-gap:26px;
+}
+[data-content-page="company-message"] .company-editorial h2{color:#086dbc;line-height:1.6;margin-bottom:28px}
+[data-content-page="company-message"] .company-editorial section>p{
+  color:#111;
+  max-width:40em;
+  margin-left:auto;
+  margin-right:auto;
+  line-height:1.95;
+  letter-spacing:normal;
+  text-wrap:wrap;
+}
+@media(max-width:600px){
+  [data-content-page="company-message"] .company-editorial{
+    --detail-section-gap:44px;
+    --detail-section-inset:16px;
+    --detail-paragraph-gap:22px;
+  }
+  [data-content-page="company-message"] .company-editorial h2{margin-bottom:22px}
+  [data-content-page="company-message"] .company-editorial section>p{line-height:1.9}
+}
+
+/* Use the desktop reading area's full width while retaining centered text. */
+@media(min-width:801px){
+  [data-content-page="company-message"] .company-detail-article.company-editorial{max-width:100%;width:100%}
+  [data-content-page="company-message"] .company-editorial section>p{max-width:52em;width:100%}
+}
+
+[data-content-page="company-principles"] .company-detail-hero,
+[data-content-page="company-principles"] .company-detail-article{text-align:center}
+[data-content-page="company-principles"] .company-detail-article{width:100%;margin-left:auto;margin-right:auto}
+[data-content-page="company-principles"] .company-editorial section>p{max-width:52em;margin-left:auto;margin-right:auto}
+[data-content-page="company-principles"] .company-detail-back{display:table;margin-left:auto;margin-right:auto}
+
+[data-content-page="company-principles"] .principles-accent{color:#a52d36}
+
+[data-content-page="company-principles"] .company-editorial section + section{border-top:0;padding-top:48px}
+[data-content-page="company-principles"] .company-editorial{--detail-section-gap:48px}
+@media(max-width:600px){
+ [data-content-page="company-principles"] .company-editorial{--detail-section-gap:32px}
+ [data-content-page="company-principles"] .company-editorial section + section{padding-top:32px}
+}
+
+[data-content-page="company-profile"] .company-detail-profile,
+[data-content-page="company-profile"] .company-profile-access .access-lines{font-size:var(--reading-body-size)}
+[data-content-page="company-profile"] .profile-list dt{font-weight:700}
+
+[data-content-page="company-profile"] .company-profile-access{margin-top:120px;padding-top:64px}
+@media(max-width:800px){[data-content-page="company-profile"] .company-profile-access{margin-top:80px;padding-top:40px}}
+
+[data-content-page="company-profile"] .company-profile-access{border-top:0}
+
+[data-content-page="company-profile"] .company-detail-hero,
+[data-content-page="company-profile"] .company-profile-access>.section-no,
+[data-content-page="company-profile"] .company-profile-access>h2{text-align:center}
+
+[data-content-page="company-profile"] .profile-table-heading{text-align:center;font-size:clamp(27px,3vw,38px);margin:0 0 28px}
+
+[data-content-page="company-profile"] .company-profile-access{margin-top:108px;padding-top:56px}
+[data-content-page="company-profile"] .company-profile-access>h2{margin-bottom:40px}
+@media(max-width:800px){[data-content-page="company-profile"] .company-profile-access{margin-top:72px;padding-top:36px}}
+
+/* Restore the profile scroll position without an animated jump. */
+html:has([data-content-page="company-profile"]){scroll-behavior:auto}

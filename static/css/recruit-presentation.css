@@ -1,0 +1,93 @@
+/* Recruitment presentation; shared corporate palette, scoped to this page. */
+.recruit-page{background:#fff;color:#173e58}
+.recruit-page .detail-section{padding:58px max(40px,calc((100% - 1120px)/2));background:#fff;border:0}
+.recruit-page .section-no{font-size:12px;letter-spacing:.12em;color:#2c8bb9;font-weight:600}
+.recruit-page .detail-section h2{font-size:30px;line-height:1.6;margin:12px 0 26px;color:#173e58}
+.recruit-page .recruit-message{padding-top:64px;padding-bottom:54px}
+.recruit-page .recruit-message-body{max-width:1000px}
+.recruit-page .recruit-message-body p{font-size:18px;line-height:2;margin:0;color:#222;letter-spacing:.02em;text-align:left}
+.recruit-page .recruit-message-body p+p{margin-top:24px}
+.recruit-page .recruit-message-body strong{font-weight:700}
+.recruit-page .recruit-message+.detail-section{padding-top:34px;padding-bottom:34px;background:#f3f9fc}
+.recruit-page .recruit-message+.detail-section h2{margin-bottom:14px}
+.recruit-page .content-pending{padding:0;border:0;background:none;margin:0;max-width:none;color:#526674;font-size:16px;line-height:1.9}
+.recruit-page .recruit-section-copy{max-width:none;color:#3e5666;line-height:1.9}
+.recruit-page .recruit-flow{max-width:none;gap:0;margin:34px 0 0}
+.recruit-page .flow-step{display:block;position:relative;padding-left:88px}
+.recruit-page .flow-step:not(:last-child)::before{content:'';position:absolute;left:27px;top:48px;bottom:-16px;border-left:1px solid #9fd0e7}
+.recruit-page .flow-arrow{display:none}
+.recruit-page .flow-card{position:relative;background:none;border:0;border-radius:0;padding:0 0 28px;margin-bottom:26px;border-bottom:1px solid #d7e5ed}
+.recruit-page .flow-step:last-child .flow-card{border:0;margin-bottom:0;padding-bottom:0}
+.recruit-page .flow-title{margin-bottom:12px}
+.recruit-page .flow-index{position:absolute;left:-88px;top:0;border:1px solid #389dcc;width:56px;height:56px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;color:#2c8bb9;font-size:23px;font-weight:500}
+.recruit-page .flow-card h3{font-size:23px;color:#173e58}
+.recruit-page .flow-card p{font-size:17px;line-height:1.95;color:#222}
+.recruit-page .recruit-requirements{padding-top:24px;padding-bottom:16px}
+.recruit-page .entry-rough{width:min(1120px,calc(100% - 80px));padding:34px 40px;margin:32px auto 64px;border-radius:6px;background:linear-gradient(115deg,#194f70,#12334f);box-sizing:border-box}
+.recruit-page .entry-rough .section-no{color:#a7d9f3}
+.recruit-page .entry-rough h2{font-size:27px}
+.recruit-page .entry-rough>a{background:#fff;color:#173e58;min-height:52px;min-width:260px;justify-content:space-between}
+@media(max-width:800px){
+ .recruit-page .detail-section{padding:42px 22px}
+ .recruit-page .detail-section h2{font-size:24px;margin-bottom:22px}
+ .recruit-page .recruit-message-body p{font-size:16px;line-height:1.95;letter-spacing:normal}
+ .recruit-page .recruit-message-body p+p{margin-top:22px}
+ .recruit-page .recruit-message+.detail-section{padding:28px 22px}
+ .recruit-page .flow-step{padding-left:62px}
+ .recruit-page .flow-step:not(:last-child)::before{left:20px;top:40px}
+ .recruit-page .flow-index{left:-62px;width:42px;height:42px;font-size:20px}
+ .recruit-page .flow-card h3{font-size:21px}
+ .recruit-page .flow-card p{font-size:16px}
+ .recruit-page .flow-card{padding-bottom:24px;margin-bottom:24px}
+ .recruit-page .recruit-requirements{padding-top:12px;padding-bottom:0}
+ .recruit-page .entry-rough{width:calc(100% - 44px);padding:28px 22px;margin:28px auto 44px;gap:20px}
+ .recruit-page .entry-rough h2{font-size:24px}
+ .recruit-page .entry-rough>a{width:100%;min-width:0;box-sizing:border-box}
+}
+
+/* Preserve the original stacked flow cards and downward arrows. */
+.recruit-page .recruit-flow{max-width:880px;margin:30px auto 0;gap:10px}
+.recruit-page .flow-step{display:flex;flex-direction:column;align-items:center;gap:10px;padding-left:0}
+.recruit-page .flow-step:not(:last-child)::before{content:none}
+.recruit-page .flow-arrow{display:block;color:#389dcc;font-size:16px;line-height:1}
+.recruit-page .flow-card,.recruit-page .flow-step:last-child .flow-card{width:100%;padding:22px 26px;margin:0;border:1px solid #b8cddd;border-radius:6px;background:#fff;box-sizing:border-box}
+.recruit-page .flow-title{display:flex;align-items:baseline;gap:12px;margin-bottom:10px}
+.recruit-page .flow-index{position:static;display:inline;width:auto;height:auto;border:0;border-radius:0;background:none;font-size:24px;font-weight:700;line-height:1}
+@media(max-width:800px){.recruit-page .flow-card,.recruit-page .flow-step:last-child .flow-card{padding:20px}.recruit-page .flow-index{font-size:24px}}
+.recruit-page .recruit-requirements-table{width:100%;border-collapse:collapse;margin-top:28px;font-size:17px;line-height:1.95;color:#222;table-layout:fixed}
+.recruit-page .recruit-requirements-table th{width:190px;padding:24px;text-align:left;vertical-align:top;background:#f0f7fb;color:#173e58;font-weight:700;border-top:1px solid #cddfea;border-bottom:1px solid #cddfea}
+.recruit-page .recruit-requirements-table td{padding:24px 30px;border-top:1px solid #cddfea;border-bottom:1px solid #cddfea;overflow-wrap:anywhere}
+.recruit-page .recruit-requirements-table p{font-size:inherit;line-height:inherit;color:inherit;margin:0;max-width:none}
+.recruit-page .recruit-requirements-table p+p{margin-top:18px}
+.recruit-page .recruit-table-caption{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+@media(max-width:800px){
+ .recruit-page .recruit-requirements-table,.recruit-page .recruit-requirements-table tbody,.recruit-page .recruit-requirements-table tr,.recruit-page .recruit-requirements-table th,.recruit-page .recruit-requirements-table td{display:block;width:100%;box-sizing:border-box}
+ .recruit-page .recruit-requirements-table{font-size:16px}
+ .recruit-page .recruit-requirements-table th{padding:12px 16px;border-bottom:0}
+ .recruit-page .recruit-requirements-table td{padding:18px 0 26px;border:0}
+}
+
+@media(min-width:801px){.recruit-page .recruit-requirements-table th{width:190px;box-sizing:border-box}.recruit-page .recruit-requirements-table td{width:calc(100% - 190px);box-sizing:border-box}}
+@media(min-width:801px){.recruit-page .recruit-requirements-table{table-layout:auto}.recruit-page .recruit-requirements-table th{width:190px!important}.recruit-page .recruit-requirements-table td{width:calc(100% - 190px)!important}}
+
+/* Dense details, with clear subsection headings. */
+.recruit-page .recruit-requirements-table{line-height:1.85}
+.recruit-page .recruit-requirements-table th{padding:22px 24px}
+.recruit-page .recruit-requirements-table td{padding:22px 30px}
+.recruit-page .requirement-subheading{display:inline-block;color:#173e58;font-weight:700;margin-top:16px;margin-bottom:4px}
+.recruit-page .recruit-requirements-table p>.requirement-subheading:first-child{margin-top:0}
+@media(max-width:800px){.recruit-page .recruit-requirements-table th{padding:12px 16px}.recruit-page .recruit-requirements-table td{padding:16px 0 24px}.recruit-page .requirement-subheading{margin-top:14px}}
+
+/* Original message as one introduction; quieter conditions table. */
+.recruit-page .recruit-message h2{font-size:clamp(28px,3vw,38px);line-height:1.6;margin:0 0 30px;color:#173e58}
+.recruit-page .detail-section>.section-no{color:#2c8bb9;font-size:12px;letter-spacing:.12em}
+.recruit-page .detail-section:not(.recruit-message)>h2{font-size:28px;line-height:1.6;color:#173e58}
+.recruit-page .recruit-requirements-table th{background:#fff;color:#173e58;padding-left:0}
+.recruit-page .recruit-requirements-table td{overflow-wrap:break-word;word-break:normal}
+.recruit-page .recruit-message+.detail-section{background:#f7fbfd}
+@media(max-width:800px){
+ .recruit-page .recruit-message h2{font-size:27px;margin-bottom:24px}
+ .recruit-page .detail-section:not(.recruit-message)>h2{font-size:24px}
+ .recruit-page .recruit-requirements-table th{padding:14px 0 6px;color:#247fae}
+ .recruit-page .recruit-requirements-table td{padding-top:8px}
+}

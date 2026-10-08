@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Authenticator認証</title>
+</head>
+<body>
+	<main>
+		<h1>Authenticator認証</h1>
+		{% with messages = get_flashed_messages(with_categories=true) %}
+			{% for category, message in messages %}
+				<p role="alert">{{ message }}</p>
+			{% endfor %}
+		{% endwith %}
+		{% if not configuration_missing %}
+			<form method="post">
+				<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+				<label for="totp_code">認証コード</label>
+				<input id="totp_code" name="totp_code" type="text" inputmode="numeric" pattern="[0-9 ]{6,7}" autocomplete="one-time-code" required autofocus>
+				<button type="submit">認証</button>
+			</form>
+		{% endif %}
+		<p><a href="{{ url_for('login') }}">ログインに戻る</a></p>
+	</main>
+</body>
+</html>

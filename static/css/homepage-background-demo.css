@@ -1,0 +1,45 @@
+/* Temporary TOP background comparison. Keep production styles independent. */
+body.home-page[data-background-demo="white"]{background:#fff}
+body.home-page[data-background-demo="light-blue"]{background:#e4f3fc}
+/* Each demo keeps a blue footer; the gradient uses the original footer. */
+body.home-page[data-background-demo="white"] .site-footer{background:#164f78}
+body.home-page[data-background-demo="light-blue"] .site-footer{background:#1b6492}
+body.home-page[data-background-demo="white"] .site-footer,
+body.home-page[data-background-demo="light-blue"] .site-footer{color:#e1eff8}
+body.home-page[data-background-demo="white"] .footer-wordmark,
+body.home-page[data-background-demo="light-blue"] .footer-wordmark{color:#fff}
+body.home-page[data-background-demo="white"] .footer-main,
+body.home-page[data-background-demo="light-blue"] .footer-main{border-bottom-color:rgba(225,239,248,.3)}
+body.home-page[data-background-demo="white"] .site-footer>small,
+body.home-page[data-background-demo="light-blue"] .site-footer>small{color:#c5deed}
+body.home-page[data-background-demo="white"] .site-footer a:focus-visible,
+body.home-page[data-background-demo="light-blue"] .site-footer a:focus-visible{outline-color:#a9dcfa}
+.background-demo{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:12px;padding:10px 14px;border:1px solid #b8d4e7;border-radius:6px;background:#fff;color:#123b58;box-shadow:0 3px 16px rgba(18,59,88,.12);font-size:13px;line-height:1.5}
+.background-demo-controls{display:flex;align-items:center;gap:12px}
+.background-demo-toggle{display:none}
+.background-demo label{font-weight:700;white-space:nowrap}
+.background-demo small{margin-right:5px;font-size:10px;color:#4d6f86;letter-spacing:.08em}
+.background-demo select{max-width:160px;padding:7px 9px;border:1px solid #b8d4e7;border-radius:4px;background:#fff;color:#123b58;font:inherit}
+.background-demo select:focus-visible{outline:3px solid #167db5;outline-offset:3px}
+/* Mobile demo tools stay in the hero flow, away from all overview cards. */
+@media(max-width:600px){
+  .home-page .hero:has(.background-demo){flex-direction:column;align-items:stretch;justify-content:center;gap:28px}
+  .home-page .hero:has(.background-demo) .hero-content{margin:0 auto}
+  .background-demo{position:static;align-self:flex-end;flex-direction:column;align-items:stretch;gap:0;width:fit-content;max-width:100%;padding:0;font-size:12px;box-shadow:0 2px 8px rgba(18,59,88,.08)}
+  .background-demo-toggle{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px;padding:10px 12px;border:0;border-radius:6px;background:#fff;color:#123b58;font-size:12px;font-weight:700}
+  .background-demo-toggle small{margin:0}
+  .background-demo-indicator{font-size:18px;line-height:1}
+  .background-demo-controls{display:none;gap:8px;padding:10px 12px;border-top:1px solid #d7e6ef}
+  .background-demo.is-open .background-demo-controls{display:flex}
+  .background-demo-controls label{font-size:12px}
+  .background-demo-controls label small{display:none}
+  .background-demo select{max-width:190px;min-height:44px;font-size:16px}
+  .home-page .site-header{gap:16px}
+  .home-page .site-header .brand{flex:1;min-width:0;margin-right:0}
+  .home-page .site-header .brand img{width:auto;max-width:min(180px,100%);height:auto;max-height:40px}
+  .home-page .header-demo-actions{gap:8px;margin-left:0}
+  .home-page .header-demo-link{min-height:44px;padding:4px 8px;font-size:11px}
+  .home-page .header-demo-link small{font-size:9px}
+  .home-page .header-demo-actions .menu-button{width:44px;height:44px;flex:0 0 44px}
+}
+

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" sizes="any">
+<script src="{{ url_for('static', filename='js/homepage-scroll.js') }}"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+  <title>ビジネスパートナー募集 | ATLAS COMPUTER</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site-base.css') }}?v=20261006-font1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/subpage-theme.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/subpage-hero.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact-actions.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site-footer.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/subpage-motion.css') }}">
+  <script src="{{ url_for('static', filename='js/subpage-motion.js') }}" defer></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site-navigation.css') }}?v=20261007-review3">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/typography-review.css') }}?v=20261008-unify1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/partner-presentation.css') }}?v=20261007-material1">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/prose-flow.css') }}?v=20261008-flow2">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/subpage-illustrations.css') }}?v=20261008-art11">
+</head>
+<body class="owned-subpage partner-page">
+<a class="skip-link" href="#main-content">本文へ移動</a>
+<!-- SITE-HEADER:START -->
+<header class="site-header" id="top">
+
+  <a class="brand" href="{{ url_for('index') }}" aria-label="アトラスコンピュータ トップページへ"><img src="{{ url_for('static', filename='images/atlas_logo.jpg') }}" alt="株式会社アトラスコンピュータ" width="196" height="40" decoding="async"></a>
+  <nav class="desktop-nav" aria-label="グローバルナビゲーション">
+    <a href="{{ url_for('company') }}">会社案内</a>
+    <a href="{{ url_for('business') }}">事業内容</a>
+    <a href="{{ url_for('smes') }}">中小企業向けITコンサルティング</a>
+    <a href="{{ url_for('partner') }}">ビジネスパートナー</a>
+    <a href="{{ url_for('recruit') }}">採用について</a>
+    <a href="{{ url_for('contact') }}">お問い合わせ</a>
+  </nav>
+  <div class="header-actions">
+  <a class="header-contact" href="{{ url_for('contact') }}" aria-label="お問い合わせ"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg></a>
+  <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <button class="drawer-close" type="button" aria-label="メニューを閉じる">×</button>
+  <div class="drawer-inner">
+    <p class="drawer-kicker">ATLAS COMPUTER</p>
+    <nav class="drawer-nav" aria-label="メニュー">
+      <a href="{{ url_for('company') }}"><span>会社案内<small>COMPANY</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('business') }}"><span>事業内容<small>BUSINESS</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('smes') }}"><span>中小企業向けITコンサルティング<small>IT CONSULTING</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('partner') }}"><span>ビジネスパートナー<small>BUSINESS PARTNER</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('recruit') }}"><span>採用について<small>RECRUIT</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('contact') }}"><span>お問い合わせ<small>CONTACT</small></span><i aria-hidden="true">→</i></a>
+    </nav>
+  </div>
+</aside>
+<div class="drawer-backdrop"></div>
+<!-- SITE-HEADER:END -->
+
+<main tabindex="-1" id="main-content" class="company-page partner-main" data-content-page="partner">
+  <header class="company-title partner-title subpage-motion page-hero">
+
+    <div class="company-title-inner illustrated-intro">
+      <p class="eyebrow">BUSINESS PARTNER</p>
+      <h1><span class="heading-unit">ビジネス</span><span class="heading-unit">パートナー募集</span></h1>
+      <p class="company-lead">ビジネスパートナー様と<br>ともに成長したい。</p>
+      <p class="company-intro">「三方よし」の精神を大切に、順調なときも厳しいときも協力し合い、共にビジネスを創りあげていけるパートナー様を募集しています。</p>
+    <figure class="socost-art intro-art"><img src="{{ url_for('static', filename='images/socost/meeting.png') }}" alt="" width="759" height="718" loading="lazy" decoding="async"></figure></div>
+  </header>
+  <section class="partner-select partner-reading-nav" aria-label="ページ内メニュー">
+    <div class="partner-select-inner">
+      <div class="partner-select-links partner-select-links-three jump-link-grid">
+        <a href="#corporate"><span><small>ON-SITE / OUTSOURCING</small><strong>法人の方</strong></span><i>↓</i></a>
+        <a href="#freelance"><span><small>FREELANCE</small><strong>個人事業主の方</strong></span><i>↓</i></a>
+        <a href="#product"><span><small>BUSINESS ALLIANCE</small><strong>製品・サービスの業務提携</strong></span><i>↓</i></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="partner-section" id="corporate" data-content-section="corporate">
+    <div class="partner-section-inner">
+      <div class="partner-heading"><p class="section-no">ON-SITE / OUTSOURCING</p><h2>法人の方</h2></div>
+      <div class="partner-content partner-reading-content">
+        <p class="partner-section-lead reading-summary">オンサイト・アウトソーシングでは、「チーム体制」を基本にパートナーシップを築いています。</p>
+        <div class="partner-prose">
+          <h3><span class="text-phrase"><span class="heading-unit">チームとして、</span></span><span class="text-phrase"><span class="heading-unit">より強い</span><span class="heading-unit">開発体制へ</span></span></h3>
+          <p>中小規模のIT企業では、お客様先に少人数で常駐することも多く、同じ会社の人材だけでチームを構成することが難しい場合があります。</p><p>当社では「全員SE、全員営業」をモットーに、お客様のニーズや案件情報を速やかに共有。パートナー企業様のリーダー・メンバーと当社チームが合流し、より強固な体制をつくることを目指しています。</p>
+        </div>
+      <figure class="partner-diagram" aria-labelledby="partner-team-caption"><figcaption id="partner-team-caption">パートナー企業様と当社チームが合流</figcaption><div class="team-sources"><div class="team-node"><strong>当社チーム</strong><span>ニーズ・案件情報の共有</span></div><div class="team-node"><strong>パートナー企業様</strong><span>リーダー・メンバー</span></div></div><div class="team-merge" aria-hidden="true"></div><div class="team-result">チーム体制で開発を支える</div></figure>
+</div>
+    </div>
+  </section>
+
+  <section class="partner-section partner-section-corporate" id="freelance" data-content-section="freelance">
+    <div class="partner-section-inner">
+      <div class="partner-heading"><p class="section-no">FREELANCE</p><h2>個人事業主の方</h2></div>
+      <div class="partner-content partner-reading-content">
+        <p class="partner-section-lead reading-summary">当社では、個人事業主の皆様とも協業しています。以下の諸条件をご参考に、ぜひご応募ください。</p>
+
+        <div class="partner-prose">
+          <h3><span class="heading-unit">個人事業主契約及び</span><span class="heading-unit">諸条件について</span></h3>
+          <p>基本契約書を交わし、双方の捺印をもって契約となります。基本契約書には取引の基本的な約束事を明記し、個別契約書（注文書）にて業務ごとの詳細条件を定めます。</p><p>基本契約書には収入印紙4,000円が必要です。</p>
+        </div>
+
+        <div class="partner-condition-block">
+          <h3><span class="heading-unit">注文書に</span><span class="heading-unit">明記されるもの</span></h3>
+          <ol>
+            <li><span>01</span>契約期間</li><li><span>02</span>業務名称及び開発内容</li>
+            <li><span>03</span>納入物件及び納入期日</li><li><span>04</span>基本月額委託料</li>
+            <li><span>05</span>基本月額時間条件</li><li><span>06</span>超過・控除単価</li>
+            <li><span>07</span>支払サイト</li>
+          </ol>
+        </div>
+
+        <div class="partner-notes">
+          <h3>補足事項</h3>
+          <dl>
+            <div><dt>契約期間</dt><dd>通常6ヶ月から1年です。</dd></div>
+            <div><dt>納入物件・納入期日</dt><dd>毎月末日に作業月報を納めます。</dd></div>
+            <div><dt>基本時間条件</dt><dd>通常は月稼働時間140H〜180H固定です。140H未満は控除、180H超は超過精算となります。</dd></div>
+            <div><dt>支払サイト</dt><dd>45日です。月末締めの場合は翌々月15日に振込となります。事情に応じて別途相談可能です。</dd></div>
+          </dl>
+        </div>
+
+        <div class="partner-fee">
+          <h3>基本月額委託料 <small>目安</small></h3>
+          <div class="partner-fee-grid">
+            <div><h4>PG</h4><table class="partner-fee-table"><caption class="skip-fee-caption">PGの基本月額委託料の目安</caption><tbody><tr><th scope="row">2年経験者</th><td>33万円</td></tr><tr><th scope="row">3年経験者</th><td>35万円</td></tr><tr><th scope="row">5年経験者</th><td>40万円</td></tr><tr><th scope="row">8年経験者</th><td>45万円</td></tr><tr><th scope="row">10年以上経験者</th><td>48万円以上</td></tr></tbody></table></div>
+            <div><h4>SE <small>PG4年以上・設計経験年数</small></h4><table class="partner-fee-table"><caption class="skip-fee-caption">SE PG4年以上・設計経験年数の基本月額委託料の目安</caption><tbody><tr><th scope="row">2年経験者</th><td>50万円</td></tr><tr><th scope="row">3年経験者</th><td>53万円</td></tr><tr><th scope="row">5年経験者</th><td>55万円</td></tr><tr><th scope="row">7年以上経験者</th><td>60万円以上</td></tr></tbody></table></div>
+          </div>
+          <p class="partner-caption">※上記金額は目安です。業務分野、技術分野によって変わる場合があります。</p>
+        </div>
+
+</div>
+    </div>
+  </section>
+
+  <section class="partner-section" id="product" data-content-section="product">
+    <div class="partner-section-inner">
+      <div class="partner-heading"><p class="section-no">PRODUCT / SERVICE</p><h2><span class="heading-unit">製品・サービスでの</span><span class="heading-unit">パートナーシップ</span></h2></div>
+      <div class="partner-content partner-reading-content">
+        <p class="partner-section-lead reading-summary">代理店契約、業務提携についてもパートナーを募集しています。</p>
+        <div class="illustrated-body"><div class="partner-prose">
+          <h3><span class="heading-unit">互いの商材に、</span><span class="heading-unit">新しい価値を</span></h3>
+          <p>当社取扱いの製品・サービスを御社の商材として活用いただくことや、御社取扱いの製品・サービスの販売促進を当社がお手伝いすることも可能です。</p><p>国内外企業との取引実績を活かし、商材に付加価値を加えた提案を目指します。</p>
+        </div><figure class="socost-art body-art"><img src="{{ url_for('static', filename='images/socost/alliance.png') }}" alt="" width="1080" height="1080" loading="lazy" decoding="async"></figure></div>
+      <figure class="partner-diagram" aria-labelledby="partner-alliance-caption"><figcaption id="partner-alliance-caption">製品・サービスの相互活用</figcaption><div class="alliance-flow"><div class="alliance-route"><div class="team-node"><strong>当社</strong></div><p class="alliance-direction">当社の取扱い製品・サービスを御社の商材に<span aria-hidden="true">↓</span></p><div class="team-node"><strong>パートナー企業様</strong></div></div><div class="alliance-route"><div class="team-node"><strong>パートナー企業様</strong></div><p class="alliance-direction">御社の製品・サービスの販売促進を当社が支援<span aria-hidden="true">↓</span></p><div class="team-node"><strong>当社</strong></div></div></div></figure>
+</div>
+    </div>  </section>
+
+  <section class="partner-final-contact subpage-motion">
+    <div class="partner-final-contact-inner">
+      <p class="section-no">CONTACT</p>
+      <h2><span class="heading-unit">ビジネス</span><span class="heading-unit">パートナーに</span><span class="heading-unit">関するご相談</span></h2>
+      <p>法人企業様、個人事業主様、製品・サービスに関する協業など、内容に応じたお問い合わせを受け付けています。</p>
+      <div class="partner-contact-options">
+        <a class="contact-action" href="{{ url_for('contact') }}?type=onsite-corporate"><span>法人企業様</span><i aria-hidden="true">→</i></a>
+        <a class="contact-action" href="{{ url_for('contact') }}?type=onsite-freelance"><span>個人事業主様</span><i aria-hidden="true">→</i></a>
+        <a class="contact-action" href="{{ url_for('contact') }}?type=product-partner"><span>協業・業務提携</span><i aria-hidden="true">→</i></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+    <nav class="footer-policy" aria-label="サイトポリシー">
+      <a href="{{ url_for('policy_terms') }}">サイト利用規定</a>
+      <a href="{{ url_for('policy_privacy') }}">個人情報取扱について</a>
+      <a href="{{ url_for('policy_protection') }}">個人情報保護方針</a>
+      <a href="{{ url_for('policy_security') }}">セキュリティポリシー</a>
+      <a href="{{ url_for('policy_disclaimer') }}">免責事項</a>
+      <a href="{{ url_for('policy_harassment') }}">採用活動におけるハラスメント防止方針</a>
+
+    </nav>
+    <div class="footer-main">
+      <div class="footer-identity">
+        <span class="footer-wordmark">株式会社アトラスコンピュータ</span>
+        <div class="footer-certifications" role="group" aria-label="認証マーク">
+        <img src="{{ url_for('static', filename='images/p_JP.png') }}" alt="Privacy Mark 10824656" width="216" height="216" loading="lazy" decoding="async">
+        <img src="{{ url_for('static', filename='images/icd.png') }}" alt="i Competency Dictionary 2023 Silver Plus 01-03102(05)" width="613" height="613" loading="lazy" decoding="async">
+      </div>
+      </div>
+      <small>© 2026 ATLAS COMPUTER CO.,LTD.</small>
+    </div>
+  </footer>
+<script src="{{ url_for('static', filename='js/script.js') }}?v=20261007-review3"></script>
+</body>
+</html>

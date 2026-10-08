@@ -1,0 +1,1027 @@
+/* Unified visual system trial. Loaded last; does not alter page content or behavior. */
+:root{--atlas-blue:#247fc1;--atlas-ink:#164f7d;--atlas-mint:#a8ddc7;--atlas-paper:#f8fcff}
+html{scroll-behavior:smooth}
+body{color:#213f57}
+.site-header{background:rgba(255,255,255,.97)!important;box-shadow:0 2px 14px rgba(24,91,141,.07)}
+/* White header connects to the light upper half of the homepage hero. */
+.home-page .site-header,
+.home-page .site-header.scrolled{
+  background:#fff!important;
+  border-bottom:0!important;
+  box-shadow:none!important;
+}
+.site-header .brand{color:#16588d!important}
+.site-header .desktop-nav a{color:#205779}
+.site-header .desktop-nav a:hover{color:#247fc1}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #247fc1;outline-offset:3px}
+.home-page .hero{background-position:center,center,center!important}
+.home-page .hero-content{max-width:740px}
+.home-page .atlas-overview{background:radial-gradient(ellipse 25% 18% at -5% 42%,rgba(168,221,199,.35),transparent 85%),linear-gradient(165deg,#fff,#f7fbfe 58%,#eaf5fb);padding-top:86px;padding-bottom:98px}
+.home-page .overview-intro{max-width:1240px;margin-bottom:38px}
+.home-page .atlas-eight-grid{gap:22px}
+.home-page .atlas-eight-card{border:1px solid #d7e6ef;box-shadow:0 10px 27px rgba(27,90,137,.09);border-radius:14px}
+.home-page .atlas-eight-photo{height:152px;filter:saturate(.82)}
+.home-page .atlas-eight-copy{min-height:116px;padding:18px 46px 19px 18px;border-top-width:3px}
+.home-page .atlas-eight-copy strong{font-size:clamp(16px,1.2vw,19px)}
+.home-page .atlas-eight-card:hover{box-shadow:0 18px 36px rgba(27,90,137,.14)}
+.home-page .news{padding-top:55px!important;padding-bottom:60px!important;background:linear-gradient(180deg,#f5fbff,#fff 42%)}
+.home-page .news .section-heading{margin-bottom:24px!important}
+.home-page .news-list a{padding-top:13px!important;padding-bottom:13px!important}
+.home-page footer,.home-page .site-footer{border-top:1px solid #d8eaf0}
+.owned-subpage,.service-page{background:#fff}
+.company-page .company-title,.business-detail-page .company-title,.partner-page .partner-title,.partner-page .partner-hero,.service-page .sub-hero,.service-page .recruit-sub,.contact-page .contact-page-title{
+ position:relative;isolation:isolate;overflow:hidden;
+ background:radial-gradient(ellipse 37% 95% at 100% 8%,rgba(163,222,197,.45),transparent 83%),linear-gradient(115deg,#f8fcff 0%,#e6f4fc 50%,#98cce8 100%)!important;
+ color:#164f7d;
+}
+.company-page .company-title::before,.business-detail-page .company-title::before,.partner-page .partner-title::before,.service-page .sub-hero::before,.contact-page .contact-page-title::before{
+ content:"";position:absolute;pointer-events:none;width:55%;height:160%;right:-18%;top:-50%;border:1px solid rgba(255,255,255,.48);border-radius:50%;transform:rotate(-22deg);z-index:-1;
+}
+.company-page .company-title,.business-detail-page .company-title{min-height:340px}
+.service-page .recruit-sub{min-height:340px}
+.company-page .company-title h1,.business-detail-page .company-title h1,.service-page .sub-hero h1,.contact-page .contact-page-title h1{color:#124e80}
+.company-page .company-title .company-lead,.business-detail-page .company-title .company-lead{color:#386d8e}
+.company-page .company-guide-thumb{background:linear-gradient(135deg,#b7deef,#69aed6)!important;text-shadow:none}
+.company-page .company-more-group,.business-detail-page #software,.contact-page .form-section{background:#f7fbfe}
+.business-detail-page #support{background:#eaf5fb}
+.company-page .company-guide-list .activity-item,.service-page .people-card{box-shadow:0 12px 28px rgba(29,91,137,.1);border-radius:14px}
+.service-page .people-card,.service-page .people-card:nth-child(2),.service-page .people-card:nth-child(3){
+ background:linear-gradient(155deg,#2b84bc,#145b94 72%,#6dbcae)!important;
+}
+.contact-page .form-steps{border-color:#c6e4e9}
+.contact-page input:focus,.contact-page textarea:focus,.contact-page select:focus{outline-color:#247fc1}
+@media(max-width:1050px){.home-page .atlas-eight-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.home-page .atlas-eight-grid{grid-template-columns:1fr}.home-page .atlas-overview{padding:64px 20px 74px}.home-page .news{padding-top:40px!important;padding-bottom:46px!important}.company-page .company-title,.business-detail-page .company-title{min-height:285px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.home-page .atlas-eight-card,.home-page .atlas-eight-photo{transition:none}}
+
+
+/* Visible hero redesign trial: editorial split photo, not another all-over pale gradient.
+   Photo is temporary; no claim that subjects are Atlas employees. */
+.home-page .hero{
+ position:relative;
+ min-height:min(790px,92svh);
+ display:flex;
+ align-items:center;
+ overflow:hidden;
+ border-radius:0 0 5% 0 / 0 0 5% 0!important;
+ background:
+ linear-gradient(90deg,#f6fbff 0%,#edf7fd 43%,rgba(237,247,253,.98) 48%,rgba(237,247,253,0) 49%),
+ #e8f4fb!important;
+}
+.home-page .hero::before{
+ content:"";display:block!important;
+ position:absolute;inset:0 0 0 auto;
+ width:52%;height:100%;
+ background:
+ linear-gradient(90deg,rgba(237,247,253,.12),rgba(21,89,142,.09)),
+ url("https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat;
+ animation:none!important;
+ transform:none!important;
+ z-index:0;
+ clip-path:ellipse(105% 105% at 100% 50%);
+}
+.home-page .hero::after{
+ content:"";display:block!important;
+ position:absolute;z-index:0;pointer-events:none;
+ width:430px;height:430px;right:-170px;bottom:-225px;
+ border:0;
+ border-radius:0;
+}
+.home-page .hero .atlas-atmosphere{display:none!important}
+.home-page .hero-content{
+ position:relative;z-index:2;
+ width:min(53%,760px);
+ max-width:none!important;
+ margin-left:max(7vw,32px);
+ padding:90px 30px 100px 0;
+}
+.home-page .hero h1{
+ font-size:clamp(35px,3.6vw,65px);
+ line-height:1.37;
+ letter-spacing:.025em;
+ color:#114d80;
+ text-shadow:none;
+}
+.home-page .hero-copy{max-width:570px;color:#315e7b;line-height:1.95}
+.home-page .hero-extra{color:#1e6798}
+.home-page .hero .scroll-cue{z-index:3}
+.home-page .hero .hero-side-note{z-index:3;color:#f5fbff}
+.home-page .atlas-overview{padding-top:76px}
+.home-page .atlas-overview::before{display:none!important}
+@media(max-width:850px){
+ .home-page .hero{
+ min-height:760px;
+ align-items:flex-start;
+ background:linear-gradient(180deg,#f6fbff,#eaf6fd)!important;
+ border-radius:0 0 6% 0 / 0 0 2% 0!important;
+ }
+ .home-page .hero::before{
+ inset:auto 0 0;width:100%;height:44%;
+ background:linear-gradient(180deg,rgba(234,246,253,.05),rgba(17,78,128,.14)),url("https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1100&q=80") center/cover no-repeat;
+ clip-path:ellipse(105% 100% at 50% 100%);
+ }
+ .home-page .hero::after{width:260px;height:260px;border-width:28px;right:-110px;bottom:-115px}
+ .home-page .hero-content{width:auto;margin:0;padding:125px 26px 30px}
+ .home-page .hero h1{font-size:clamp(34px,7vw,50px)}
+ .home-page .hero .hero-side-note{display:none}
+}
+
+
+/* Responsive hero correction: let Japanese text wrap before it reaches the photo. */
+.home-page .hero{box-sizing:border-box}
+.home-page .hero-content{
+  box-sizing:border-box;
+  min-width:0;
+  width:min(53%,760px);
+  margin-left:clamp(28px,5vw,88px);
+  padding-right:clamp(18px,2.5vw,40px);
+}
+.home-page .hero h1{
+  max-width:100%;
+  white-space:normal!important;
+  overflow-wrap:anywhere;
+  font-size:clamp(32px,3.35vw,59px);
+  line-height:1.42;
+}
+.home-page .hero .eyebrow{overflow-wrap:anywhere}
+@media (min-width:851px) and (max-width:1180px){
+  .home-page .hero-content{
+    width:57%;
+    margin-left:clamp(28px,4vw,55px);
+    padding-right:20px;
+  }
+  .home-page .hero::before{width:46%;background-position:center,right center}
+  .home-page .hero h1{font-size:clamp(31px,3.25vw,42px)}
+}
+@media (max-width:850px){
+  .home-page .hero{height:auto;min-height:760px}
+  .home-page .hero-content{
+    width:100%;
+    max-width:100%!important;
+    margin:0;
+    padding:clamp(100px,13vw,130px) clamp(22px,5vw,42px) 40px;
+  }
+  .home-page .hero h1{
+    max-width:100%;
+    font-size:clamp(30px,6vw,48px);
+  }
+  .home-page .hero-copy br{display:none}
+  .home-page .hero::before{height:40%}
+}
+@media (max-width:480px){
+  .home-page .hero{min-height:720px}
+  .home-page .hero-content{padding-top:108px;padding-left:22px;padding-right:22px}
+  .home-page .hero h1{font-size:clamp(29px,7.3vw,35px);line-height:1.48}
+  .home-page .hero .eyebrow{font-size:10px;letter-spacing:.09em}
+  .home-page .hero::before{height:36%}
+}
+
+
+/* Trial: one continuous, gently animated canvas across the entire TOP page.
+   No section-edge cutout and no hero stock photo. */
+.home-page{
+  background:#f1f9fd;
+  isolation:isolate;
+}
+.home-page::before{
+  content:"";
+  position:fixed;
+  inset:-18%;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse 37% 33% at 85% 17%,rgba(141,210,234,.40),transparent 78%),
+    radial-gradient(ellipse 34% 31% at 12% 64%,rgba(164,223,197,.34),transparent 78%),
+    radial-gradient(ellipse 42% 35% at 75% 92%,rgba(170,218,243,.38),transparent 80%),
+    linear-gradient(155deg,#f8fcff 0%,#eff8fd 48%,#f6fcff 100%);
+  animation:atlas-canvas-drift 32s ease-in-out infinite alternate;
+  will-change:transform;
+}
+@keyframes atlas-canvas-drift{
+  0%{transform:translate3d(-1.5%,0,0) scale(1)}
+  100%{transform:translate3d(1.5%,-1.2%,0) scale(1.035)}
+}
+.home-page .hero{
+  min-height:clamp(620px,78svh,790px);
+  height:auto;
+  padding:0 clamp(22px,6vw,105px);
+  border-radius:0!important;
+  margin:0;
+  background:transparent!important;
+  overflow:visible;
+}
+.home-page .hero::before,.home-page .hero::after{
+  content:none!important;
+  display:none!important;
+  background:none!important;
+}
+.home-page .hero-noise,.home-page .hero .atlas-atmosphere{display:none!important}
+.home-page .hero-content{
+  width:min(100%,930px)!important;
+  max-width:930px!important;
+  margin:0!important;
+  padding:125px 0 105px!important;
+}
+.home-page .hero h1{
+  max-width:900px;
+  font-size:clamp(36px,4.15vw,70px);
+  line-height:1.45;
+  white-space:normal!important;
+  overflow-wrap:normal;
+  word-break:normal;
+  text-wrap:pretty;
+}
+.home-page .hero-copy{max-width:640px}
+.home-page .hero .hero-side-note{color:#5283a5}
+.home-page .atlas-overview{
+  background:transparent!important;
+  padding-top:clamp(58px,6vw,95px);
+}
+.home-page .atlas-overview::before,.home-page .atlas-overview::after{
+  display:none!important;
+  content:none!important;
+}
+.home-page .news{
+  background:transparent!important;
+}
+@media(max-width:850px){
+  .home-page .hero{
+    min-height:clamp(570px,76svh,730px);
+    padding:0 clamp(22px,5vw,42px);
+    align-items:center;
+  }
+  .home-page .hero-content{
+    width:100%!important;
+    padding:110px 0 95px!important;
+  }
+  .home-page .hero h1{font-size:clamp(34px,6vw,50px)}
+  .home-page .hero .hero-side-note{display:none}
+}
+@media(max-width:480px){
+  .home-page .hero{min-height:590px}
+  .home-page .hero-content{padding:110px 0 80px!important}
+  .home-page .hero h1{font-size:clamp(31px,8vw,39px)}
+  .home-page .hero .eyebrow{font-size:10px;letter-spacing:.08em}
+  .home-page .hero .scroll-cue{left:22px;bottom:25px}
+}
+@media(prefers-reduced-motion:reduce){
+  .home-page::before{animation:none;will-change:auto}
+}
+
+
+/* Continuous canvas v2: noticeable slow motion without decorative labels. */
+.home-page{
+  background:linear-gradient(135deg,#f2faff 0%,#eaf6fc 45%,#f4fbff 100%);
+}
+.home-page::before{
+  inset:-25%;
+  z-index:0;
+  opacity:1;
+  background:
+    radial-gradient(ellipse 29% 31% at 20% 33%,rgba(84,177,223,.32) 0%,rgba(117,201,229,.20) 45%,transparent 76%),
+    radial-gradient(ellipse 32% 34% at 79% 58%,rgba(111,211,171,.31) 0%,rgba(160,225,202,.18) 45%,transparent 76%),
+    radial-gradient(ellipse 30% 29% at 58% 87%,rgba(99,177,229,.27),transparent 76%);
+  animation:atlas-canvas-visible 20s ease-in-out infinite alternate;
+  will-change:transform;
+}
+.home-page::after{
+  content:"";
+  position:fixed;
+  inset:-25%;
+  z-index:0;
+  pointer-events:none;
+  background:radial-gradient(ellipse 28% 32% at 73% 17%,rgba(108,185,227,.23),transparent 77%);
+  animation:atlas-canvas-counter 26s ease-in-out infinite alternate;
+  will-change:transform;
+}
+@keyframes atlas-canvas-visible{
+  from{transform:translate3d(-5%,2%,0) rotate(-5deg) scale(1)}
+  to{transform:translate3d(5%,-3%,0) rotate(5deg) scale(1.07)}
+}
+@keyframes atlas-canvas-counter{
+  from{transform:translate3d(5%,-4%,0) scale(1)}
+  to{transform:translate3d(-6%,5%,0) scale(1.1)}
+}
+.home-page .hero,.home-page .atlas-overview,.home-page .news{
+  position:relative;
+  z-index:1;
+  background:transparent!important;
+}
+.home-page .hero{overflow:visible}
+.home-page .hero .scroll-cue,.home-page .hero .hero-side-note{display:none!important}
+@media(prefers-reduced-motion:reduce){
+  .home-page::before,.home-page::after{animation:none;will-change:auto}
+}
+
+
+/* Motion study v3: distinct flowing ribbons, with continuous color behind all sections. */
+.home-page .atlas-motion-bg{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  overflow:hidden;
+  opacity:.92;
+}
+.home-page .atlas-motion-svg{
+  display:block;
+  width:100%;
+  height:100%;
+  min-width:1100px;
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+}
+.home-page .atlas-ribbon{
+  transform-box:fill-box;
+  transform-origin:center;
+  will-change:transform;
+}
+.home-page .atlas-ribbon-one{
+  animation:atlas-ribbon-flow 13s ease-in-out infinite alternate;
+}
+.home-page .atlas-ribbon-two{
+  animation:atlas-ribbon-counter 17s ease-in-out infinite alternate;
+}
+@keyframes atlas-ribbon-flow{
+  0%{transform:translate3d(-85px,45px,0) rotate(-5deg)}
+  50%{transform:translate3d(45px,-42px,0) rotate(3deg)}
+  100%{transform:translate3d(105px,24px,0) rotate(-2deg)}
+}
+@keyframes atlas-ribbon-counter{
+  0%{transform:translate3d(100px,-38px,0) rotate(5deg)}
+  50%{transform:translate3d(-45px,35px,0) rotate(-4deg)}
+  100%{transform:translate3d(-100px,-25px,0) rotate(2deg)}
+}
+@media(max-width:700px){
+  .home-page .atlas-motion-bg{opacity:.55}
+  .home-page .atlas-motion-svg{min-width:900px}
+}
+@media(prefers-reduced-motion:reduce){
+  .home-page .atlas-ribbon{animation:none!important;will-change:auto}
+}
+
+
+/* Particle trial: replace ribbons, keep the approved blue/mint background. */
+.home-page .atlas-motion-bg{display:none!important}
+.home-page .atlas-particles{
+  position:fixed;inset:0;width:100%;height:100%;
+  display:block;z-index:0;pointer-events:none;
+}
+.home-page .hero,.home-page .atlas-overview,.home-page .news{z-index:1}
+@media(max-width:700px){.home-page .atlas-particles{opacity:.72}}
+
+
+/* Azure palette trial: deeper blue atmosphere while preserving white cards. */
+.home-page{
+  background:linear-gradient(135deg,#e5f3fc 0%,#d9edfa 47%,#e7f4fb 100%);
+}
+.home-page::before{
+  background:
+    radial-gradient(ellipse 31% 34% at 19% 33%,rgba(47,145,210,.42) 0%,rgba(79,169,219,.26) 46%,transparent 77%),
+    radial-gradient(ellipse 32% 34% at 82% 56%,rgba(68,161,208,.35) 0%,rgba(99,191,217,.20) 48%,transparent 78%),
+    radial-gradient(ellipse 29% 30% at 53% 88%,rgba(48,125,198,.30),transparent 77%);
+}
+.home-page::after{
+  background:radial-gradient(ellipse 30% 35% at 72% 17%,rgba(55,144,210,.29),transparent 77%);
+}
+.home-page .atlas-overview .overview-intro h2{color:#11548b}
+.home-page .atlas-eight-card{
+  border-color:#c5e0f2;
+  box-shadow:0 12px 29px rgba(20,83,139,.11);
+}
+.home-page .atlas-eight-copy{border-top-color:#70b7e6}
+.home-page .atlas-eight-card:nth-child(3n) .atlas-eight-copy{border-top-color:#65b5d9}
+.home-page .atlas-eight-arrow{background:#1479bc}
+
+/* Azure and white study: airy layered background, clear typography. */
+.home-page{background:linear-gradient(145deg,#f8fcff 0%,#e4f3fc 48%,#f6fbff 100%)}
+.home-page::before{
+  opacity:.88;
+  background:
+    radial-gradient(ellipse 32% 35% at 18% 28%,rgba(55,150,218,.35),transparent 76%),
+    radial-gradient(ellipse 31% 36% at 85% 66%,rgba(64,149,211,.27),transparent 76%),
+    radial-gradient(ellipse 27% 30% at 49% 92%,rgba(114,190,228,.20),transparent 76%);
+}
+.home-page::after{
+  background:radial-gradient(ellipse 27% 30% at 74% 15%,rgba(90,169,220,.20),transparent 76%);
+}
+.home-page .atlas-particles{opacity:.94}
+.home-page .atlas-eight-card{
+  border-color:rgba(164,205,233,.68);
+  box-shadow:0 12px 30px rgba(24,93,153,.12),0 2px 8px rgba(24,93,153,.04);
+}
+.home-page .atlas-eight-card:hover{
+  box-shadow:0 19px 38px rgba(24,93,153,.19),0 4px 12px rgba(24,93,153,.08);
+}
+
+/* Hero: desktop single line; subtitle lines appear after last headline character. */
+.home-page .hero-content{width:100%!important;max-width:100%!important}
+.home-page .hero h1{overflow-wrap:normal;word-break:normal}
+@media(min-width:1200px){
+  .home-page .hero{padding-inline:clamp(32px,4vw,78px)}
+  .home-page .hero h1{
+    white-space:nowrap!important;
+    width:max-content;
+    max-width:100%;
+    font-size:clamp(37px,3.25vw,61px);
+    letter-spacing:0;
+  }
+}
+@media(max-width:1199px){
+  .home-page .hero h1{white-space:normal!important}
+}
+.home-page .hero-copy .hero-copy-line{display:block}
+.home-page .hero-content .hero-copy-line,
+.home-page .hero-content .hero-extra{opacity:0;transform:translateY(11px)}
+.home-page .hero-content.visible .hero-copy-line,
+.home-page .hero-content.visible .hero-extra{
+  animation:atlas-copy-enter .65s ease-out both;
+}
+.home-page .hero-content.visible .hero-copy-line:first-child{animation-delay:2.05s}
+.home-page .hero-content.visible .hero-copy-line:nth-child(2){animation-delay:2.62s}
+.home-page .hero-content.visible .hero-extra{animation-delay:3.19s}
+@keyframes atlas-copy-enter{
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* News: white hover surfaces on the continuous blue canvas. */
+.home-page .news-list a{
+  border-radius:9px;
+  transition:background-color .24s ease,box-shadow .24s ease,transform .24s ease;
+}
+.home-page .news-list a:hover,
+.home-page .news-list a:focus-visible{
+  background:#fff!important;
+  box-shadow:0 9px 24px rgba(27,91,149,.13);
+  transform:translateY(-2px);
+}
+.home-page .news-list a:focus-visible{outline:2px solid #207bb8;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){
+  .home-page .hero-content .hero-copy-line,
+  .home-page .hero-content .hero-extra{opacity:1;transform:none;animation:none!important}
+  .home-page .news-list a{transition:none}
+}
+
+
+/* Reduce the empty stretch between hero copy and the overview heading. */
+@media(min-width:851px){
+  .home-page .hero{
+    min-height:clamp(470px,60svh,610px);
+  }
+  .home-page .hero-content{
+    padding-top:100px!important;
+    padding-bottom:55px!important;
+  }
+  .home-page .atlas-overview{
+    padding-top:clamp(24px,3vw,45px)!important;
+  }
+}
+@media(max-width:850px){
+  .home-page .hero{min-height:clamp(480px,65svh,620px)}
+  .home-page .hero-content{padding-bottom:35px!important}
+  .home-page .atlas-overview{padding-top:35px!important}
+}
+@media(max-width:480px){
+  .home-page .hero{min-height:510px}
+  .home-page .hero-content{padding-bottom:30px!important}
+  .home-page .atlas-overview{padding-top:28px!important}
+}
+
+
+/* Layout correction: let content, not viewport height, determine hero size.
+   Keep the overview entrance visible and aligned with the cards. */
+.home-page .hero{
+  height:auto!important;
+  min-height:0!important;
+  align-items:flex-start;
+  padding-top:clamp(98px,9vw,142px)!important;
+  padding-bottom:clamp(38px,4vw,68px)!important;
+}
+.home-page .hero-content{
+  padding:0!important;
+  margin:0!important;
+}
+.home-page .atlas-overview{
+  padding-top:clamp(32px,4vw,58px)!important;
+}
+.home-page .overview-intro{
+  width:100%;
+  max-width:1240px;
+  margin:0 auto 36px!important;
+}
+.home-page .overview-intro.reveal{
+  transform:translateY(12px);
+  transition:opacity .55s ease,transform .55s ease;
+}
+.home-page .overview-intro.reveal.visible{transform:none}
+@media(max-width:850px){
+  .home-page .hero{
+    padding-top:clamp(95px,15vw,130px)!important;
+    padding-bottom:40px!important;
+  }
+  .home-page .atlas-overview{padding-top:30px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .home-page .overview-intro.reveal{transform:none;transition:none}
+}
+
+/* Remove legacy teal/green separators; keep the new blue-and-white palette. */
+.home-page .site-footer{
+  position:relative;
+  width:100%;
+  height:auto!important;
+  min-height:0!important;
+  border-top:1px solid #91c4e5!important;
+  background:#103653;
+  padding:clamp(32px,4vw,55px) clamp(22px,6vw,110px) 26px;
+}
+.home-page .site-footer::before{display:none!important;content:none!important}
+.home-page .footer-main{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.home-page .footer-main strong{display:block;max-width:100%}
+.home-page .footer-main img{display:block;max-width:min(200px,100%);height:auto}
+.home-page .footer-main p{max-width:100%;overflow-wrap:anywhere}
+.home-page .footer-policy{row-gap:10px}
+.home-page .atlas-eight-copy,
+.home-page .atlas-eight-card:nth-child(3n) .atlas-eight-copy{
+  border-top-color:#72b7e4!important;
+}
+.home-page .atlas-eight-contact .atlas-eight-photo{
+  background:radial-gradient(circle at 78% 25%,rgba(212,239,255,.9),transparent 43%),
+             linear-gradient(135deg,#d7eefb,#599bc9)!important;
+}
+@media(max-width:800px){
+  .home-page .footer-main{display:flex;flex-direction:column;align-items:flex-start}
+  .home-page .footer-main p{text-align:left;margin:0}
+}
+
+
+/* Centered hero layout trial. Text stays readable on narrow screens. */
+.home-page .hero{
+  justify-content:center!important;
+  padding-left:clamp(20px,4vw,72px)!important;
+  padding-right:clamp(20px,4vw,72px)!important;
+}
+.home-page .hero-content{
+  width:100%!important;
+  max-width:1320px!important;
+  text-align:center;
+  margin-inline:auto!important;
+}
+.home-page .hero h1{
+  width:auto!important;
+  max-width:100%!important;
+  margin-inline:auto;
+  text-align:center;
+  font-size:clamp(31px,3.25vw,61px);
+}
+.home-page .hero .eyebrow,
+.home-page .hero .hero-copy,
+.home-page .hero .hero-extra{
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+}
+.home-page .hero .hero-copy{max-width:750px}
+@media(max-width:1199px){
+  .home-page .hero h1{white-space:normal!important;text-wrap:balance}
+}
+@media(max-width:650px){
+  .home-page .hero h1{font-size:clamp(30px,7vw,42px);line-height:1.45}
+  .home-page .hero .eyebrow{font-size:10px;letter-spacing:.07em}
+}
+
+/* Hide the TOP header when scrolling down; show when scrolling up or menu is open. */
+.home-page .site-header{
+  transition:transform .32s ease,background-color .3s ease,box-shadow .3s ease!important;
+  will-change:transform;
+}
+.home-page .site-header.header-hidden{
+  transform:translateY(calc(-100% - 4px));
+  pointer-events:none;
+}
+@media(prefers-reduced-motion:reduce){
+  .home-page .site-header{transition:none!important}
+}
+
+
+/* Avoid animated browser scroll restoration on reload (global styles use smooth). */
+html:has(body.home-page){scroll-behavior:auto!important}
+
+/* Centered, spacious hero: preserve natural content height and keep next section close. */
+.home-page .hero{
+  min-height:clamp(610px,83svh,820px)!important;
+  padding-top:clamp(110px,13vh,175px)!important;
+  padding-bottom:clamp(80px,11vh,145px)!important;
+  align-items:center!important;
+}
+.home-page .hero-content{
+  max-width:1450px!important;
+  margin-inline:auto!important;
+  text-align:center;
+}
+.home-page .hero h1{
+  margin-inline:auto!important;
+  font-size:clamp(35px,3.55vw,70px);
+}
+.home-page .atlas-overview{padding-top:clamp(24px,3vw,48px)!important}
+@media(max-width:1199px){
+  .home-page .hero h1{font-size:clamp(33px,4.5vw,54px);text-wrap:balance}
+}
+@media(max-width:650px){
+  .home-page .hero{
+    min-height:clamp(580px,78svh,720px)!important;
+    padding-top:110px!important;
+    padding-bottom:65px!important;
+  }
+  .home-page .hero h1{font-size:clamp(30px,7vw,42px)}
+}
+
+
+/* Full first-view hero: prevent the next section's heading being clipped at viewport bottom. */
+.home-page .hero{
+  min-height:100svh!important;
+  height:auto!important;
+  box-sizing:border-box;
+  padding-top:clamp(120px,15vh,190px)!important;
+  padding-bottom:clamp(100px,15vh,190px)!important;
+  align-items:center!important;
+}
+.home-page .hero-content{width:100%!important}
+.home-page .atlas-overview{padding-top:clamp(50px,6vw,90px)!important}
+.home-page .hero-philosophy-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:26px;
+  margin:34px auto 0;
+  padding:12px 13px 12px 27px;
+  border:1px solid #287bb3;
+  border-radius:999px;
+  color:#13568b;
+  background:rgba(255,255,255,.68);
+  box-shadow:0 7px 23px rgba(28,98,155,.09);
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:.055em;
+  text-decoration:none;
+  opacity:0;
+  transform:translateY(10px);
+  transition:background .25s ease,color .25s ease,box-shadow .25s ease;
+}
+.home-page .hero-content.visible .hero-philosophy-link{
+  animation:atlas-copy-enter .65s ease-out 3.7s both;
+}
+.home-page .hero-philosophy-link:hover,
+.home-page .hero-philosophy-link:focus-visible{
+  background:#155c96;
+  color:#fff;
+  box-shadow:0 10px 28px rgba(22,89,150,.19);
+}
+.home-page .hero-philosophy-arrow{
+  display:grid;
+  place-items:center;
+  width:31px;
+  height:31px;
+  border-radius:50%;
+  background:#1d79b7;
+  color:#fff;
+  font-size:18px;
+}
+.home-page .hero-philosophy-link:hover .hero-philosophy-arrow,
+.home-page .hero-philosophy-link:focus-visible .hero-philosophy-arrow{
+  background:#fff;color:#155c96;
+}
+@media(max-width:650px){
+  .home-page .hero{
+    min-height:100svh!important;
+    padding-top:110px!important;
+    padding-bottom:80px!important;
+  }
+  .home-page .hero-philosophy-link{margin-top:28px}
+}
+@media(prefers-reduced-motion:reduce){
+  .home-page .hero-philosophy-link,
+  .home-page .hero-content.visible .hero-philosophy-link{
+    opacity:1;transform:none;animation:none!important;
+  }
+}
+
+
+/* Final hero spacing trial: show the beginning of DISCOVER ATLAS in first viewport. */
+.home-page .hero{
+  min-height:clamp(510px,73svh,710px)!important;
+  padding-top:clamp(105px,12vh,145px)!important;
+  padding-bottom:clamp(65px,9vh,105px)!important;
+  box-sizing:border-box;
+}
+.home-page .atlas-overview{
+  padding-top:clamp(28px,3vw,45px)!important;
+}
+.home-page .footer-main{
+  justify-content:flex-end;
+}
+.home-page .footer-main p{
+  margin-left:auto;
+  text-align:right;
+}
+@media(max-width:650px){
+  .home-page .hero{
+    min-height:clamp(520px,76svh,650px)!important;
+    padding-top:100px!important;
+    padding-bottom:60px!important;
+  }
+  .home-page .footer-main{align-items:flex-start}
+  .home-page .footer-main p{margin-left:0;text-align:left}
+}
+/* The removed CTA must not leave reserved spacing. */
+.home-page .hero-extra{margin-bottom:0}
+
+
+/* Larger news heading, with a little more breathing room above the footer. */
+.home-page .news .section-heading{justify-content:center;text-align:center}
+.home-page .news .section-heading h2{
+  font-size:clamp(35px,3.1vw,49px);
+  line-height:1.3;
+  letter-spacing:.035em;
+}
+.home-page .news{
+  padding-bottom:clamp(100px,10vw,155px)!important;
+}
+@media(max-width:650px){
+  .home-page .news{padding-bottom:85px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .home-page .atlas-eight-card.card-enter,
+  .home-page .atlas-eight-card.card-enter.card-entered{
+    opacity:1;transform:none;transition:none!important;
+  }
+}
+
+
+/* Single source of truth for the eight homepage cards' scroll entrance. */
+.home-page .atlas-eight-card.card-enter{
+  opacity:0;
+  transform:translate3d(0,46px,0) scale(.975);
+  transition-property:opacity,transform,box-shadow;
+  transition-duration:.82s,.82s,.3s;
+  transition-timing-function:cubic-bezier(.18,.7,.2,1);
+  transition-delay:calc(var(--card-order,0) * 125ms);
+}
+.home-page .atlas-eight-card.card-enter.card-entered{
+  opacity:1;
+  transform:translate3d(0,0,0) scale(1);
+}
+.home-page .atlas-eight-card.card-enter.card-entered:hover{
+  transform:translateY(-6px);
+  transition-delay:0ms;
+}
+@media(prefers-reduced-motion:reduce){
+  .home-page .atlas-eight-card.card-enter,
+  .home-page .atlas-eight-card.card-enter.card-entered{
+    opacity:1;transform:none;transition:none!important;
+  }
+}
+
+
+/* Homepage photo hero and overview: consolidated current design.
+   Preserve the real photo, keep all text in the sky, and avoid text backplates. */
+.home-page .hero{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden!important;
+  border-radius:0;
+  min-height:0!important;
+  height:clamp(610px,83svh,820px)!important;
+  box-sizing:border-box;
+  padding:82px clamp(20px,4vw,70px) 40px!important;
+  align-items:center!important;
+  justify-content:center!important;
+  background:#d9edf7!important;
+}
+.home-page .hero::before{
+  content:""!important;
+  display:block!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:0!important;
+  width:100%!important;
+  height:100%!important;
+  border:0!important;
+  border-radius:0!important;
+  clip-path:none!important;
+  transform:none!important;
+  animation:none!important;
+  opacity:1!important;
+  background:
+    linear-gradient(180deg,rgba(3,22,40,.53) 0%,rgba(3,22,40,.56) 24%,rgba(3,22,40,.60) 47%,rgba(3,22,40,.39) 70%,rgba(3,22,40,.10) 91%,transparent 100%),
+    url("../images/georg-BxAaEPKXReM-unsplash.jpg") center top / cover no-repeat!important;
+  filter:none!important;
+  pointer-events:none;
+}
+.home-page .hero::after{content:none!important;display:none!important}
+.home-page .hero-content{
+  position:relative;
+  z-index:2;
+  width:100%!important;
+  max-width:1240px!important;
+  margin:-46px auto 0!important;
+  padding:0!important;
+  border:0;
+  border-radius:0;
+  background:none!important;
+  text-align:center;
+}
+.home-page .hero .eyebrow{
+  margin:0 auto 12px!important;
+  font-size:clamp(10px,.8vw,12px);
+}
+.home-page .hero h1{
+  max-width:100%!important;
+  margin:0 auto 13px!important;
+  font-size:clamp(30px,3vw,55px)!important;
+  line-height:1.3!important;
+  white-space:normal!important;
+  text-wrap:balance;
+}
+.home-page .hero .hero-copy{
+  width:auto!important;
+  max-width:720px!important;
+  margin:0 auto!important;
+  font-size:clamp(12px,1vw,15px)!important;
+  line-height:1.8!important;
+  font-weight:700!important;
+}
+.home-page .hero .hero-extra{
+  width:auto!important;
+  max-width:720px!important;
+  margin:9px auto 0!important;
+  font-size:clamp(12px,1vw,15px)!important;
+  line-height:1.65!important;
+  font-weight:700!important;
+}
+.home-page .hero .eyebrow,
+.home-page .hero h1,
+.home-page .hero .hero-copy,
+.home-page .hero .hero-extra{
+  color:#073e6b!important;
+  text-shadow:0 1px 2px rgba(255,255,255,.82)!important;
+  background:none!important;
+}
+.home-page .hero .hero-copy::before,
+.home-page .hero .hero-extra::before{content:none!important;display:none!important}
+.home-page .atlas-overview{
+  padding-top:clamp(50px,6vw,78px)!important;
+}
+.home-page .overview-intro{
+  margin-bottom:36px!important;
+}
+.home-page .overview-intro h2{
+  font-size:clamp(35px,3.1vw,49px)!important;
+  line-height:1.3;
+}
+@media(max-width:900px){
+  .home-page .hero{
+    height:clamp(570px,76svh,730px)!important;
+    padding-top:80px!important;
+    padding-bottom:32px!important;
+  }
+  .home-page .hero-content{margin:-20px auto 0!important}
+  .home-page .hero h1{font-size:clamp(29px,4.3vw,43px)!important}
+}
+@media(max-width:650px){
+  .home-page .hero{
+    height:clamp(520px,76svh,650px)!important;
+    padding:95px 20px 35px!important;
+  }
+  .home-page .hero::before{
+    background-size:auto 100%!important;
+    background-position:center top!important;
+  }
+  .home-page .hero-content{margin:-12px auto 0!important}
+  .home-page .hero h1{font-size:clamp(27px,7vw,38px)!important}
+  .home-page .hero .hero-copy,
+  .home-page .hero .hero-extra{font-size:12px!important}
+  .home-page .atlas-overview{padding-top:55px!important}
+  .home-page .overview-intro h2{font-size:clamp(29px,7vw,38px)!important}
+}
+
+/* Full-width NEWS section: give the compact list visual weight without stretching its rows. */
+.home-page .news{
+  position:relative;
+  background:transparent!important;
+  padding-top:clamp(66px,7vw,100px)!important;
+  padding-bottom:clamp(90px,9vw,135px)!important;
+}
+.home-page .news .section-heading,
+.home-page .news .news-list{
+  position:relative;
+  z-index:1;
+}
+@media(max-width:650px){
+  .home-page .news{padding:62px 20px 86px!important}
+}
+
+/* Photo contrast: a full-bleed navy tint, never a blurry box behind words. */
+.home-page .hero::after{
+  content:""!important;
+  display:block!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:1!important;
+  background:linear-gradient(180deg,
+    rgba(5,34,59,.66) 0%,
+    rgba(7,43,71,.49) 36%,
+    rgba(7,43,71,.24) 65%,
+    rgba(7,43,71,.03) 100%)!important;
+  pointer-events:none;
+}
+.home-page .hero .eyebrow,
+.home-page .hero h1,
+.home-page .hero .hero-copy,
+.home-page .hero .hero-extra{
+  color:#fff!important;
+  text-shadow:0 2px 9px rgba(3,25,47,.75)!important;
+}
+.home-page .hero h1{
+  font-size:clamp(29px,2.85vw,52px)!important;
+  overflow-wrap:normal;
+}
+@media(max-width:900px){
+  .home-page .hero h1{font-size:clamp(27px,4vw,40px)!important}
+}
+@media(max-width:650px){
+  .home-page .hero::after{
+    background:linear-gradient(180deg,rgba(5,34,59,.73),rgba(7,43,71,.5) 60%,rgba(7,43,71,.12))!important;
+  }
+  .home-page .hero h1{font-size:clamp(26px,6.6vw,36px)!important}
+}
+
+/* Alternate homepage hero: light copy area flows into the original Tokyo photo.
+   Keep the existing height and leave other pages untouched. */
+.home-page .hero{
+  border-radius:0;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  padding:clamp(145px,19svh,195px) clamp(20px,4vw,70px) 0!important;
+  background:linear-gradient(180deg,#fff 0%,#f1f9fd 22%,#dceef8 49%,#c8e5f4 63%,#d9edf7 100%)!important;
+}
+.home-page .hero::before{
+  inset:auto 0 0!important;
+  top:auto!important;
+  height:57%!important;
+  background:
+    linear-gradient(180deg,#c8e5f4 0%,rgba(200,229,244,.78) 9%,rgba(200,229,244,0) 31%),
+    url("../images/georg-BxAaEPKXReM-unsplash.jpg") center 43% / cover no-repeat!important;
+}
+.home-page .hero::after{content:none!important;display:none!important}
+.home-page .hero .atlas-atmosphere,
+.home-page .hero .hero-noise{display:none!important}
+.home-page .hero-content{
+  margin:0 auto!important;
+  max-width:1180px!important;
+  text-align:center!important;
+}
+.home-page .hero .eyebrow{margin-bottom:13px!important}
+.home-page .hero h1{
+  margin-bottom:17px!important;
+  font-size:clamp(29px,2.65vw,49px)!important;
+  letter-spacing:.01em!important;
+}
+.home-page .hero .hero-copy{
+  font-size:clamp(17px,1.25vw,21px)!important;
+  line-height:1.7!important;
+}
+.home-page .hero .hero-extra{
+  margin-top:13px!important;
+  font-size:clamp(15px,1.1vw,18px)!important;
+}
+.home-page .hero .eyebrow,
+.home-page .hero h1,
+.home-page .hero .hero-copy,
+.home-page .hero .hero-extra{
+  color:#174d73!important;
+  text-shadow:none!important;
+}
+@media(max-width:900px){
+  .home-page .hero{padding-top:clamp(130px,17svh,170px)!important}
+  .home-page .hero h1{font-size:clamp(28px,4vw,39px)!important}
+}
+@media(max-width:650px){
+  .home-page .hero{padding-top:120px!important}
+  .home-page .hero h1{font-size:clamp(26px,6.4vw,35px)!important}
+  .home-page .hero .hero-copy{font-size:15px!important}
+  .home-page .hero .hero-extra{font-size:14px!important}
+  .home-page .hero::before{
+    height:49%!important;
+    background:
+      linear-gradient(180deg,#c8e5f4 0%,rgba(200,229,244,.72) 11%,rgba(200,229,244,0) 35%),
+      url("../images/georg-BxAaEPKXReM-unsplash.jpg") center 43% / auto 100% no-repeat!important;
+  }
+}

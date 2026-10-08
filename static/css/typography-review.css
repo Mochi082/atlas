@@ -1,0 +1,40 @@
+/* Typography trial: preserve the two approved TOP editorial areas. */
+:root{--reading-body-weight:500;--font-body:"Yu Gothic", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;--font-heading:"Yu Gothic", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif}
+body{font-family:var(--font-body);font-weight:500}
+body :is(h1,h2,h3,h4){font-family:var(--font-heading);letter-spacing:.025em}
+body .hero :is(h1,p),body .overview-intro h2{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;letter-spacing:normal}
+body .hero h1{letter-spacing:.015em}
+body .hero .eyebrow,body .overview-kicker{font-family:Meiryo,"Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif}
+body .hero .eyebrow{letter-spacing:.18em}
+body .overview-kicker{letter-spacing:.18em}
+.home-business-copy h3,.business-detail-page .bd-section-head h2{font-weight:700;line-height:1.5}
+.home-business-copy>p:not(.business-eyebrow){font-weight:500;line-height:1.95}
+.business-detail-page .bd-services h3{font-weight:700;letter-spacing:.02em}
+body :is(.desktop-nav,.drawer-nav,.form-submit,.contact-action,.home-business-link){font-weight:600;letter-spacing:.015em}
+body :is(.page-hero .eyebrow,.bd-section-head small,.bd-skills-heading small,.home-business-copy .business-eyebrow){font-family:Arial,var(--font-body);font-weight:600;letter-spacing:.08em}
+@media(max-width:600px){.home-business-copy>p:not(.business-eyebrow){line-height:1.85}}
+/* Restore restrained editorial structure without changing the one-column layout. */
+[data-content-page="business"] .bd-services{counter-reset:service-item;gap:0}
+[data-content-page="business"] .bd-services article{counter-increment:service-item;padding:24px 0}
+[data-content-page="business"] .bd-services article:first-child{padding-top:0}
+[data-content-page="business"] .bd-services article+article{border-top:1px solid #cbdbe6}
+[data-content-page="business"] .bd-services h3::before{content:counter(service-item,decimal-leading-zero);display:inline-block;margin-right:16px;font:600 13px/1.5 Arial,sans-serif;color:#286f99;vertical-align:middle}
+[data-content-page="business"] .bd-section-head>small{display:inline-block;border-left:3px solid #247fc1;padding-left:12px}
+[data-content-page="smes"] .consultation-overview{max-width:48em;width:100%;justify-self:center}
+[data-content-page="smes"] .consultation-concerns{background:#edf6fc}
+[data-content-page="smes"] :is(#cost,#security) .consultation-concerns{background:#fafdff}
+.drawer-nav small{font-weight:400;letter-spacing:.08em}
+[data-content-page="company-message"] .company-editorial{max-width:48em}
+.partner-main .partner-reading-nav{margin-bottom:24px}
+.home-business-visual img{filter:saturate(.85) brightness(.99) contrast(.98)}
+.home-business-link{margin-top:22px}
+@media(max-width:760px){.home-business-link{margin-top:18px}}
+.site-footer .footer-policy{margin-bottom:26px}
+@media(max-width:600px){.site-footer .footer-policy{margin-bottom:0}}
+/* Shared desktop reading size across inner-page prose. */
+@media(min-width:801px){
+ .business-detail-page[data-content-page="business"] :is(.bd-services p,.bd-section-band .bd-lead,.bd-pending-note),
+ [data-content-page="smes"] :is(.bd-lead,.consultation-checklist li),
+ .partner-page :is(.partner-prose p,#freelance .partner-prose p,.partner-condition-block li,.partner-notes dd,.partner-fee td),
+ .activity-original,.news-page .news-article,.news-page .news-list a {font-size:18px;}
+}

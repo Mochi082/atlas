@@ -1,0 +1,76 @@
+/* Cross-page layout safeguards. No clipping of overflowing page content. */
+.text-phrase { display: inline-block; }
+/* Short editorial phrases, rather than whole headings, stay together. */
+.heading-unit { display:inline-block; max-width:100%; white-space:nowrap; }
+.heading-unit-spaced { white-space:pre; }
+main :where(section,article,div,dl,dd,a,button) {
+  min-width:0
+}
+main :where(p,li,dd,h1,h2,h3) {
+  overflow-wrap:anywhere
+}
+.page-hero:is(.company-title, .company-detail-hero, .activity-hero, .news-hero) h1, .page-hero .company-lead, .home-page .hero-title-line, .company-detail-hero h1, .activity-hero h1, .company-page #activities .activity-item-body h3, .news-page .news-hero h1 {
+  text-wrap:balance;
+  word-break:normal;
+  overflow-wrap:normal
+}
+img, video, iframe {
+  max-width:100%
+}
+input, select, textarea {
+  min-width:0;
+  max-width:100%
+}
+main :where(section[id],div[id]) {
+  scroll-margin-top:90px
+}
+@media(max-width:800px) {
+  .contact-page #contact-form>label {
+    grid-template-columns:1fr
+  }
+  .contact-page input:not([type="checkbox"]), .contact-page select, .contact-page textarea, .contact-page .field-note, .contact-page .char-count {
+    grid-column:1
+  }
+}
+@media(max-width:600px) {
+  .company-page #activities .activity-item {
+    grid-template-columns:48px minmax(0,1fr) 20px;
+    gap:8px
+  }
+  .company-page #activities .activity-thumb {
+    height:76px
+  }
+  .company-page #activities .activity-item-body h3 { text-wrap:wrap; }
+  .contact-page input:not([type="checkbox"]), .contact-page select, .contact-page textarea {
+    font-size:16px
+  }
+  .contact-page .form-steps {
+    flex-wrap:wrap;
+    gap:10px 18px
+  }
+  .contact-page .form-submit {
+    max-width:100%;
+    white-space:normal
+  }
+  .contact-page .consent-box {
+    padding:18px
+  }
+  main :where(section[id],div[id]) {
+    scroll-margin-top:76px
+  }
+}
+@media(max-height:600px) {
+  .home-page .hero {
+    padding-top:100px;
+    padding-bottom:48px
+  }
+  .home-page .hero-content {
+    gap:22px
+  }
+  .home-page .hero .eyebrow {
+    margin-bottom:16px
+  }
+  .home-page .hero h1 {
+    font-size:clamp(31px,4.5vw,60px)
+  }
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>管理画面</title>
+	<link rel="stylesheet" href="/static/css/management.css">
+</head>
+<body>
+	<main>
+{% include "management-messages.html" %}
+		<h1>お知らせ編集</h1>
+		<form method="post">
+			<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+			{% for information in informations %}
+				<fieldset>
+					<legend>投稿 #{{ information.id }}</legend>
+					<input type="hidden" name="information_id" value="{{ information.id }}">
+				<p>
+					<label for="title-{{ information.id }}">タイトル</label>
+					<input id="title-{{ information.id }}" name="title_{{ information.id }}" type="text" value="{{ information.title }}" required>
+				</p>
+				<p>
+					<label for="content-{{ information.id }}">本文</label>
+					<textarea id="content-{{ information.id }}" name="content_{{ information.id }}" rows="8" required>{{ information.text }}</textarea>
+				</p>
+				<p>
+					<label>
+						<input type="checkbox" name="published_{{ information.id }}" value="1" {% if information.published %}checked{% endif %}>
+						公開する
+					</label>
+				</p>
+				<p>
+					<input type="submit" value="削除" formaction="{{ url_for('delete_info', information_id=information.id) }}" onclick="return confirm('本当に削除しますか？');">
+				</p>
+				</fieldset>
+			{% else %}
+				<p>投稿はありません。</p>
+			{% endfor %}
+			{% if informations %}
+				<button type="submit">すべての変更を保存</button>
+			{% endif %}
+		</form>
+		<p><a href="{{ url_for('management') }}">管理画面へ戻る</a></p>
+	</main>
+</body>
+</html>

@@ -1,0 +1,108 @@
+/* ============================================
+   活動記事 詳細ページ（activity_contents.html）
+   .activity-record-section の中身のデザイン
+   色・文字サイズは activity.css に合わせる
+   ============================================ */
+
+/* ----------------------------------------------------------
+   画像と文の組（.activity-pair）
+   画像1＋本文1、画像2＋本文2 を1ブロックずつ横並びで表示する
+   ---------------------------------------------------------- */
+.activity-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: start;
+}
+
+/* 組と組の間を区切り線で分ける */
+.activity-pair + .activity-pair {
+  margin-top: 56px;
+  padding-top: 56px;
+  border-top: 1px solid #dce3ea;
+}
+
+/* 2組目は画像を右側にして、ジグザグに並べる */
+.activity-pair:nth-child(even) > .activity-pair-image {
+  order: 2;
+}
+
+/* 画像または文の片方しかない組は1列で表示する */
+.activity-pair:not(:has(> .activity-pair-image)),
+.activity-pair:not(:has(> .activity-pair-text)) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* ----------------------------------------------------------
+   画像
+   アップロード画像は縦横比がまちまちなので、切り抜かずに全体を表示する
+   ---------------------------------------------------------- */
+.activity-pair-image {
+  margin: 0;
+  padding: 14px;
+  background: #f3f7fa;
+  border: 1px solid #dce3ea;
+  border-radius: 12px;
+}
+
+.activity-pair-image img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 480px;
+  height: auto;
+  margin-inline: auto;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+/* 文がない組の画像は大きくなりすぎないよう幅を抑える */
+.activity-pair:not(:has(> .activity-pair-text)) > .activity-pair-image {
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+/* ----------------------------------------------------------
+   文
+   ---------------------------------------------------------- */
+.activity-pair-text > p {
+  margin: 0 0 var(--activity-paragraph-gap, 24px);
+}
+
+.activity-pair-text > p:last-child {
+  margin-bottom: 0;
+}
+
+/* 画像のない組は行幅を絞って読みやすくする */
+.activity-pair:not(:has(> .activity-pair-image)) > .activity-pair-text {
+  max-width: 760px;
+}
+
+/* ----------------------------------------------------------
+   タブレット・スマートフォン：画像 → 文 の縦積み
+   ---------------------------------------------------------- */
+@media (max-width: 800px) {
+  .activity-pair {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .activity-pair:nth-child(even) > .activity-pair-image {
+    order: 0;
+  }
+
+  .activity-pair + .activity-pair {
+    margin-top: 40px;
+    padding-top: 40px;
+  }
+
+  .activity-pair-image {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .activity-pair-image img {
+    max-height: 420px;
+    border-radius: 6px;
+  }
+}

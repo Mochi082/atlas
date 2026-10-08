@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" sizes="any">
+<script src="{{ url_for('static', filename='js/homepage-scroll.js') }}"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+  <title>中小企業向けITコンサルティング | ATLAS COMPUTER</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site-base.css') }}?v=20261006-font1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/business.css') }}?v=20261006-alternating">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/company-detail.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/subpage-theme.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/subpage-hero.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact-actions.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site-footer.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/subpage-motion.css') }}">
+  <script src="{{ url_for('static', filename='js/subpage-motion.js') }}" defer></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site-navigation.css') }}?v=20261007-review3">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/typography-review.css') }}?v=20261008-unify1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/consulting.css') }}?v=20261008-unify1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/service-presentation.css') }}?v=20261007-content1">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/prose-flow.css') }}?v=20261008-flow6">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/subpage-illustrations.css') }}?v=20261008-art11">
+</head>
+<body class="owned-subpage">
+<a class="skip-link" href="#main-content">本文へ移動</a>
+<!-- SITE-HEADER:START -->
+<header class="site-header" id="top">
+
+  <a class="brand" href="{{ url_for('index') }}" aria-label="アトラスコンピュータ トップページへ"><img src="{{ url_for('static', filename='images/atlas_logo.jpg') }}" alt="株式会社アトラスコンピュータ" width="196" height="40" decoding="async"></a>
+  <nav class="desktop-nav" aria-label="グローバルナビゲーション">
+    <a href="{{ url_for('company') }}">会社案内</a>
+    <a href="{{ url_for('business') }}">事業内容</a>
+    <a href="{{ url_for('smes') }}">中小企業向けITコンサルティング</a>
+    <a href="{{ url_for('partner') }}">ビジネスパートナー</a>
+    <a href="{{ url_for('recruit') }}">採用について</a>
+    <a href="{{ url_for('contact') }}">お問い合わせ</a>
+  </nav>
+  <div class="header-actions">
+  <a class="header-contact" href="{{ url_for('contact') }}" aria-label="お問い合わせ"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg></a>
+  <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <button class="drawer-close" type="button" aria-label="メニューを閉じる">×</button>
+  <div class="drawer-inner">
+    <p class="drawer-kicker">ATLAS COMPUTER</p>
+    <nav class="drawer-nav" aria-label="メニュー">
+      <a href="{{ url_for('company') }}"><span>会社案内<small>COMPANY</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('business') }}"><span>事業内容<small>BUSINESS</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('smes') }}"><span>中小企業向けITコンサルティング<small>IT CONSULTING</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('partner') }}"><span>ビジネスパートナー<small>BUSINESS PARTNER</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('recruit') }}"><span>採用について<small>RECRUIT</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('contact') }}"><span>お問い合わせ<small>CONTACT</small></span><i aria-hidden="true">→</i></a>
+    </nav>
+  </div>
+</aside>
+<div class="drawer-backdrop"></div>
+<!-- SITE-HEADER:END -->
+<main tabindex="-1" id="main-content" class="company-page business-detail-page" data-content-page="smes">
+<!-- Content reference: https://atlas-co.co.jp/smes, checked 2026-10-06. -->
+<header class="company-title bd-title page-hero">
+<div class="company-title-inner illustrated-intro">
+  <p class="eyebrow">IT CONSULTING</p><h1><span class="consulting-title-part">中小企業向け</span><wbr><span class="consulting-title-part">ITコンサルティング</span></h1>
+<p class="company-lead">業務の課題に、<br>IT活用という選択肢を。</p><p class="company-intro">売り上げの向上、経費削減、生産性向上、セキュリティ対策。中小企業の皆様の課題に合わせたIT活用をご提案します。</p>
+<figure class="socost-art intro-art"><img src="{{ url_for('static', filename='images/socost/consulting.png') }}" alt="" width="757" height="611" decoding="async"></figure></div></header>
+<div class="bd-wrap bd-intro"><nav class="consultation-index" aria-label="相談テーマ一覧"><a href="#sales"><small>01<span class="jump-index-detail"> / SALES</span></small><strong><span class="text-phrase">売り上げを</span><span class="text-phrase">上げたい</span></strong><span aria-hidden="true">↓</span></a>
+<a href="#cost"><small>02<span class="jump-index-detail"> / COST</span></small><strong><span class="text-phrase">経費を</span><span class="text-phrase">削減したい</span></strong><span aria-hidden="true">↓</span></a>
+<a href="#productivity"><small>03<span class="jump-index-detail"> / PRODUCTIVITY</span></small><strong><span class="text-phrase">生産性を</span><span class="text-phrase">向上したい</span></strong><span aria-hidden="true">↓</span></a>
+<a href="#security"><small>04<span class="jump-index-detail"> / SECURITY</span></small><strong><span class="text-phrase">セキュリティ</span><span class="text-phrase">対策をしたい</span></strong><span aria-hidden="true">↓</span></a></nav></div>
+<section class="bd-section" id="sales" data-content-section="sales" aria-labelledby="sales-title"><div class="bd-wrap">
+<div class="consultation-layout consultation-layout-linear consultation-layout-centered"><div class="bd-section-head"><small>01 / SALES</small><h2 id="sales-title"><span class="heading-unit">売り上げを</span><span class="heading-unit">上げたい</span></h2></div>
+  <p class="bd-lead">ITを活用した売り上げアップのご提案をさせていただきます。</p>
+<figure class="socost-art consultation-art"><img src="{{ url_for('static', filename='images/socost/sales.png') }}?v=20261008-outline1" alt="" width="684" height="668" loading="lazy" decoding="async"></figure><div class="consultation-concerns">  <h3>相談例</h3>
+  <ul class="consultation-checklist"><li><span>営業時間外も販売したい</span></li>
+<li><span>全国規模で展開したい</span></li>
+<li><span>営業時間外も電話以外の方法でお問合せを受け付けたい</span></li>
+<li><span>商品PRのホームぺージが欲しいが、自分たちで運用できるか分からない</span></li></ul>
+  </div>
+
+</div></div></section>
+<section class="bd-section" id="cost" data-content-section="cost" aria-labelledby="cost-title"><div class="bd-wrap">
+<div class="consultation-layout consultation-layout-linear consultation-layout-centered"><div class="bd-section-head"><small>02 / COST</small><h2 id="cost-title"><span class="heading-unit">経費を</span><span class="heading-unit">削減したい</span></h2></div>
+  <p class="bd-lead">「もうこれ以上経費の削減は難しい。」と思っている、中小企業の皆様。ITを活用した経費削減の事例をご提案しながら弊社の経費削減対策を検討させていただきます。</p>
+<figure class="socost-art consultation-art"><img src="{{ url_for('static', filename='images/socost/cost.png') }}?v=20261008-outline1" alt="" width="1080" height="1080" loading="lazy" decoding="async"></figure><div class="consultation-concerns">  <h3>相談例</h3>
+  <ul class="consultation-checklist"><li><span>不要な印刷物の経費を削減したい</span></li>
+<li><span>ドキュメントを一元管理したい</span></li>
+<li><span>ドキュメントを電子化したいが運用できるか不安</span></li></ul>
+  </div>
+
+</div></div></section>
+<section class="bd-section" id="productivity" data-content-section="productivity" aria-labelledby="productivity-title"><div class="bd-wrap">
+<div class="consultation-layout consultation-layout-linear consultation-layout-centered"><div class="bd-section-head"><small>03 / PRODUCTIVITY</small><h2 id="productivity-title"><span class="heading-unit">生産性を</span><span class="heading-unit">向上したい</span></h2></div>
+  <p class="bd-lead">お客様の業務フローを検証させていただき、ITを活用した生産性向上をご提案致します。</p>
+  <figure class="consultation-explainer">
+    <figcaption>ご提案の考え方</figcaption>
+    <ul><li><span class="text-phrase">業務</span><span class="text-phrase">フローの</span><span class="text-phrase">検証</span><span class="explainer-arrow" aria-hidden="true">→</span></li><li><span class="text-phrase">IT活用</span><span class="explainer-arrow" aria-hidden="true">→</span></li><li><span class="text-phrase">生産性</span><span class="text-phrase">向上</span></li></ul>
+  </figure>
+<figure class="socost-art consultation-art"><img src="{{ url_for('static', filename='images/socost/work.png') }}?v=20261008-outline1" alt="" width="1080" height="1080" loading="lazy" decoding="async"></figure><div class="consultation-concerns">  <h3>相談例</h3>
+  <ul class="consultation-checklist"><li><span>毎日決まった単純タスクがあり、年間多くの時間をそれに費やしている</span></li>
+<li><span>エクセルのマクロを活用しているが、痒いところに手が届かないと感じる</span></li>
+<li><span>業務の一部を自動化できないか相談したい</span></li></ul>
+  </div>
+
+</div></div></section>
+<section class="bd-section" id="security" data-content-section="security" aria-labelledby="security-title"><div class="bd-wrap">
+<div class="consultation-layout consultation-layout-linear consultation-layout-centered"><div class="bd-section-head"><small>04 / SECURITY</small><h2 id="security-title"><span class="heading-unit">セキュリティ</span><span class="heading-unit">対策をしたい</span></h2></div>
+  <p class="bd-lead">業務のIT化に伴い、セキュリティの対策は非常に重要な要素です。お客様の業務、IT化に見合ったセキュリティ対策をご提案致します。</p>
+<figure class="socost-art consultation-art"><img src="{{ url_for('static', filename='images/socost/security.png') }}?v=20261008-outline1" alt="" width="1080" height="1080" loading="lazy" decoding="async"></figure><div class="consultation-concerns">  <h3>相談例</h3>
+  <ul class="consultation-checklist"><li><span>お客様のためにセキュリティについて安全なサービスを提供したい</span></li>
+<li><span>費用対効果から必要十分なセキュリティ施策を実施したい</span></li>
+<li><span>自分のサービスが安全であることお客様にアピールしたい</span></li>
+<li><span>自分のホームページが改ざんされないように守りたい</span></li></ul>
+  </div>
+
+</div></div></section>
+  <div class="bd-contact" id="consulting-contact"><div class="bd-wrap"><div><h2>ITに関するご相談・お問い合わせ</h2><p>お客様の課題に合わせたIT活用をご提案します。</p></div><a class="contact-action" href="{{ url_for('contact') }}">お問い合わせはこちら <span aria-hidden="true">→</span></a></div></div>
+</main>
+<footer class="site-footer">
+    <nav class="footer-policy" aria-label="サイトポリシー">
+      <a href="{{ url_for('policy_terms') }}">サイト利用規定</a>
+      <a href="{{ url_for('policy_privacy') }}">個人情報取扱について</a>
+      <a href="{{ url_for('policy_protection') }}">個人情報保護方針</a>
+      <a href="{{ url_for('policy_security') }}">セキュリティポリシー</a>
+      <a href="{{ url_for('policy_disclaimer') }}">免責事項</a>
+      <a href="{{ url_for('policy_harassment') }}">採用活動におけるハラスメント防止方針</a>
+
+    </nav>
+    <div class="footer-main">
+      <div class="footer-identity">
+        <span class="footer-wordmark">株式会社アトラスコンピュータ</span>
+        <div class="footer-certifications" role="group" aria-label="認証マーク">
+        <img src="{{ url_for('static', filename='images/p_JP.png') }}" alt="Privacy Mark 10824656" width="216" height="216" loading="lazy" decoding="async">
+        <img src="{{ url_for('static', filename='images/icd.png') }}" alt="i Competency Dictionary 2023 Silver Plus 01-03102(05)" width="613" height="613" loading="lazy" decoding="async">
+      </div>
+      </div>
+      <small>© 2026 ATLAS COMPUTER CO.,LTD.</small>
+    </div>
+  </footer>
+<script src="{{ url_for('static', filename='js/script.js') }}?v=20261007-review3"></script>
+
+</body>
+</html>

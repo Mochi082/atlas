@@ -1,0 +1,86 @@
+/* Content-led service pages. Deliberately scoped away from TOP and company. */
+:is([data-content-page="business"],[data-content-page="smes"]){--service-ink:#173e58;--service-blue:#2c8bb9;--service-line:#cddfea;counter-reset:service;background:#fff}
+.business-detail-page:is([data-content-page="business"],[data-content-page="smes"]) .bd-wrap{width:min(1120px,calc(100% - 80px));max-width:1120px}
+:is([data-content-page="business"],[data-content-page="smes"]) .bd-intro{padding-block:28px 38px}
+[data-content-page="business"] .bd-intro .bd-index{display:flex;flex-wrap:wrap;border-block:1px solid var(--service-line)}
+[data-content-page="business"] .bd-intro .bd-index a{flex:1 1 220px;min-height:60px;flex-direction:row;align-items:center;gap:12px;padding:14px 16px;border:0}
+[data-content-page="business"] .bd-intro .bd-index small{font-size:12px;letter-spacing:0}
+[data-content-page="business"] .bd-intro .bd-index .jump-index-detail{display:none}
+[data-content-page="business"] .bd-intro .bd-index strong{font-size:16px}
+[data-content-page="business"] .bd-intro .bd-index a>span[aria-hidden]{position:static;margin-left:auto;color:var(--service-blue);font-size:18px}
+.business-detail-page:is([data-content-page="business"],[data-content-page="smes"]) .bd-section{padding:0 0 60px;background:#fff;scroll-margin-top:100px}
+:is([data-content-page="business"],[data-content-page="smes"]) .bd-section-head{display:grid;grid-template-columns:60px minmax(0,1fr);column-gap:22px;align-items:center;counter-increment:service;margin:0;padding:0;background:none;text-align:left}
+:is([data-content-page="business"],[data-content-page="smes"]) .bd-section-head::before{content:counter(service,decimal-leading-zero);grid-column:1;grid-row:1;font:400 34px/1.2 Arial,sans-serif;color:var(--service-blue);border-right:1px solid #a8d2e9;padding-right:18px}
+:is([data-content-page="business"],[data-content-page="smes"]) .bd-section-head>small{display:none}
+.business-detail-page:is([data-content-page="business"],[data-content-page="smes"]) .bd-section-head h2{grid-column:2;grid-row:1;margin:0;font-size:28px;line-height:1.5;color:var(--service-ink);text-wrap:wrap}
+[data-content-page="business"] .bd-section-band{width:min(1120px,calc(100% - 80px));margin-inline:auto;padding:38px 0 26px;border-top:1px solid var(--service-line);background:none}
+[data-content-page="business"] #software .bd-section-band{border-top:0;padding-top:0}
+[data-content-page="business"] .bd-section-band>.bd-wrap{width:100%}
+.business-detail-page[data-content-page="business"] .bd-section-band .bd-lead{margin:14px 0 0 82px;max-width:52em;font-size:17px;line-height:1.9;color:#334d5e}
+.business-detail-page[data-content-page="business"] .bd-section-body{padding:0;border:0;margin-top:0;min-height:0}
+[data-content-page="business"] .bd-section-body::before{display:none}
+.business-detail-page[data-content-page="business"] .bd-services{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:none}
+[data-content-page="business"] #software .bd-services article{padding:22px 20px;background:linear-gradient(120deg,#f4fafe,#eaf5fb)}
+.business-detail-page[data-content-page="business"] .bd-services h3{font-size:18px;line-height:1.6;margin-bottom:12px;color:var(--service-ink)}
+.business-detail-page[data-content-page="business"] .bd-services p{font-size:16px;line-height:1.9;color:#334d5e}
+[data-content-page="business"] :is(#dx,#support) .bd-services{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+[data-content-page="business"] :is(#dx,#support) .bd-services article+article{border-left:1px solid var(--service-line);padding-left:32px}
+[data-content-page="business"] .bd-pending-note{margin:0;color:#506675;font-size:16px}
+[data-content-page="business"] .bd-fa-placeholder{padding-left:82px}
+[data-content-page="business"] .bd-site-link{padding:8px 0;min-height:44px;border:0;background:none;border-bottom:1px solid #a5cfe4;color:#247fae;font-size:16px}
+[data-content-page="business"] .bd-site-link:hover{background:none;color:#145880}
+[data-content-page="business"] .bd-skills{border:0;margin-top:28px;padding:0;background:#f0f8fc}
+[data-content-page="business"] .bd-skills-heading{padding:20px 24px 0;gap:0;margin:0}
+[data-content-page="business"] .bd-skills-heading small,[data-content-page="business"] .bd-skills-heading p{display:none}
+[data-content-page="business"] .bd-skills-heading h3{font-size:17px;margin:0;color:var(--service-ink)}
+[data-content-page="business"] .bd-skills details{padding:0 24px 18px}
+[data-content-page="business"] .bd-skills summary{font-size:16px;color:#247fae}
+[data-content-page="business"] .technical-close{border-color:#b8d6e7;color:#247fae}
+.business-detail-page:is([data-content-page="business"],[data-content-page="smes"]) .service-process{margin:28px 0 0}
+.service-process figcaption{font-size:15px;font-weight:700;color:#173e58;margin-bottom:12px}
+.service-process ol{display:flex;gap:4px;margin:0;padding:0;list-style:none}
+.service-process li{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px 18px;background:linear-gradient(110deg,#e1f3fc,#a7dafa);color:#173e58;font-size:15px;font-weight:600;line-height:1.6;clip-path:polygon(0 0,calc(100% - 15px) 0,100% 50%,calc(100% - 15px) 100%,0 100%,15px 50%)}
+.service-process li:first-child{clip-path:polygon(0 0,calc(100% - 15px) 0,100% 50%,calc(100% - 15px) 100%,0 100%)}
+.business-detail-page:is([data-content-page="business"],[data-content-page="smes"]) .bd-contact{width:min(1120px,calc(100% - 80px));padding:28px 32px;margin:4px auto 60px;background:linear-gradient(115deg,#194f70,#12334f);border:0;border-radius:6px}
+.business-detail-page:is([data-content-page="business"],[data-content-page="smes"]) .bd-contact .bd-wrap{width:100%;max-width:none}
+.business-detail-page:is([data-content-page="business"],[data-content-page="smes"]) .bd-contact h2{font-size:23px;margin:0 0 8px}
+.business-detail-page:is([data-content-page="business"],[data-content-page="smes"]) .bd-contact small{display:none}
+.business-detail-page:is([data-content-page="business"],[data-content-page="smes"]) .bd-contact p{font-size:15px}
+@media(max-width:1000px){
+ .business-detail-page[data-content-page="business"] .bd-services{grid-template-columns:1fr}
+ [data-content-page="business"] #software .bd-services article{padding:18px 22px}
+}
+@media(max-width:800px){
+ .business-detail-page:is([data-content-page="business"],[data-content-page="smes"]) .bd-wrap{width:calc(100% - 44px)}
+ :is([data-content-page="business"],[data-content-page="smes"]) .bd-intro{padding-block:22px 28px}
+ [data-content-page="business"] .bd-intro .bd-index{display:block}
+ [data-content-page="business"] .bd-intro .bd-index a{min-height:48px;padding:10px 4px}
+ [data-content-page="business"] .bd-intro .bd-index a+a{border-top:1px solid #e0eaf0}
+ [data-content-page="business"] .bd-section-band{width:calc(100% - 44px);padding:30px 0 22px}
+ :is([data-content-page="business"],[data-content-page="smes"]) .bd-section-head{grid-template-columns:42px minmax(0,1fr);gap:14px}
+ :is([data-content-page="business"],[data-content-page="smes"]) .bd-section-head::before{font-size:27px;padding-right:12px}
+ .business-detail-page:is([data-content-page="business"],[data-content-page="smes"]) .bd-section-head h2{font-size:23px}
+ .business-detail-page[data-content-page="business"] .bd-section-band .bd-lead{margin:14px 0 0;font-size:16px}
+ [data-content-page="business"] .bd-fa-placeholder{padding:0}
+ [data-content-page="business"] :is(#dx,#support) .bd-services{grid-template-columns:1fr;gap:24px}
+ [data-content-page="business"] :is(#dx,#support) .bd-services article+article{border:0;padding:0}
+ .business-detail-page:is([data-content-page="business"],[data-content-page="smes"]) .bd-section{padding-bottom:44px}
+ .service-process ol{flex-direction:column;gap:4px}
+ .service-process li,.service-process li:first-child{clip-path:none;position:relative;padding:12px 16px}
+ .service-process li:not(:last-child)::after{content:'↓';position:absolute;bottom:-12px;z-index:1;color:#287fae;font-weight:700}
+ .business-detail-page:is([data-content-page="business"],[data-content-page="smes"]) .bd-contact{width:calc(100% - 44px);padding:24px 22px;margin:0 auto 40px}
+ .business-detail-page:is([data-content-page="business"],[data-content-page="smes"]) .bd-contact h2{font-size:21px}
+}
+
+.business-detail-page[data-content-page="business"] .bd-section-body.bd-fa-placeholder{padding-left:82px}
+@media(max-width:800px){.business-detail-page[data-content-page="business"] .bd-section-body.bd-fa-placeholder{padding-left:0}}
+
+/* The two DX offers share the same top rule and heading baseline. */
+.business-detail-page[data-content-page="business"] #dx .bd-services article{border-top:1px solid #cddfea;padding-top:24px}
+
+@media(min-width:801px){.business-detail-page[data-content-page="business"] :is(.company-intro,.bd-section-band .bd-lead,.bd-services p,.bd-pending-note){font-size:18px;}}
+
+/* A section band already supplies the mobile gutter; do not inset it twice. */
+@media(max-width:800px){
+ .business-detail-page[data-content-page="business"] .bd-section-band>.bd-wrap{width:100%;max-width:none;margin-inline:0;}
+}

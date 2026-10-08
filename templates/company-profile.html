@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ja"><head>
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" sizes="any">
+<script src="{{ url_for('static', filename='js/homepage-scroll.js') }}"></script><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>会社概要 | ATLAS COMPUTER</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site-base.css') }}?v=20261006-font1"><link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='css/company-detail.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='css/company-layout.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='css/subpage-hero.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site-footer.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/subpage-motion.css') }}">
+  <script src="{{ url_for('static', filename='js/subpage-motion.js') }}" defer></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site-navigation.css') }}?v=20261007-review3">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/typography-review.css') }}?v=20261008-unify1">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/prose-flow.css') }}?v=20261008-flow2">
+</head><body class="owned-subpage">
+<a class="skip-link" href="#main-content">本文へ移動</a>
+<!-- SITE-HEADER:START -->
+<header class="site-header" id="top">
+
+  <a class="brand" href="{{ url_for('index') }}" aria-label="アトラスコンピュータ トップページへ"><img src="{{ url_for('static', filename='images/atlas_logo.jpg') }}" alt="株式会社アトラスコンピュータ" width="196" height="40" decoding="async"></a>
+  <nav class="desktop-nav" aria-label="グローバルナビゲーション">
+    <a href="{{ url_for('company') }}">会社案内</a>
+    <a href="{{ url_for('business') }}">事業内容</a>
+    <a href="{{ url_for('smes') }}">中小企業向けITコンサルティング</a>
+    <a href="{{ url_for('partner') }}">ビジネスパートナー</a>
+    <a href="{{ url_for('recruit') }}">採用について</a>
+    <a href="{{ url_for('contact') }}">お問い合わせ</a>
+  </nav>
+  <div class="header-actions">
+  <a class="header-contact" href="{{ url_for('contact') }}" aria-label="お問い合わせ"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg></a>
+  <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <button class="drawer-close" type="button" aria-label="メニューを閉じる">×</button>
+  <div class="drawer-inner">
+    <p class="drawer-kicker">ATLAS COMPUTER</p>
+    <nav class="drawer-nav" aria-label="メニュー">
+      <a href="{{ url_for('company') }}"><span>会社案内<small>COMPANY</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('business') }}"><span>事業内容<small>BUSINESS</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('smes') }}"><span>中小企業向けITコンサルティング<small>IT CONSULTING</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('partner') }}"><span>ビジネスパートナー<small>BUSINESS PARTNER</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('recruit') }}"><span>採用について<small>RECRUIT</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('contact') }}"><span>お問い合わせ<small>CONTACT</small></span><i aria-hidden="true">→</i></a>
+    </nav>
+  </div>
+</aside>
+<div class="drawer-backdrop"></div>
+<!-- SITE-HEADER:END -->
+
+<main tabindex="-1" id="main-content" class="company-detail-main" data-content-page="company-profile"><div class="company-detail-wrap"><nav class="company-detail-breadcrumb" aria-label="パンくずリスト"><a href="{{ url_for('company') }}">会社案内</a><span aria-hidden="true">／</span><span aria-current="page">会社概要</span></nav><header class="company-detail-hero page-hero">
+<p class="section-no">COMPANY PROFILE</p><h1>会社概要・アクセス</h1></header><div class="company-detail-article company-detail-profile"><h2 class="profile-table-heading">会社概要</h2><dl class="profile-list">
+      <div><dt>会社名</dt><dd>株式会社アトラスコンピュータ<br><small>ATLAS COMPUTER CO.,LTD.</small></dd></div>
+      <div><dt>設立</dt><dd>平成11年3月30日</dd></div>
+      <div><dt>資本金</dt><dd>15,000,000円</dd></div>
+      <div><dt>住所</dt><dd>〒110-0016 東京都台東区台東2-5-1 NOEビル5F</dd></div>
+      <div><dt>電話番号</dt><dd><a href="tel:0358165770">03-5816-5770</a></dd></div>
+      <div><dt>FAX</dt><dd>03-5818-8432</dd></div>
+      <div><dt>役員</dt><dd>代表取締役 小長谷 丈晴<br>取締役 李 尚鶴<br>監査役 小長谷 八千代</dd></div>
+      <div><dt>取引銀行</dt><dd>りそな銀行 秋葉原支店<br>三井住友銀行 上野支店<br>みずほ銀行 浅草支店</dd></div>
+      <div><dt>認定・登録</dt><dd>プライバシーマーク<br>2018年12月 認定取得<br>登録番号：第10824656</dd></div>
+    </dl><section class="company-profile-access" id="access" data-content-section="access">
+
+    <h2>アクセス</h2>
+    <div class="access-grid">
+      <div>
+        <h3><span class="heading-unit">株式会社</span><span class="heading-unit">アトラス</span><span class="heading-unit">コンピュータ　本社</span></h3>
+        <p>〒110-0016<br>東京都台東区台東2-5-1 NOEビル5F</p>
+      </div>
+      <div class="access-lines">
+        <p>JR「秋葉原駅」昭和通り口より徒歩10分</p>
+        <p>JR「御徒町駅」より徒歩10分</p>
+        <p>地下鉄「仲御徒町駅」1番出口より徒歩6分</p>
+        <p>地下鉄「新御徒町駅」「末広町駅」より徒歩10分</p>
+      </div>
+    </div>
+    <div class="access-map">
+      <iframe title="株式会社アトラスコンピュータ 本社へのアクセス地図" data-map-src="https://maps.google.co.jp/maps?f=q&amp;source=s_q&amp;hl=ja&amp;geocode=&amp;q=%E5%8F%B0%E6%9D%B1%E5%8C%BA%E5%8F%B0%E6%9D%B1%EF%BC%92%EF%BC%8D%EF%BC%95%EF%BC%8D%EF%BC%91&amp;aq=&amp;sll=36.5626,136.362305&amp;sspn=30.676173,50.273437&amp;brcurrent=3,0x60188ea4247005eb:0x89c0dde1d624b6f8,0&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E5%8F%B0%E6%9D%B1%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%95%E2%88%92%EF%BC%91&amp;ll=35.703276,139.777293&amp;spn=0.012197,0.018239&amp;z=16&amp;output=embed" loading="eager" referrerpolicy="no-referrer-when-downgrade" width="980" height="360"></iframe>
+      <a href="https://maps.google.co.jp/maps?f=q&amp;source=embed&amp;hl=ja&amp;geocode=&amp;q=%E5%8F%B0%E6%9D%B1%E5%8C%BA%E5%8F%B0%E6%9D%B1%EF%BC%92%EF%BC%8D%EF%BC%95%EF%BC%8D%EF%BC%91&amp;aq=&amp;sll=36.5626,136.362305&amp;sspn=30.676173,50.273437&amp;brcurrent=3,0x60188ea4247005eb:0x89c0dde1d624b6f8,0&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E5%8F%B0%E6%9D%B1%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%95%E2%88%92%EF%BC%91&amp;ll=35.703276,139.777293&amp;spn=0.012197,0.018239&amp;z=15&amp;iwloc=A">Google マップで本社の位置を確認する →</a>
+    </div>
+  </section></div><a class="company-detail-back return-link" href="{{ url_for('company') }}#company-info">← 会社案内へ戻る</a></div></main>
+<footer class="site-footer">
+    <nav class="footer-policy" aria-label="サイトポリシー">
+      <a href="{{ url_for('policy_terms') }}">サイト利用規定</a>
+      <a href="{{ url_for('policy_privacy') }}">個人情報取扱について</a>
+      <a href="{{ url_for('policy_protection') }}">個人情報保護方針</a>
+      <a href="{{ url_for('policy_security') }}">セキュリティポリシー</a>
+      <a href="{{ url_for('policy_disclaimer') }}">免責事項</a>
+      <a href="{{ url_for('policy_harassment') }}">採用活動におけるハラスメント防止方針</a>
+
+    </nav>
+    <div class="footer-main">
+      <div class="footer-identity">
+        <span class="footer-wordmark">株式会社アトラスコンピュータ</span>
+        <div class="footer-certifications" role="group" aria-label="認証マーク">
+        <img src="{{ url_for('static', filename='images/p_JP.png') }}" alt="Privacy Mark 10824656" width="216" height="216" loading="lazy" decoding="async">
+        <img src="{{ url_for('static', filename='images/icd.png') }}" alt="i Competency Dictionary 2023 Silver Plus 01-03102(05)" width="613" height="613" loading="lazy" decoding="async">
+      </div>
+      </div>
+      <small>© 2026 ATLAS COMPUTER CO.,LTD.</small>
+    </div>
+  </footer>
+<script src="{{ url_for('static', filename='js/script.js') }}?v=20261007-review3"></script>
+<script src="{{ url_for('static', filename='js/company-map.js') }}" defer></script></body>
+</html>

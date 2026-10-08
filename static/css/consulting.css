@@ -1,0 +1,59 @@
+/* Consultation examples remain faithful to the existing service copy. */
+[data-content-page="smes"] .consultation-index{display:flex;flex-wrap:wrap;border-block:1px solid #cddfea}
+[data-content-page="smes"] .consultation-index a{display:flex;align-items:center;gap:12px;flex:1 1 240px;padding:14px 12px;min-height:60px;color:#173e58;text-decoration:none}
+[data-content-page="smes"] .consultation-index a:hover{background:#eef7fc}
+[data-content-page="smes"] .consultation-index small{font:600 12px/1.5 Arial,sans-serif;color:#2c8bb9}
+[data-content-page="smes"] .consultation-index .jump-index-detail{display:none}
+[data-content-page="smes"] .consultation-index strong{font-size:15px;font-weight:600}
+[data-content-page="smes"] .consultation-index a>span[aria-hidden]{margin-left:auto;color:#2c8bb9}
+[data-content-page="smes"] .consultation-layout{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:'heading action' 'overview overview' 'concerns concerns';gap:18px 28px;padding:38px 0 0;border-top:1px solid #cddfea;align-items:center}
+[data-content-page="smes"] #sales .consultation-layout{border-top:0;padding-top:0}
+[data-content-page="smes"] .bd-section-head{grid-area:heading}
+[data-content-page="smes"] .consultation-overview{grid-area:overview;text-align:left;margin:0 0 0 82px;width:auto}
+[data-content-page="smes"] .bd-lead{color:#334d5e;font-size:17px;line-height:1.9;text-wrap:wrap;margin:0;max-width:54em}
+[data-content-page="smes"] .consultation-concerns,[data-content-page="smes"] :is(#cost,#security) .consultation-concerns{grid-area:concerns;max-width:none;width:auto;margin-left:82px;padding:0;border:0;background:none;text-align:left;justify-self:stretch}
+[data-content-page="smes"] .consultation-concerns h3{font-size:15px;color:#173e58;margin:0 0 12px}
+[data-content-page="smes"] .consultation-checklist{display:flex;flex-wrap:wrap;gap:8px;max-width:none;margin:0;padding:0;list-style:none}
+[data-content-page="smes"] .consultation-checklist li{display:flex;flex:1 1 200px;align-items:flex-start;gap:10px;background:linear-gradient(110deg,#f3fafe,#eaf5fb);padding:18px 20px;color:#334d5e;font-size:16px;line-height:1.85;border:0}
+[data-content-page="smes"] .concern-check{flex-shrink:0;width:14px;height:14px;margin-top:.45em;color:#2c8bb9}
+[data-content-page="smes"] .service-contact{grid-area:action;justify-self:end;width:auto;text-align:left;margin:0}
+[data-content-page="smes"] .service-contact a.contact-action{width:auto;min-height:44px;padding:8px 0;gap:16px;border:0;border-radius:0;background:none;color:#247fae;font-size:15px;font-weight:600}
+[data-content-page="smes"] .service-contact a.contact-action:hover{background:none;color:#145880;text-decoration:underline;text-underline-offset:5px}
+[data-content-page="smes"] .consultation-explainer{max-width:none;margin:24px 0 0}
+[data-content-page="smes"] .consultation-explainer figcaption{font-size:15px;font-weight:700;margin-bottom:12px;color:#173e58}
+[data-content-page="smes"] .consultation-explainer ul{display:flex;gap:4px;margin:0;padding:0;list-style:none}
+[data-content-page="smes"] .consultation-explainer li{flex:1;padding:16px 20px;position:relative;border:0;background:linear-gradient(110deg,#e1f3fc,#a7dafa);font-size:16px;color:#173e58;clip-path:polygon(0 0,calc(100% - 15px) 0,100% 50%,calc(100% - 15px) 100%,0 100%,15px 50%)}
+[data-content-page="smes"] .consultation-explainer li:first-child{clip-path:polygon(0 0,calc(100% - 15px) 0,100% 50%,calc(100% - 15px) 100%,0 100%)}
+[data-content-page="smes"] .explainer-arrow{display:none}
+@media(max-width:800px){
+ [data-content-page="smes"] .consultation-index{display:block}
+ [data-content-page="smes"] .consultation-index a{min-height:48px;padding:10px 4px}
+ [data-content-page="smes"] .consultation-index a+a{border-top:1px solid #e0eaf0}
+ [data-content-page="smes"] .consultation-layout{grid-template-columns:1fr;grid-template-areas:'heading' 'overview' 'concerns' 'action';gap:16px;padding-top:30px}
+ [data-content-page="smes"] .consultation-overview,[data-content-page="smes"] .consultation-concerns,[data-content-page="smes"] :is(#cost,#security) .consultation-concerns{margin-left:0}
+ [data-content-page="smes"] .bd-lead{font-size:16px}
+ [data-content-page="smes"] .consultation-checklist{flex-direction:column}
+ [data-content-page="smes"] .consultation-checklist li{flex:auto;font-size:16px;padding:14px 16px}
+ [data-content-page="smes"] .service-contact{justify-self:start}
+ [data-content-page="smes"] .consultation-explainer ul{flex-direction:column}
+ [data-content-page="smes"] .consultation-explainer li,[data-content-page="smes"] .consultation-explainer li:first-child{clip-path:none;padding:12px 16px}
+ [data-content-page="smes"] .consultation-explainer .explainer-arrow{display:block;right:calc(50% - 8px);top:auto;bottom:-12px;transform:rotate(90deg);z-index:1}
+}
+
+[data-content-page="smes"] .consultation-overview{max-width:none;justify-self:stretch}
+
+/* Examples read as a list; keep one contact destination at the end. */
+[data-content-page="smes"] .consultation-layout{grid-template-columns:1fr;grid-template-areas:'heading' 'overview' 'concerns';}
+[data-content-page="smes"] .consultation-checklist{gap:0 24px;}
+[data-content-page="smes"] .consultation-checklist li{background:none;border-top:1px solid #dbe7ed;padding:16px 0;}
+@media(max-width:800px){
+ [data-content-page="smes"] .consultation-layout{grid-template-areas:'heading' 'overview' 'concerns';}
+ [data-content-page="smes"] .consultation-checklist li{padding:14px 0;}
+}
+
+@media(min-width:801px){[data-content-page="smes"] :is(.bd-lead,.consultation-checklist li){font-size:18px;}}
+
+/* Consultation examples are prose lists, not checked results or link cards. */
+#main-content[data-content-page="smes"] .consultation-checklist{display:grid;grid-template-columns:minmax(0,1fr);gap:0;margin:0;padding:0;max-width:none}
+#main-content[data-content-page="smes"] .consultation-checklist li{display:grid;grid-template-columns:.5em minmax(0,1fr);gap:14px;padding:14px 0;border:0;flex:none;background:none}
+#main-content[data-content-page="smes"] .consultation-checklist li::before{content:"";width:5px;height:5px;margin-top:.8em;border-radius:50%;background:#3099c3}

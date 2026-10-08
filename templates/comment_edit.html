@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>社員の声の管理</title>
+	<link rel="stylesheet" href="/static/css/management.css">
+</head>
+<body>
+	<main>
+{% include "management-messages.html" %}
+		<h1>社員の声の管理</h1>
+		<form method="post">
+			<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+			{% for comment in comments %}
+				<fieldset>
+					<legend>投稿 #{{ comment.id }}（{{ comment.date.strftime('%Y.%m.%d') }}）</legend>
+					<iframe class="voice-embed" src="{{ comment.url }}" title="VOiCE 口コミ" loading="lazy"></iframe>
+					<p><a href="{{ comment.url }}" target="_blank" rel="noopener">{{ comment.url }}</a></p>
+					<p>
+						<input type="submit" value="削除" formaction="{{ url_for('delete_comment', comment_id=comment.id) }}" onclick="return confirm('本当に削除しますか？');">
+					</p>
+				</fieldset>
+			{% else %}
+				<p>投稿はありません。</p>
+			{% endfor %}
+		</form>
+		<p><a href="{{ url_for('management') }}">管理画面へ戻る</a></p>
+	</main>
+</body>
+</html>

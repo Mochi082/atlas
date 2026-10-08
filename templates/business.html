@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" sizes="any">
+<script src="{{ url_for('static', filename='js/homepage-scroll.js') }}"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+  <title>事業内容 | ATLAS COMPUTER</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site-base.css') }}?v=20261006-font1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/business.css') }}?v=20261007-band3">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/subpage-theme.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/subpage-hero.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact-actions.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site-footer.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/subpage-motion.css') }}">
+  <script src="{{ url_for('static', filename='js/subpage-motion.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='js/technical-disclosure.js') }}?v=20261007-bottom-close" defer></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site-navigation.css') }}?v=20261007-review3">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/typography-review.css') }}?v=20261008-unify1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/service-presentation.css') }}?v=20261007-content1">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/prose-flow.css') }}?v=20261008-flow3">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/subpage-illustrations.css') }}?v=20261008-art16">
+</head>
+<body class="owned-subpage">
+<a class="skip-link" href="#main-content">本文へ移動</a>
+<!-- SITE-HEADER:START -->
+<header class="site-header" id="top">
+
+  <a class="brand" href="{{ url_for('index') }}" aria-label="アトラスコンピュータ トップページへ"><img src="{{ url_for('static', filename='images/atlas_logo.jpg') }}" alt="株式会社アトラスコンピュータ" width="196" height="40" decoding="async"></a>
+  <nav class="desktop-nav" aria-label="グローバルナビゲーション">
+    <a href="{{ url_for('company') }}">会社案内</a>
+    <a href="{{ url_for('business') }}">事業内容</a>
+    <a href="{{ url_for('smes') }}">中小企業向けITコンサルティング</a>
+    <a href="{{ url_for('partner') }}">ビジネスパートナー</a>
+    <a href="{{ url_for('recruit') }}">採用について</a>
+    <a href="{{ url_for('contact') }}">お問い合わせ</a>
+  </nav>
+  <div class="header-actions">
+  <a class="header-contact" href="{{ url_for('contact') }}" aria-label="お問い合わせ"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg></a>
+  <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <button class="drawer-close" type="button" aria-label="メニューを閉じる">×</button>
+  <div class="drawer-inner">
+    <p class="drawer-kicker">ATLAS COMPUTER</p>
+    <nav class="drawer-nav" aria-label="メニュー">
+      <a href="{{ url_for('company') }}"><span>会社案内<small>COMPANY</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('business') }}"><span>事業内容<small>BUSINESS</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('smes') }}"><span>中小企業向けITコンサルティング<small>IT CONSULTING</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('partner') }}"><span>ビジネスパートナー<small>BUSINESS PARTNER</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('recruit') }}"><span>採用について<small>RECRUIT</small></span><i aria-hidden="true">→</i></a>
+      <a href="{{ url_for('contact') }}"><span>お問い合わせ<small>CONTACT</small></span><i aria-hidden="true">→</i></a>
+    </nav>
+  </div>
+</aside>
+<div class="drawer-backdrop"></div>
+<!-- SITE-HEADER:END -->
+<main tabindex="-1" id="main-content" class="company-page business-detail-page" data-content-page="business">
+  <header class="company-title bd-title subpage-motion page-hero">
+<div class="company-title-inner illustrated-intro"><p class="eyebrow">BUSINESS</p><h1>事業内容</h1><p class="company-lead"><span class="text-phrase">開発から</span><span class="text-phrase">ITサポート、</span><span class="text-phrase">DX化支援まで。</span><br><span class="text-phrase">技術と情熱で</span><span class="text-phrase">ビジネスを支える。</span></p><p class="company-intro">システム開発、FA系システム開発、DX化支援、ITサポートの4事業をご紹介します。</p><figure class="socost-art intro-art"><img src="{{ url_for('static', filename='images/socost/business.png') }}?v=20261008-outline1" alt="" width="524" height="546" loading="lazy" decoding="async"></figure></div></header>
+  <div class="bd-wrap bd-intro subpage-motion">
+    <nav class="bd-index jump-link-grid" aria-label="事業一覧">
+      <a href="#software"><small>01<span class="jump-index-detail"> / SYSTEM DEVELOPMENT</span></small><strong><span class="text-phrase">システム</span><span class="text-phrase">開発</span></strong><span aria-hidden="true">↓</span></a>
+      <a href="#fa"><small>02<span class="jump-index-detail"> / FA SYSTEMS</span></small><strong><span class="text-phrase">FA系</span><span class="text-phrase">システム開発</span></strong><span aria-hidden="true">↓</span></a>
+      <a href="#dx"><small>03<span class="jump-index-detail"> / DX SUPPORT</span></small><strong>DX化支援</strong><span aria-hidden="true">↓</span></a>
+      <a href="#support"><small>04<span class="jump-index-detail"> / IT SUPPORT</span></small><strong>ITサポート</strong><span aria-hidden="true">↓</span></a>
+    </nav>
+  </div>
+  <section class="bd-section" data-service-key="software" id="software" data-content-section="software">
+    <header class="bd-section-band">
+<div class="bd-wrap">
+      <div class="bd-section-head subpage-motion"><small>01 / SYSTEM DEVELOPMENT</small><h2>システム開発</h2></div>
+      <p class="bd-lead reading-summary">お客様の開発体制や業務課題に合わせ、常駐・受託開発から業務自動化まで対応します。</p>
+    </div></header><div class="bd-wrap bd-section-body">
+      <div class="bd-services subpage-motion">
+        <article><div><h3><span class="heading-unit">常駐</span><span class="heading-unit">システム開発</span></h3><p>お客様の開発チームに参画し、開発環境の共有やセキュリティへの配慮を図りながら、経験を持つ要員でチームを編成して開発を行います。</p></div></article>
+        <article><div><h3><span class="heading-unit">受託</span><span class="heading-unit">システム開発</span></h3><p>お客様のご要望に応じてシステム開発を受託。自社および海外パートナーとの連携により、開発リソース不足などの課題に対応します。</p></div></article>
+        <article><div><h3><span class="heading-unit">RPAによる</span><span class="heading-unit">自動化開発</span></h3><p>定型的なデスクワークの自動化を支援します。WinActor、UiPath、BizRobo!、Automation Anywhereを使用した開発に対応しています。</p></div></article>
+        <article><div><h3><span class="heading-unit">ローコード・</span><span class="heading-unit">ノーコード系</span><span class="heading-unit">システム構築</span></h3><p>WebPerformer、Microsoft PowerApps、Kintoneなどを活用し、コストや納期、業務上のニーズに合わせたシステム構築を提案します。</p></div></article>
+      </div>
+      <figure class="service-process" aria-labelledby="development-process-title">
+        <figcaption id="development-process-title">対応工程</figcaption>
+        <ol><li>要件定義</li><li>設計</li><li>開発</li><li>テスト</li><li>運用保守</li></ol>
+      </figure>
+      <section class="bd-skills subpage-motion" id="technical-capabilities" aria-labelledby="technical-title">
+        <div class="bd-skills-heading"><div><small>TECHNICAL CAPABILITIES</small><h3 id="technical-title">システム開発で対応する<span class="heading-unit">技術・</span><span class="heading-unit">開発領域</span></h3></div><p>ソフトウェア開発における対応技術と開発領域をご紹介します。</p></div>
+        <details data-technical-disclosure><summary><span class="disclosure-open">技術・開発領域の一覧を開く</span><span class="disclosure-close">一覧を閉じる</span></summary>
+        <dl class="bd-skill-list">
+          <div><dt>言語・フレームワーク等</dt><dd><ul class="bd-skill-names"><li>Java</li><li>PHP</li><li>JavaScript</li><li>Ruby</li><li>Python</li><li>Android-Java</li><li>C</li><li>C++</li><li>Pro*C</li><li>C#</li><li>VB</li><li>VB.NET</li><li>VB Script</li><li>ASP.NET</li><li>PL/SQL</li><li>VBA</li><li>Perl</li><li>Powershell</li><li>Spring</li><li>Struts</li><li>独自フレームワーク</li><li>ActionScript</li><li>jQuery</li><li>Ajax</li><li>HTML</li><li>JP1</li><li>Delphi</li><li>PowerBuilder</li><li>SAS</li><li>COBOL</li><li>PL-1</li></ul></dd></div>
+          <div><dt>データベース</dt><dd><ul class="bd-skill-names"><li>Oracle</li><li>SQL Server</li><li>DB2</li><li>Access</li><li>PostgreSQL</li><li>MySQL</li><li>IMS</li><li>SQLite</li><li>HiRDB</li><li>ADABAS</li><li>Symfoware</li><li>XDM</li></ul></dd></div>
+          <div><dt>サーバーサイド</dt><dd><ul class="bd-skill-names"><li>Linux</li><li>AWS</li><li>Node.js</li></ul></dd></div>
+          <div><dt>アプリケーション</dt><dd><ul class="bd-skill-names"><li>Android-Java</li><li>Kotlin</li><li>Swift</li></ul></dd></div>
+          <div><dt>対応工程</dt><dd><ul class="bd-skill-names"><li>要件定義</li><li>設計</li><li>開発</li><li>テスト</li><li>運用保守</li></ul></dd></div>
+          <div><dt>対応業種</dt><dd><ul class="bd-skill-names"><li>通信</li><li>金融</li><li>公共</li><li>流通小売</li><li>産業</li><li>医療</li><li>サービス</li><li>制御</li><li>ネットワーク基盤系</li></ul></dd></div>
+        </dl>
+        <button type="button" class="technical-close" data-technical-close>技術・開発領域の一覧を閉じる <span aria-hidden="true">↑</span></button>
+        </details>
+      </section>
+    </div>
+  </section>
+  <section class="bd-section" data-service-key="fa" id="fa" data-content-section="fa"><header class="bd-section-band">
+<div class="bd-wrap">
+      <div class="bd-section-head subpage-motion"><small>02 / FA SYSTEMS</small><h2><span class="heading-unit">FA系</span><span class="heading-unit">システム開発</span></h2></div>
+      <p class="bd-lead">FA系システム開発に関するご相談を承ります。</p>
+    </div></header><div class="bd-wrap bd-section-body bd-fa-placeholder"><div class="illustrated-body fa-overview"><p class="bd-pending-note">詳しい事業内容は今後追加予定です。</p><figure class="socost-art body-art"><img src="{{ url_for('static', filename='images/socost/construction.png') }}" alt="" width="1080" height="1080" loading="lazy" decoding="async"></figure></div></div></section>
+  <section class="bd-section" data-service-key="dx" id="dx" data-content-section="dx"><header class="bd-section-band">
+<div class="bd-wrap">
+      <div class="bd-section-head subpage-motion"><small>03 / DX SUPPORT</small><h2>DX化支援</h2></div>
+      <p class="bd-lead reading-summary">中小企業のDX化を、業務課題に合わせて支援します。</p>
+    </div></header><div class="bd-wrap bd-section-body">
+    <div class="bd-services subpage-motion">
+      <article><div><h3><span class="heading-unit">kintoneを活用した</span><span class="heading-unit">DX化支援</span></h3><p>ローコードのkintoneを活用し、さまざまな業界のお客様のIT課題の解決とDX化を支援します。</p><p><a class="bd-site-link" href="https://atlas-dx.com/">kintone導入支援の詳細を見る <span aria-hidden="true">→</span></a></p></div></article>
+      <article><div><h3><span class="heading-unit">AIを活用した</span><span class="heading-unit">DX支援</span></h3><p>AIの活用によるDX支援に取り組みます。具体的なサービス内容は現在検討中で、詳細は今後追加予定です。</p></div></article>
+    </div>
+  </div></section>
+  <section class="bd-section" data-service-key="support" id="support" data-content-section="support"><header class="bd-section-band">
+<div class="bd-wrap">
+      <div class="bd-section-head subpage-motion"><small>04 / IT SUPPORT</small><h2>ITサポート</h2></div>
+      <p class="bd-lead reading-summary">システム開発の経験を活かし、SES形態でITサポート事業を行っています。</p>
+    </div></header><div class="bd-wrap bd-section-body">
+    <div class="illustrated-body"><div class="bd-services subpage-motion">
+      <article><div><h3><span class="heading-unit">ヘルプデスク・</span><span class="heading-unit">テクニカルサポート</span></h3><p>お客様のIT環境に関するサポート業務を支援します。</p></div></article>
+      <article><div><h3><span class="heading-unit">その他の</span><span class="heading-unit">サポート業務</span></h3><p>PMO補佐業務／キッティング／端末フィールドサービス支援／データ入力・データ整理／製品評価など。</p></div></article>
+    </div><figure class="socost-art body-art"><img src="{{ url_for('static', filename='images/socost/support.png') }}" alt="" width="1080" height="1080" loading="lazy" decoding="async"></figure></div>
+  </div></section>
+  <div class="bd-contact subpage-motion" id="business-contact"><div class="bd-wrap"><div><small>CONTACT</small><h2><span class="heading-unit">事業に関する</span><span class="heading-unit">ご相談・</span><span class="heading-unit">お問い合わせ</span></h2><p>ご相談やご質問などがございましたら、お気軽にお問い合わせください。</p></div><a class="contact-action" href="{{ url_for('contact') }}?type=services">お問い合わせはこちら <span aria-hidden="true">→</span></a></div></div>
+</main>
+<footer class="site-footer">
+    <nav class="footer-policy" aria-label="サイトポリシー">
+      <a href="{{ url_for('policy_terms') }}">サイト利用規定</a>
+      <a href="{{ url_for('policy_privacy') }}">個人情報取扱について</a>
+      <a href="{{ url_for('policy_protection') }}">個人情報保護方針</a>
+      <a href="{{ url_for('policy_security') }}">セキュリティポリシー</a>
+      <a href="{{ url_for('policy_disclaimer') }}">免責事項</a>
+      <a href="{{ url_for('policy_harassment') }}">採用活動におけるハラスメント防止方針</a>
+
+    </nav>
+    <div class="footer-main">
+      <div class="footer-identity">
+        <span class="footer-wordmark">株式会社アトラスコンピュータ</span>
+        <div class="footer-certifications" role="group" aria-label="認証マーク">
+        <img src="{{ url_for('static', filename='images/p_JP.png') }}" alt="Privacy Mark 10824656" width="216" height="216" loading="lazy" decoding="async">
+        <img src="{{ url_for('static', filename='images/icd.png') }}" alt="i Competency Dictionary 2023 Silver Plus 01-03102(05)" width="613" height="613" loading="lazy" decoding="async">
+      </div>
+      </div>
+      <small>© 2026 ATLAS COMPUTER CO.,LTD.</small>
+    </div>
+  </footer>
+<script src="{{ url_for('static', filename='js/script.js') }}?v=20261007-review3"></script>
+
+</body>
+</html>

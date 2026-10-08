@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>管理画面</title>
+  <link rel="stylesheet" href="/static/css/management.css">
+</head>
+<body>
+	<main>
+{% include "management-messages.html" %}
+		<h1>管理画面</h1>
+
+    <div>
+      <ul>
+        <li><a href="{{ url_for('newinfo') }}">新規お知らせ</a></li>
+        <li><a href="{{ url_for('info_edit') }}">お知らせ編集</a></li>
+        <li><a href="{{ url_for('new_activity') }}">新規活動報告</a></li>
+        <li><a href="{{ url_for('activity_edit') }}">活動報告編集</a></li>
+        <li><a href="{{ url_for('new_comment') }}">社員の声の追加</a></li>
+        <li><a href="{{ url_for('comment_edit') }}">社員の声の管理</a></li>
+        <li>
+          <form method="post" action="{{ url_for('logout') }}">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <button type="submit">ログアウト</button>
+          </form>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <ul>
+      {% for information in informations %}
+        <li><p>{{ information.title }}</p><p>{{ information.text }}</p></li>
+        <li><p class="{{ 'published' if information.published else 'unpublished' }}">{{ '公開' if information.published else '非公開' }}</p></li>
+      {% else %}
+        <li>投稿はありません。</li>
+      {% endfor %}
+    </ul>
+    <ul>
+      {% for activity in activities %}
+        <li>
+          {{ activity.date.strftime('%Y-%m-%d') }}
+        </li>
+        <li>
+          <p>{{ activity.title }}</p>
+        </li>
+        <li>
+          <p class="{{ 'published' if activity.published else 'unpublished' }}">{{ '公開' if activity.published else '非公開' }}</p>
+        </li>
+        {% for number in range(1, 5) %}
+        {% set text = activity['text' ~ number] %}
+        {% set image_path = activity['image_path_' ~ number] %}
+        <li>{{ text or '' }}</li>
+        <li>{% if image_path %}<img src="{{ url_for('static', filename=image_path) }}" alt="画像{{ number }}" width="200">{% endif %}</li>
+        {% endfor %}
+      {% else %}
+        <li>投稿はありません。</li>
+      {% endfor %}
+    </ul>
+    <ol class="comment-list">
+      {% for comment in comments %}
+        <li>
+          <p class="comment-meta"><span>投稿 #{{ comment.id }}</span><span class="comment-age">{{ comment.date.strftime('%Y.%m.%d') }}</span></p>
+          <p class="comment-text"><a href="{{ comment.url }}" target="_blank" rel="noopener">{{ comment.url }}</a></p>
+        </li>
+      {% else %}
+        <li class="comment-empty">投稿はありません。</li>
+      {% endfor %}
+    </ol>
+    </div>
+	</main>
+</body>
+</html>

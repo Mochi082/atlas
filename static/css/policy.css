@@ -1,0 +1,64 @@
+/* Long-form policy content; layout, title and navigation use existing shared CSS. */
+.policy-article.company-detail-article{max-width:44em;font-size:16px;overflow-wrap:break-word;line-break:strict}
+.policy-article.company-detail-article p{margin:0 0 24px;line-height:1.95;letter-spacing:.015em}
+.policy-article.company-detail-article h2{margin:56px 0 24px;padding-bottom:16px;border-bottom:1px solid #dce5eb;font-size:clamp(21px,2.3vw,26px);line-height:1.6;scroll-margin-top:110px}
+.policy-article h3{margin:36px 0 18px;font-size:19px;line-height:1.7;color:#15364d;scroll-margin-top:110px}
+.policy-article h4{margin:28px 0 16px;font-size:17px;line-height:1.7;color:#15364d}
+.policy-article ol,.policy-article ul{padding-left:1.6em;margin:28px 0 36px;line-height:1.95;color:var(--reading-body-color);font-weight:var(--reading-body-weight)}
+.policy-article li{padding-left:8px}
+.policy-article li+li{margin-top:22px}
+.policy-article li::marker{color:#245b88;font-weight:700}
+.policy-toc{max-width:44em;margin-top:32px;padding:24px 28px;background:#f4f8fb;border:1px solid #dce5eb;border-radius:4px}
+.policy-toc-title{margin:0 0 12px;font-weight:700;color:#15364d}
+.policy-toc ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 24px;list-style:none;padding:0;margin:0}
+.policy-toc a{display:flex;align-items:center;min-height:44px;padding:8px 0;font-size:14px;line-height:1.7;color:#245b88;text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
+.policy-toc-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.policy-toc-group{min-width:0}
+.policy-toc-group summary{min-height:44px;padding:8px 0;color:#15364d;font-weight:700;line-height:1.7;cursor:pointer}
+.policy-toc-group summary:focus-visible{outline:3px solid #247fc1;outline-offset:3px}
+.policy-toc-group ul{display:block;margin-top:8px}
+.policy-table{max-width:100%;overflow-x:auto;margin:0 0 24px}
+.policy-table table{width:100%;border-collapse:collapse;color:var(--reading-body-color);font-weight:var(--reading-body-weight);line-height:1.8}
+.policy-table th,.policy-table td{padding:16px;border:1px solid #dce5eb;text-align:left;vertical-align:top}
+.policy-table th{background:#f4f8fb;font-weight:700}
+.policy-article a{color:#245b88;text-decoration:underline}
+@media(max-width:600px){
+  .policy-toc{padding:16px 12px}
+  .policy-toc ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 12px}
+  .policy-toc-groups{grid-template-columns:1fr;gap:12px}
+  .policy-article.company-detail-article p{margin-bottom:20px;line-height:1.85}
+  .policy-article.company-detail-article h2{margin:36px 0 18px;font-size:20px;padding-bottom:12px}
+  .policy-article h3{font-size:18px;margin:28px 0 14px}
+  .policy-article ol,.policy-article ul{margin:22px 0 28px;line-height:1.85}
+  .policy-article li+li{margin-top:16px}
+  .policy-table th,.policy-table td{padding:12px}
+}
+
+/* Policy reading refinements shared by the five pages. */
+[data-content-page^="policy-"] .company-detail-hero .section-no,
+.policy-article li::marker,.policy-toc a { color:#2c8bb9; }
+.policy-article.company-detail-article :is(p,li,td,th) {letter-spacing:.015em;word-break:normal;line-break:strict;}
+.policy-table th[scope="row"] {width:32%;}
+.policy-table th[scope="col"]:first-child {width:32%;}
+@media(max-width:600px){
+  .policy-toc>ul{grid-template-columns:1fr;gap:2px;}
+  .policy-table th,.policy-table td{padding:12px 10px;}
+  .policy-table tr>:first-child{width:32%;}
+}
+
+/* Center policy headings and prose on a shared reading axis. */
+[data-content-page^="policy-"] .company-detail-hero{text-align:center;}
+.policy-article.company-detail-article{margin-inline:auto;text-align:center;}
+.policy-toc{margin-inline:auto;text-align:left;}
+.policy-article :is(ol,ul,.policy-table){text-align:left;}
+[data-content-page^="policy-"] .company-detail-back{display:table;margin-inline:auto;}
+
+/* Use the page width and stronger text contrast. */
+.policy-article.company-detail-article {max-width:none;width:100%;color:#202a31;}
+.policy-article.company-detail-article :is(p,li,td,th) {color:#202a31;font-weight:500;letter-spacing:normal;}
+.policy-article.company-detail-article p {font-size:18px;line-height:1.95;}
+.policy-article.company-detail-article :is(li,td,th) {font-size:18px;}
+.policy-toc {max-width:none;width:100%;}
+@media(max-width:600px){
+ .policy-article.company-detail-article :is(p,li,td,th){font-size:16px;line-height:1.85;}
+}

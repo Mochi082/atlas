@@ -1,0 +1,137 @@
+/* Shared lower-page hero. Loaded only on company/business/partner/recruit
+   and their detail pages; TOP and contact retain their own presentation. */
+.recruit-page{padding-top:76px}
+.page-hero:is(.company-title, .company-detail-hero, .activity-hero, .news-hero){
+  position:relative;
+  isolation:isolate;
+  min-height:0;
+  margin:0;
+  padding:0;
+  border-bottom:0;
+  overflow:hidden;
+  color:#164f7d;
+  background:radial-gradient(ellipse 37% 95% at 100% 8%,rgba(163,222,197,.45),transparent 83%),linear-gradient(115deg,#f8fcff 0%,#e6f4fc 50%,#98cce8 100%)!important;
+}
+.page-hero.company-title .company-title-inner{
+  width:100%;
+  max-width:1200px;
+  margin:0 auto;
+  padding:28px 40px 36px;
+}
+.page-hero .eyebrow,.page-hero .section-no,.page-hero .activity-kicker{
+  margin:0 0 10px;
+  color:#286f99;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.18em;
+}
+.page-hero:is(.company-title, .company-detail-hero, .activity-hero, .news-hero) h1{
+  margin:0 0 18px;
+  font-size:clamp(28px,4vw,48px);
+  line-height:1.25;
+  color:#124e80;
+  overflow-wrap:anywhere;
+}
+.page-hero.company-title .company-lead{
+  margin:0;
+  font-size:clamp(22px,2.6vw,34px);
+  line-height:1.5;
+  font-weight:700;
+  color:#386d8e;
+}
+.page-hero.company-title .company-title-inner .company-intro{
+  margin:16px 0 0;
+  max-width:100%;
+  font-size:17px;
+  line-height:1.9;
+  font-weight:500;
+  color:#294c65;
+}
+/* Detail heroes keep their breadcrumb and article containers. */
+.page-hero.company-detail-hero,.page-hero.activity-hero{
+  padding:28px 40px 36px;
+  margin-top:28px;
+  min-height:0;
+}
+.page-hero.company-detail-hero h1,.page-hero.activity-hero h1{margin-bottom:0}
+.page-hero.activity-hero time{color:#294c65}
+@media(max-width:800px){
+  .recruit-page{padding-top:64px}
+  .page-hero.company-title .company-title-inner{padding:20px 22px 28px}
+  .page-hero:is(.company-title, .company-detail-hero, .activity-hero, .news-hero) h1{font-size:clamp(28px,5vw,40px);margin-bottom:14px}
+  .page-hero:is(.company-title, .company-detail-hero, .activity-hero, .news-hero):has(.company-title-inner) h1{min-height:0}
+  .page-hero.company-detail-hero,.page-hero.activity-hero{padding:20px 22px 28px}
+}
+
+
+@media(max-height:500px){
+  .page-hero.company-title .company-title-inner{padding-top:12px;padding-bottom:20px}
+  .page-hero.company-detail-hero,.page-hero.activity-hero{padding-top:12px;padding-bottom:20px}
+}
+
+/* Jump menu dimensions follow BUSINESS on both pages. */
+.partner-page .partner-reading-nav{padding:60px 40px 72px}
+.partner-page .partner-reading-nav .partner-select-inner{max-width:1120px;width:100%;margin-inline:auto}
+.company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0;
+  border-block:1px solid #b8c7d3;
+}
+.company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  justify-content:flex-start;
+  gap:14px;
+  min-height:166px;
+  padding:27px 24px 48px;
+  border:0;
+  border-right:1px solid #d5dfe7;
+  text-align:left;
+}
+.company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a:last-child{border-right:0}
+.company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a::after{content:none}
+.company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a{transition:background-color .2s ease,color .2s ease}
+.company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a:hover,
+.company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a:focus-visible{background:#eaf5fc;color:#123b58;transform:none}
+.company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a:focus-visible{outline:3px solid #167db5;outline-offset:4px}
+.company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a>span[aria-hidden],
+.company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a>i{transform:none;transition:none}
+@media(prefers-reduced-motion:reduce){.company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a{transition:none}}
+.company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a>span:not([aria-hidden]){display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid small{font-size:12px;letter-spacing:.08em;font-weight:700;color:#245d8e}
+.company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid strong{font-size:21px;line-height:1.45}
+.company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a>span[aria-hidden],
+.company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a>i{position:absolute;left:24px;bottom:14px;margin:0;font-size:22px;font-style:normal;line-height:1;color:#245d8e}
+/* Desktop reflects destination count; narrower menus share two columns. */
+.business-detail-page .bd-intro .jump-link-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:1100px){
+ .company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a{border-right:1px solid #d5dfe7;border-bottom:1px solid #d5dfe7}
+ .company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a:nth-child(2n),
+ .company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a:last-child{border-right:0}
+ .company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a:last-child,
+ .company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a:nth-last-child(2):nth-child(odd){border-bottom:0}
+ .partner-page .partner-reading-nav .jump-link-grid a:last-child{grid-column:1 / -1}
+}
+@media(max-width:800px){
+ .partner-page .partner-reading-nav{padding:46px 22px 55px}
+ .company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a{min-height:110px;padding:20px 16px 42px}
+ .company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a>span[aria-hidden],
+ .company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a>i{left:16px;bottom:12px}
+}
+/* Four compact destinations keep the mobile introduction short. */
+@media(max-width:600px){
+ .page-hero:is(.company-title, .company-detail-hero, .activity-hero, .news-hero) h1{font-size:26px;line-height:1.35}
+ .page-hero.company-title .company-lead{font-size:21px}
+ .page-hero.company-title .company-title-inner .company-intro{font-size:16px;line-height:1.75;margin-top:14px}
+ .company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a{gap:6px;min-height:104px;padding:12px 8px;min-width:0}
+ .company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid small{letter-spacing:0;font-size:11px;overflow-wrap:anywhere}
+ .jump-index-detail{display:none}
+ .company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid strong{font-size:17px;line-height:1.5}
+ .company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a>span:not([aria-hidden]){gap:6px}
+ .company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a>i,
+ .company-page :is(.bd-intro, .partner-reading-nav) .jump-link-grid a>span[aria-hidden]{position:static;align-self:flex-end;font-size:16px;margin-top:auto}
+}

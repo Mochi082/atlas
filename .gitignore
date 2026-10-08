@@ -1,0 +1,13 @@
+# 秘密情報
+.env
+
+# ローカルDB・ログ
+instance/
+log.txt
+*.db
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/

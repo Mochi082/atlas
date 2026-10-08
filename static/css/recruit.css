@@ -1,0 +1,74 @@
+.recruit-page .detail-section { padding:60px max(40px,calc((100vw - 1120px)/2)); }
+.recruit-page .detail-section h2 { margin:8px 0 14px; font-size:clamp(26px,3vw,34px); }
+.recruit-page .section-no { margin:0; font-size:12px; }
+.recruit-section-copy { max-width:760px; margin:0 0 26px; font-size:16px; line-height:1.9; color:#435b6d; }
+.people-rough { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
+.people-card {
+  min-height: 170px;
+  border: 0;
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: flex-start;
+  color: #fff;
+  font-weight: 700;
+  font-size:22px;
+  text-align: left;
+  background: linear-gradient(145deg, #7aaac8, #203f54);
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+.people-card:hover, .people-card:focus-visible { box-shadow: 0 12px 24px rgba(16, 37, 56, 0.2); }
+.people-card span { display: block; font-size: inherit; font-weight: 800; line-height: 1.1; }
+.people-rough small { display: block; font-size:13px; font-weight: 400; color: #dbe7ef; margin-top: 10px; }
+.people-modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 2000; padding: 24px; }
+.people-modal.open { display: flex; }
+.people-modal-backdrop { position: absolute; inset: 0; background: rgba(11, 24, 39, 0.5); }
+.people-modal-dialog { position: relative; z-index: 1; width: min(560px, 100%); max-height:calc(100dvh - 48px); overflow-y:auto; background: #fff; border: 3px solid #0d2d5a; border-radius: 18px; padding: 32px 28px 28px; box-shadow: 0 28px 60px rgba(12, 28, 45, 0.18); }
+.people-modal-close { position: absolute; top: 12px; right: 14px; width: 36px; height: 36px; border: 0; border-radius: 50%; background: #edf4fb; color: #0d2d5a; font-size: 26px; line-height: 1; cursor: pointer; }
+.modal-kicker { margin: 0 0 10px; font-size: 11px; letter-spacing: 0.12em; color: #0d2d5a; }
+#peopleModalTitle { margin: 0 0 12px; font-size: 22px; color: #0d2d5a; }
+.people-modal-text { margin: 0 0 16px; font-size: 17px; line-height: 1.8; color: var(--ink); }
+.people-modal-detail { margin: 0; font-size: 15px; line-height: 1.9; color: var(--muted); }
+.recruit-flow { display: flex; flex-direction: column; align-items: stretch; gap: 10px; max-width: 880px; margin: 0 auto; }
+.flow-step { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; }
+.flow-arrow { color: #547d9c; font-size: 16px; line-height: 1; }
+.flow-card { width:100%; background:#fff; border:1px solid #b8cddd; border-radius:6px; padding:22px 26px; text-align:left; box-sizing:border-box; }
+.flow-title { display:flex; align-items:baseline; gap:12px; margin-bottom:10px; color:#0d2d5a; }
+.flow-index { font-size:24px; font-weight:700; line-height:1; }
+.flow-card h3 { margin:0; font-size:22px; font-weight:700; line-height:1.4; }
+.flow-card p { margin:0; font-size:16px; color:var(--ink); line-height:1.9; }
+.entry-rough {
+  width:min(1120px,calc(100% - 80px));
+  margin:40px auto 64px;
+  min-height:0;
+  border-radius:8px;
+  padding:32px;
+  color: #fff;
+  background: linear-gradient(90deg, rgba(8, 28, 46, 0.94), rgba(9, 43, 70, 0.2)), linear-gradient(135deg, #102538, #245f84);
+  display: flex;
+  align-items:center;
+  gap:28px;
+  justify-content: space-between;
+}
+.entry-rough h2 { font-size:clamp(26px,3vw,34px); margin:10px 0; }
+.entry-rough p:not(.section-no) { max-width:620px; margin:0; font-size:16px; line-height:1.9; color:#e0edf5; }
+.entry-rough > a { flex-shrink:0; width:auto; height:auto; min-height:48px; padding:12px 18px; border:1px solid rgba(255,255,255,.65); border-radius:4px; display:flex; align-items:center; gap:16px; font-size:15px; font-weight:700; transition:background .2s,color .2s; }
+.entry-rough > a:hover { background:#fff; color:#123b58; }
+.entry-rough > a:hover { transform: translateX(3px); }
+@media(max-width:1050px) and (min-width:801px){.people-rough{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width: 800px) {
+  .people-rough { grid-template-columns: 1fr; }
+  .recruit-page .detail-section { padding:42px 22px; }
+  .people-card { min-height:130px; padding:22px; }
+  .flow-card { padding:20px; }
+  .entry-rough { width:calc(100% - 44px); margin:28px auto 44px; padding:26px 22px; flex-direction:column; align-items:flex-start; gap:20px; }
+}
+@media(prefers-reduced-motion:reduce){.people-card,.entry-rough>a{transition:none}.people-card:hover,.entry-rough>a:hover{transform:none}}
+
+/* 社員の声（VOiCE 埋め込み）：幅620pxまでのカードを並べ、狭い画面では1列 */
+.voice-list { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr)); gap:24px; justify-items:center; }
+.voice-list > .recruit-section-copy { grid-column:1 / -1; justify-self:start; margin:0; }
+.voice-embed { display:block; width:100%; max-width:620px; height:400px; border:none; }

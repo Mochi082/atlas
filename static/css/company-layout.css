@@ -1,0 +1,441 @@
+/* Four vertical gateways reuse the existing activities list pattern. */
+.company-page :is(#activities, .company-guide-list) .activity-item{
+  padding-inline:clamp(10px,2vw,22px);
+}
+.company-page #activities .activity-item{
+  width:calc(100% - 10px);
+  grid-template-columns:220px minmax(0,1fr) 48px;
+  transition:background-color .25s ease,transform .25s ease;
+}
+.company-page #activities .activity-item:hover,
+.company-page #activities .activity-item:focus-visible{background:#f7f9fb;transform:translateX(10px)}
+.company-page #activities .activity-arrow{justify-self:center;width:24px;transform:none;transition:transform .25s ease}
+.company-page #activities .activity-item:hover .activity-arrow,
+.company-page #activities .activity-item:focus-visible .activity-arrow{transform:translateX(6px)}
+@media(max-width:700px){.company-page #activities .activity-item{grid-template-columns:100px minmax(0,1fr) 36px;gap:16px}}
+@media(prefers-reduced-motion:reduce){
+  .company-page #activities .activity-item,
+  .company-page #activities .activity-arrow{transition:none}
+  .company-page #activities .activity-item:hover,
+  .company-page #activities .activity-item:focus-visible,
+  .company-page #activities .activity-item:hover .activity-arrow,
+  .company-page #activities .activity-item:focus-visible .activity-arrow{transform:none}
+}
+.company-page .company-philosophy{padding:88px max(40px,calc((100vw - 1120px)/2));background:#f6f9fb}
+.company-page .company-philosophy>h2{margin:8px 0 28px;font-size:clamp(30px,3vw,42px)}
+.company-page .company-guide-list{max-width:none;margin-top:28px}
+.company-page .company-guide-list .activity-item{grid-template-columns:150px minmax(0,1fr) 48px;min-height:148px;gap:28px;text-decoration:none}
+.company-page .company-guide-thumb{height:100px;font-size:34px;font-weight:700;letter-spacing:.02em;color:#66849a;background:linear-gradient(135deg,#e0eaf1,#f5f8fa)}
+.company-page .company-guide-list .activity-item-body small{display:block;margin-bottom:7px;color:#667b8d;font-size:12px;letter-spacing:.12em}
+.company-page .company-guide-list .activity-item-body h3{margin-bottom:8px}
+.company-page .company-more-group>.detail-section{padding-top:42px}
+.company-page .company-more-group{padding-bottom:30px}
+@media(max-width:800px){.company-page .company-philosophy{padding:58px 22px}.company-page .company-guide-list .activity-item{grid-template-columns:82px minmax(0,1fr) 24px;gap:14px;min-height:115px}.company-page .company-guide-thumb{height:76px;font-size:26px}.company-page .company-more-group>.detail-section{padding-top:32px}}
+@media(prefers-reduced-motion:reduce){.company-page .company-guide-list *{animation:none!important;transition:none!important}}
+
+/* Original site thumbnails keep the existing row layout. */
+.company-page .activity-thumb{position:relative;overflow:hidden}
+.company-page .activity-thumb img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover}
+.company-page #logo-message .activity-thumb img,
+.company-page .activity-thumb-support img,
+.company-page .activity-thumb-business img{object-fit:contain;background:#fff}
+
+.company-page .company-media-link{margin:24px 0 0}
+.company-page .company-media-link a{display:inline-flex;align-items:center;flex-wrap:wrap;gap:12px 20px;border-radius:2px;color:#245b88;font-weight:700}
+.company-page .company-media-link img{display:block;width:192px;max-width:100%;height:auto}
+.company-page .company-media-link a>span{flex:1 1 240px}
+.company-page .company-media-description{display:block;margin-top:4px;color:#49677b;font-size:14px;font-weight:400;line-height:1.7}
+.company-page .company-media-link a:hover>span{text-decoration:underline;text-underline-offset:4px}
+.company-page .company-media-link a:focus-visible{outline:2px solid #075ab3;outline-offset:5px}
+
+/* Company gateways use the same flat rows as the activities list. */
+.owned-subpage .company-page .company-guide-list .activity-item{
+  grid-template-columns:220px minmax(0,1fr) 48px;
+  min-height:170px;
+  gap:30px;
+  border-radius:0;
+  box-shadow:none;
+  border-bottom:1px solid #cfd8df;
+  transition:background-color .25s ease;
+}
+.owned-subpage .company-page .company-guide-list .activity-item:hover,
+.owned-subpage .company-page .company-guide-list .activity-item:focus-visible{
+  background:#f7f9fb;
+  box-shadow:none;
+  transform:none;
+}
+.owned-subpage .company-page .company-guide-thumb{height:126px}
+.owned-subpage .company-page .company-guide-list .activity-arrow{justify-self:center}
+@media(max-width:800px){
+  .owned-subpage .company-page .company-guide-list .activity-item{
+    grid-template-columns:82px minmax(0,1fr) 24px;
+    min-height:115px;
+    gap:14px;
+  }
+  .owned-subpage .company-page .company-guide-thumb{height:76px}
+}
+@media(prefers-reduced-motion:reduce){
+  .owned-subpage .company-page .company-guide-list .activity-item{transition:none}
+}
+
+/* Match the activities row and arrow hover motion. */
+.owned-subpage .company-page .company-guide-list .activity-item{
+  width:calc(100% - 10px);
+  transition:background-color .25s ease,transform .25s ease;
+}
+.owned-subpage .company-page .company-guide-list .activity-item:hover,
+.owned-subpage .company-page .company-guide-list .activity-item:focus-visible{
+  transform:translateX(10px);
+}
+.owned-subpage .company-page .company-guide-list .activity-arrow{
+  width:24px;
+  transform:none;
+  transition:transform .25s ease;
+}
+.owned-subpage .company-page .company-guide-list .activity-item:hover .activity-arrow,
+.owned-subpage .company-page .company-guide-list .activity-item:focus-visible .activity-arrow{
+  transform:translateX(6px);
+}
+@media(prefers-reduced-motion:reduce){
+  .owned-subpage .company-page .company-guide-list .activity-item,
+  .owned-subpage .company-page .company-guide-list .activity-arrow{transition:none}
+  .owned-subpage .company-page .company-guide-list .activity-item:hover,
+  .owned-subpage .company-page .company-guide-list .activity-item:focus-visible,
+  .owned-subpage .company-page .company-guide-list .activity-item:hover .activity-arrow,
+  .owned-subpage .company-page .company-guide-list .activity-item:focus-visible .activity-arrow{transform:none}
+}
+
+/* Keep mobile thumbnails landscape and give the title a balanced share. */
+@media(max-width:800px){
+  .owned-subpage .company-page :is(.company-guide-list,#activities) .activity-item{
+    grid-template-columns:88px minmax(0,1fr) 20px;
+    gap:12px;
+    padding:20px 0;
+    min-height:110px;
+  }
+  .owned-subpage .company-page :is(.company-guide-list,#activities) .activity-thumb{
+    height:66px;
+    background:#fff!important;
+  }
+  .owned-subpage .company-page :is(.company-guide-list,#activities) .activity-thumb img{
+    object-fit:contain;
+  }
+  .owned-subpage .company-page #representative .activity-thumb img{object-fit:cover;object-position:center 30%}
+  .owned-subpage .company-page :is(.company-guide-list,#activities) .activity-arrow{font-size:20px;width:20px}
+}
+@media(max-width:360px){
+  .owned-subpage .company-page :is(.company-guide-list,#activities) .activity-item{
+    grid-template-columns:72px minmax(0,1fr) 18px;
+    gap:10px;
+  }
+  .owned-subpage .company-page :is(.company-guide-list,#activities) .activity-thumb{height:54px}
+}
+
+/* Mobile rows: larger images and quieter labels balance the text. */
+@media(max-width:800px){
+  .owned-subpage .company-page :is(.company-guide-list,#activities) .activity-item{
+    grid-template-columns:108px minmax(0,1fr) 18px;
+    gap:12px;
+  }
+  .owned-subpage .company-page :is(.company-guide-list,#activities) .activity-thumb{height:81px}
+  .owned-subpage .company-page :is(.company-guide-list,#activities) .activity-item-body h3{
+    font-size:15px;
+    line-height:1.55;
+  }
+  .owned-subpage .company-page .company-guide-list .activity-item-body small{
+    font-size:10px;
+    letter-spacing:.08em;
+    margin-bottom:6px;
+  }
+  .owned-subpage .company-page #activities .activity-item-body time{
+    font-size:11px;
+    line-height:1.5;
+    margin-bottom:6px;
+  }
+  .owned-subpage .company-page :is(.company-guide-list,#activities) .activity-arrow{font-size:18px;width:18px}
+}
+@media(max-width:360px){
+  .owned-subpage .company-page :is(.company-guide-list,#activities) .activity-item{
+    grid-template-columns:92px minmax(0,1fr) 16px;
+    gap:10px;
+  }
+  .owned-subpage .company-page :is(.company-guide-list,#activities) .activity-thumb{height:69px}
+  .owned-subpage .company-page :is(.company-guide-list,#activities) .activity-item-body h3{font-size:14px}
+}
+
+@media(max-width:800px){
+  .owned-subpage .company-page .company-guide-list .activity-item-body h3{font-size:17px}
+}
+@media(max-width:360px){
+  .owned-subpage .company-page .company-guide-list .activity-item-body h3{font-size:16px}
+}
+@media(max-width:800px){
+  .owned-subpage .company-page #philosophy .company-guide-list .activity-item-body h3{font-size:17px}
+}
+@media(max-width:360px){
+  .owned-subpage .company-page #philosophy .company-guide-list .activity-item-body h3{font-size:16px}
+}
+
+/* The media link continues the company guide with the same row proportions. */
+.owned-subpage .company-page .company-media-link{margin:0}
+.owned-subpage .company-page .company-media-link a{
+  display:grid;
+  grid-template-columns:220px minmax(0,1fr);
+  gap:30px;
+  align-items:center;
+  min-height:170px;
+  padding:22px clamp(10px,2vw,22px);
+  border-bottom:1px solid #cfd8df;
+  border-radius:0;
+  text-decoration:none;
+}
+.owned-subpage .company-page .company-media-link img{width:220px;height:auto}
+.owned-subpage .company-page .company-media-link a>span{font-size:20px;line-height:1.5}
+.owned-subpage .company-page .company-media-description{margin-top:8px;font-size:14px}
+@media(max-width:800px){
+  .owned-subpage .company-page .company-media-link a{
+    grid-template-columns:108px minmax(0,1fr);
+    gap:12px;
+    min-height:110px;
+    padding:20px 0;
+  }
+  .owned-subpage .company-page .company-media-link img{width:108px}
+  .owned-subpage .company-page .company-media-link a>span{font-size:16px}
+  .owned-subpage .company-page .company-media-description{font-size:12px}
+}
+@media(max-width:360px){
+  .owned-subpage .company-page .company-media-link a{grid-template-columns:92px minmax(0,1fr);gap:10px}
+  .owned-subpage .company-page .company-media-link img{width:92px}
+}
+
+.owned-subpage .company-page .company-media-link a{border-bottom:0}
+
+/* Keep the original stacked media link on phones. */
+@media(max-width:800px){
+  .owned-subpage .company-page .company-media-link{margin-top:24px}
+  .owned-subpage .company-page .company-media-link a{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+    min-height:0;
+    padding:0;
+  }
+  .owned-subpage .company-page .company-media-link img{width:192px;max-width:100%;height:auto}
+  .owned-subpage .company-page .company-media-link a>span{flex:0 1 auto;font-size:16px}
+  .owned-subpage .company-page .company-media-description{margin-top:4px;font-size:14px;line-height:1.7}
+}
+
+/* Review the company page with a uniform white background. */
+.owned-subpage .company-page,
+.owned-subpage .company-page .company-philosophy,
+.owned-subpage .company-page .company-more-group,
+.owned-subpage .company-page #activities{
+  background:#fff!important;
+}
+
+
+/* Shift company content slightly right on desktop. */
+@media(min-width:801px){
+  .owned-subpage .company-page .company-title-inner,
+  .owned-subpage .company-page .company-philosophy>* ,
+  .owned-subpage .company-page #activities>div{
+    position:relative;
+    left:24px;
+  }
+}
+
+/* Align both company lists to the same content and column axes. */
+@media(min-width:801px){
+  .owned-subpage .company-page .company-title-inner,
+  .owned-subpage .company-page .company-philosophy>*,
+  .owned-subpage .company-page #activities>div{left:0}
+  .owned-subpage .company-page #activities .activity-list{max-width:none;width:100%}
+}
+
+@media(min-width:801px){.owned-subpage .company-page #activities>div{max-width:none;width:100%}}
+
+/* Keep both desktop lists at the more compact activities width. */
+@media(min-width:801px){
+  .owned-subpage .company-page .company-guide-list,
+  .owned-subpage .company-page .company-media-link,
+  .owned-subpage .company-page #activities>div{max-width:980px;width:100%}
+}
+
+/* Center the rows while section headings stay on the left content axis. */
+@media(min-width:801px){
+  .owned-subpage .company-page .company-guide-list,
+  .owned-subpage .company-page .company-media-link{margin-left:auto;margin-right:auto}
+  .owned-subpage .company-page #activities>div{max-width:none;width:100%}
+  .owned-subpage .company-page #activities .activity-list{max-width:980px;width:100%;margin-left:auto;margin-right:auto}
+}
+
+/* Section labels and descriptions share the centered list's left edge. */
+@media(min-width:801px){
+  .owned-subpage .company-page .company-philosophy>.section-no,
+  .owned-subpage .company-page .company-philosophy>h2{
+    max-width:980px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .owned-subpage .company-page #activities>div{max-width:980px;margin-left:auto;margin-right:auto}
+}
+
+.owned-subpage .company-page .company-guide-intro{
+  margin:0 0 28px;
+  font-size:16px;
+  line-height:1.9;
+}
+@media(min-width:801px){
+  .owned-subpage .company-page .company-guide-intro{max-width:980px;margin-left:auto;margin-right:auto}
+}
+
+/* Match the section introductions and heading rhythm. */
+.owned-subpage .company-page .company-guide-intro,
+.owned-subpage .company-page #activities .detail-copy{
+  font-size:18px;
+  font-weight:600;
+  line-height:1.9;
+  color:#263f52;
+  margin-top:18px;
+  margin-bottom:18px;
+}
+.owned-subpage .company-page #philosophy-title{
+  font-size:clamp(30px,3.3vw,42px);
+  line-height:1.25;
+  margin-top:0;
+  margin-bottom:28px;
+}
+@media(max-width:800px){
+  .owned-subpage .company-page .company-guide-intro,
+  .owned-subpage .company-page #activities .detail-copy{font-size:16px}
+}
+
+/* Desktop copy uses the available width without forced wrapping. */
+@media(min-width:801px){
+  .owned-subpage .company-page .company-lead br{display:none}
+  .owned-subpage .company-page #activities .detail-copy{max-width:none}
+}
+
+@media(min-width:801px){
+  .owned-subpage .company-page .company-lead br{display:revert}
+  .owned-subpage .company-page #activities .detail-copy{max-width:none;width:100%;text-wrap:wrap}
+}
+
+/* Company palette: white surfaces, navy headings, blue interaction accents. */
+.owned-subpage .company-page :is(#philosophy-title,#activities h2){color:#173e58}
+.owned-subpage .company-page :is(.company-philosophy,#activities)>.section-no,
+.owned-subpage .company-page #activities .section-no,
+.owned-subpage .company-page .company-guide-list .activity-item-body small{color:#24678f}
+.owned-subpage .company-page :is(.company-guide-intro,#activities .detail-copy){color:#46545e}
+.owned-subpage .company-page :is(.company-guide-list,#activities) .activity-item{border-bottom-color:#d6e0e6}
+.owned-subpage .company-page :is(.company-guide-list,#activities) .activity-item-body h3{color:#173e58}
+.owned-subpage .company-page :is(.company-guide-list,#activities) .activity-item:hover,
+.owned-subpage .company-page :is(.company-guide-list,#activities) .activity-item:focus-visible{background:#eef7fc}
+.owned-subpage .company-page :is(.company-guide-list,#activities) .activity-arrow{color:#327ba5}
+.owned-subpage .company-page :is(.company-guide-list,#activities) .activity-item:hover .activity-arrow,
+.owned-subpage .company-page :is(.company-guide-list,#activities) .activity-item:focus-visible .activity-arrow{color:#075b96}
+.owned-subpage .company-page .company-media-link a{color:#24678f}
+.owned-subpage .company-page .company-media-description{color:#566672}
+
+/* Short blue rules distinguish the two section introductions. */
+.owned-subpage .company-page .company-philosophy>.section-no::before,
+.owned-subpage .company-page #activities .section-no::before{
+  content:"";
+  display:block;
+  width:48px;
+  height:3px;
+  margin-bottom:20px;
+  background:#24678f;
+}
+.owned-subpage .company-page .company-more-group>#activities{padding-top:64px}
+@media(max-width:800px){
+  .owned-subpage .company-page .company-philosophy>.section-no::before,
+  .owned-subpage .company-page #activities .section-no::before{width:36px;margin-bottom:16px}
+  .owned-subpage .company-page .company-more-group>#activities{padding-top:44px}
+}
+
+/* Group each section introduction with a blue vertical rule. */
+.owned-subpage .company-page .company-philosophy>.section-no::before,
+.owned-subpage .company-page #activities .section-no::before{display:none}
+.owned-subpage .company-page .company-philosophy>:is(.section-no,h2,.company-guide-intro),
+.owned-subpage .company-page #activities>div>:is(.section-no,h2,.detail-copy){
+  border-left:4px solid #24678f;
+  padding-left:20px;
+  box-sizing:border-box;
+}
+.owned-subpage .company-page .company-philosophy>.section-no,
+.owned-subpage .company-page #activities>div>.section-no{margin-bottom:0;padding-bottom:12px}
+.owned-subpage .company-page #philosophy-title,
+.owned-subpage .company-page #activities>div>h2{margin-top:0;margin-bottom:0;padding-bottom:24px}
+.owned-subpage .company-page .company-guide-intro,
+.owned-subpage .company-page #activities>div>.detail-copy{margin-top:0;margin-bottom:28px}
+@media(max-width:800px){
+  .owned-subpage .company-page .company-philosophy>:is(.section-no,h2,.company-guide-intro),
+  .owned-subpage .company-page #activities>div>:is(.section-no,h2,.detail-copy){padding-left:14px;border-left-width:3px}
+}
+
+/* Compact section introductions on phones. */
+@media(max-width:800px){
+  .owned-subpage .company-page #philosophy-title,
+  .owned-subpage .company-page #activities>div>h2{
+    font-size:26px;
+    line-height:1.4;
+    padding-bottom:14px;
+  }
+  .owned-subpage .company-page .company-philosophy>.section-no,
+  .owned-subpage .company-page #activities>div>.section-no{
+    font-size:11px;
+    line-height:1.5;
+    padding-bottom:8px;
+  }
+  .owned-subpage .company-page .company-guide-intro,
+  .owned-subpage .company-page #activities>div>.detail-copy{
+    font-size:14px;
+    font-weight:500;
+    line-height:1.8;
+    margin-bottom:24px;
+  }
+  .owned-subpage .company-page .company-guide-list{margin-top:24px}
+}
+
+/* Approved sky-blue interaction accents; preserve company layout and typography. */
+.owned-subpage [data-content-page="company"] :is(.company-guide-list,#activities) .activity-arrow{color:#389dcc}
+.owned-subpage [data-content-page="company"] :is(.company-guide-list,#activities) .activity-item:hover .activity-arrow,
+.owned-subpage [data-content-page="company"] :is(.company-guide-list,#activities) .activity-item:focus-visible .activity-arrow{color:#247fae}
+
+/* Carry the approved sky-blue accents through both company section introductions. */
+.owned-subpage [data-content-page="company"] .company-philosophy>:is(.section-no,h2,.company-guide-intro),
+.owned-subpage [data-content-page="company"] #activities>div>:is(.section-no,h2,.detail-copy){border-left-color:#389dcc}
+.owned-subpage [data-content-page="company"] .company-philosophy>.section-no,
+.owned-subpage [data-content-page="company"] #activities .section-no,
+.owned-subpage [data-content-page="company"] .company-guide-list .activity-item-body small{color:#2c8bb9}
+
+.owned-subpage #main-content.company-page[data-content-page="company"] .section-no,
+.owned-subpage #main-content.company-page[data-content-page="company"] .company-guide-list .activity-item-body small{color:#2c8bb9}
+.owned-subpage #main-content.company-page[data-content-page="company"] :is(.company-guide-list,#activities) .activity-arrow{font-size:30px;width:30px;line-height:1}
+@media(max-width:800px){
+ .owned-subpage #main-content.company-page[data-content-page="company"] :is(.company-guide-list,#activities) .activity-arrow{font-size:25px;width:25px}
+}
+
+/* Final company landing rhythm: shared introductions, clear section break. */
+.owned-subpage #main-content.company-page[data-content-page="company"] .company-philosophy{padding-bottom:40px}
+.owned-subpage #main-content.company-page[data-content-page="company"] .company-more-group>#activities{padding-top:48px}
+.owned-subpage #main-content.company-page[data-content-page="company"] .company-guide-intro,
+.owned-subpage #main-content.company-page[data-content-page="company"] #activities>div>.detail-copy{margin-bottom:36px;font-weight:400}
+.owned-subpage #main-content.company-page[data-content-page="company"] :is(.company-guide-list,#activities .activity-list){margin-top:0}
+.owned-subpage #main-content.company-page[data-content-page="company"] .company-media-link{margin-top:28px}
+.owned-subpage #main-content.company-page[data-content-page="company"] :is(.company-guide-list,#activities) .activity-item{width:100%;grid-template-columns:220px minmax(0,1fr) 48px;transform:none}
+.owned-subpage #main-content.company-page[data-content-page="company"] :is(.company-guide-list,#activities) .activity-item:hover,
+.owned-subpage #main-content.company-page[data-content-page="company"] :is(.company-guide-list,#activities) .activity-item:focus-visible{transform:none;background:#eef8fc}
+.owned-subpage #main-content.company-page[data-content-page="company"] :is(.company-guide-list,#activities) .activity-arrow{font-size:32px;width:32px;color:#3099c3}
+.owned-subpage #main-content.company-page[data-content-page="company"] .activity-item-body p{font-weight:400;color:#435562}
+@media(max-width:800px){
+ .owned-subpage #main-content.company-page[data-content-page="company"] .company-philosophy{padding-bottom:28px}
+ .owned-subpage #main-content.company-page[data-content-page="company"] .company-more-group>#activities{padding-top:36px}
+ .owned-subpage #main-content.company-page[data-content-page="company"] .company-guide-intro,
+ .owned-subpage #main-content.company-page[data-content-page="company"] #activities>div>.detail-copy{margin-bottom:28px;font-size:16px}
+ .owned-subpage #main-content.company-page[data-content-page="company"] :is(.company-guide-list,#activities) .activity-item{grid-template-columns:100px minmax(0,1fr) 30px;gap:12px}
+ .owned-subpage #main-content.company-page[data-content-page="company"] :is(.company-guide-list,#activities) .activity-arrow{font-size:26px;width:26px}
+}
+@media(max-width:360px){.owned-subpage #main-content.company-page[data-content-page="company"] :is(.company-guide-list,#activities) .activity-item{grid-template-columns:84px minmax(0,1fr) 28px;gap:10px}}
